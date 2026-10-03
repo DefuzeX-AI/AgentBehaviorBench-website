@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { navigation, site } from '../config/site.js';
+import { pageMetadata, site } from '../config/site.js';
 import { usePath } from './router.js';
 import SiteLayout from '../components/SiteLayout.jsx';
 import EmptyState from '../components/EmptyState.jsx';
@@ -7,7 +7,7 @@ import LeaderboardPage from '../pages/LeaderboardPage.jsx';
 import CasesPage from '../pages/CasesPage.jsx';
 import AgentsPage from '../pages/AgentsPage.jsx';
 import ContentPage from '../pages/ContentPage.jsx';
-import { getAbout, getMethodology } from '../services/benchmark.js';
+import { getAbout, getMethodology, getPaper, getHowToStart } from '../services/benchmark.js';
 
 const pages = {
   '/': <LeaderboardPage />,
@@ -15,11 +15,13 @@ const pages = {
   '/cases': <CasesPage />,
   '/methodology': <ContentPage contentKey="methodology" load={getMethodology} />,
   '/about': <ContentPage contentKey="about" load={getAbout} />,
+  '/paper': <ContentPage contentKey="paper" load={getPaper} />,
+  '/how-to-start': <ContentPage contentKey="howToStart" load={getHowToStart} />,
 };
 
 export default function App() {
   const path = usePath();
-  const page = navigation.find((item) => item.path === path);
+  const page = pageMetadata.find((item) => item.path === path);
 
   useEffect(() => {
     document.title = `${page?.title ?? 'Page not found'} · ${site.name}`;

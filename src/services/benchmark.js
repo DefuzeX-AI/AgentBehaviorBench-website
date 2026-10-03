@@ -6,5 +6,7 @@ export async function getLeaderboard() { return data.leaderboard; }
 export async function getCases() { return data.cases; }
 export async function getMethodology() { return data.methodology; }
 export async function getAbout() { return data.about; }
+export async function getPaper() { return data.paper; }
+export async function getHowToStart() { return data.howToStart; }
 export async function getAgents() { return agentDirectory.agents; }
 export const agentDirectorySource = agentDirectory.source;

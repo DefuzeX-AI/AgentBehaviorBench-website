@@ -1,4 +1,4 @@
-import { navigation, site } from '../config/site.js';
+import { navigationGroups, site } from '../config/site.js';
 
 export default function SiteLayout({ path, page, children }) {
   return (
@@ -8,16 +8,19 @@ export default function SiteLayout({ path, page, children }) {
         document.getElementById('main-content')?.focus();
       }}>Skip to content</a>
       <aside className="sidebar">
-        <a className="brand" href="#/" aria-label={site.name}>
-          <span className="brand-mark" aria-hidden="true">A</span>
-          <span>{site.shortName}<small>Behavior Benchmark</small></span>
-        </a>
-        <div className="nav-label">{site.section}</div>
-        <nav aria-label="Main navigation">
-          {navigation.map((item, index) => (
-            <a key={item.path} href={`#${item.path}`} className={path === item.path ? 'nav-link active' : 'nav-link'} aria-current={path === item.path ? 'page' : undefined}>
-              <span className="nav-number" aria-hidden="true">0{index + 1}</span>{item.label}
-            </a>
+        <a className="brand" href="#/">{site.name}</a>
+        <nav className="sidebar-nav" aria-label="Main navigation">
+          {navigationGroups.map((group) => (
+            <div className="nav-group" key={group.id}>
+              {group.label && <h2 className="nav-label">{group.label}</h2>}
+              <div className="nav-items">
+                {group.items.map((item) => (
+                  <a key={item.path} href={`#${item.path}`} className={path === item.path ? 'nav-link active' : 'nav-link'} aria-current={path === item.path ? 'page' : undefined}>
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
         </nav>
         <div className="sidebar-footer">{site.footer}</div>

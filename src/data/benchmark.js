@@ -8,3 +8,5 @@ export const cases = [];
 // Example shape: { id, title, body }
 export const methodology = [];
 export const about = [];
+export const paper = [];
+export const howToStart = [];

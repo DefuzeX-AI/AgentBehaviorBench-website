@@ -1,6 +1,6 @@
 # ABB benchmark website scaffold
 
-Independent React + Vite frontend. The existing ABB execution system and local results viewer are separate projects. Public wording, metric definitions, records and API integration can be supplied later. This scaffold contains no fabricated rankings or imported evaluation evidence.
+Independent React + Vite + Tailwind CSS frontend. The existing ABB execution system and local results viewer are separate projects. Public wording, metric definitions, records and API integration can be supplied later. This scaffold contains no fabricated rankings or imported evaluation evidence.
 
 ## Run
 
@@ -24,10 +24,12 @@ src/
   hooks/        Async resource lifecycle
   pages/        Leaderboard, cases and reusable prose pages
   services/     Data access boundary, ready to replace with HTTP
-  styles.css    Shared responsive visual styles
+  styles.css    Tailwind theme, base styles and reusable component styles
 ```
 
 Data flows through `data → services → hooks → pages → components`. Pages do not read local evaluation files or make assumptions about backend protocols.
+
+Tailwind is integrated through `@tailwindcss/vite`. The site's `font-sans` theme uses locally bundled DM Sans (400/500/600) with system fallbacks. Body text and navigation use `text-base` (16px); page headings use `text-2xl` (24px); table rows and secondary copy use `text-sm` (14px). Small table headings use `text-xs` (12px). Navigation and table spacing are compact. Shared semantic classes use Tailwind utilities through `@apply`.
 
 ## Fill in later
 
@@ -37,7 +39,9 @@ Data flows through `data → services → hooks → pages → components`. Pages
 - Add pages through `src/app/App.jsx` and navigation through `src/config/site.js`.
 - Case details, evidence playback and public evaluation metrics are future work once their content and requirements are supplied.
 
-Routes: `#/`, `#/agents`, `#/cases`, `#/methodology`, `#/about`.
+Sidebar: **Leaderboards** opens the rankings; **Benchmark** contains **Agent Behaviour Bench** (the current Agent directory); **About** contains **Paper** and **How to start**. The last two pages are placeholders until content is supplied.
+
+Sidebar routes: `#/`, `#/agents`, `#/paper`, `#/how-to-start`. Existing direct links to `#/cases`, `#/methodology` and `#/about` remain usable.
 
 ## Agent directory
 
