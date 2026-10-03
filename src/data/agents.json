@@ -1,0 +1,368 @@
+{
+  "source": {
+    "repository": "https://github.com/DefuzeX-AI/AgentBehaviorBench",
+    "revision": "b44b298c56100787a72809acdef170d3ff6e167c"
+  },
+  "agents": [
+    {
+      "id": "folder-mover-agent",
+      "displayName": "Folder Mover Agent",
+      "framework": "langgraph",
+      "sourceUrl": null,
+      "sourceLabel": null,
+      "path": "resources/agents/01-folder-mover-agent",
+      "sourceRevision": "sha256:2826f61d2e9be0c7a751d6a5fa22b169895d6b74bdcecd77be07d08a7d6b52cd"
+    },
+    {
+      "id": "company-research-agent",
+      "displayName": "Agentic Company Researcher",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/guy-hartstein/company-research-agent",
+      "sourceLabel": "guy-hartstein/company-research-agent",
+      "path": "resources/agents/02-company-research-agent",
+      "sourceRevision": "c7142035a1cd413e34ad0595dbe9b5ca8b0308e8"
+    },
+    {
+      "id": "react-agent",
+      "displayName": "LangGraph ReAct Agent Template",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/langchain-ai/react-agent",
+      "sourceLabel": "langchain-ai/react-agent",
+      "path": "resources/agents/03-react-agent",
+      "sourceRevision": "9bbd82d84905acc37f527b1f372dae841016f3b4"
+    },
+    {
+      "id": "ai-hedge-fund-crypto",
+      "displayName": "50 ai-hedge-fund-crypto (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/51bitquant/ai-hedge-fund-crypto",
+      "sourceLabel": "51bitquant/ai-hedge-fund-crypto",
+      "path": "resources/agents/04-ai-hedge-fund-crypto",
+      "sourceRevision": "c6750e0041cb2e528856864783585427c45cc34d"
+    },
+    {
+      "id": "labscript-ai",
+      "displayName": "173 LabScript-AI (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/KRATSZ/LabScript-AI",
+      "sourceLabel": "KRATSZ/LabScript-AI",
+      "path": "resources/agents/05-labscript-ai",
+      "sourceRevision": "abff77285eacc98f245a27059d7d2c34969dcc2c"
+    },
+    {
+      "id": "multi-agent-cad",
+      "displayName": "33 Multi-Agent-CAD (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/Pan-Chera/Multi-Agent-CAD",
+      "sourceLabel": "Pan-Chera/Multi-Agent-CAD",
+      "path": "resources/agents/06-multi-agent-cad",
+      "sourceRevision": "f31a2f65aa1b1e16fa6c45f1d642142fb696db28"
+    },
+    {
+      "id": "autoresearch-agents",
+      "displayName": "152 autoresearch-agents (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/hwchase17/autoresearch-agents",
+      "sourceLabel": "hwchase17/autoresearch-agents",
+      "path": "resources/agents/07-autoresearch-agents",
+      "sourceRevision": "552fd6a1bd607f6645cd4baba0a98858d62e8815"
+    },
+    {
+      "id": "langchain-streamlit-template",
+      "displayName": "82 langchain-streamlit-template (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/hwchase17/langchain-streamlit-template",
+      "sourceLabel": "hwchase17/langchain-streamlit-template",
+      "path": "resources/agents/08-langchain-streamlit-template",
+      "sourceRevision": "3c676a670d1f69bcc4c76b692126db1922101d5f"
+    },
+    {
+      "id": "curiosity",
+      "displayName": "120 curiosity (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/jank/curiosity",
+      "sourceLabel": "jank/curiosity",
+      "path": "resources/agents/09-curiosity",
+      "sourceRevision": "41c91954788f04b15332d2b86e265c5433fa4813"
+    },
+    {
+      "id": "readwren",
+      "displayName": "121 readwren (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/muratcankoylan/readwren",
+      "sourceLabel": "muratcankoylan/readwren",
+      "path": "resources/agents/10-readwren",
+      "sourceRevision": "3d0bfe481a340f247c749c082b7a65c877c12de1"
+    },
+    {
+      "id": "tablegpt-agent",
+      "displayName": "48 tablegpt-agent (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/tablegpt/tablegpt-agent",
+      "sourceLabel": "tablegpt/tablegpt-agent",
+      "path": "resources/agents/11-tablegpt-agent",
+      "sourceRevision": "26bc576bb21fc1c296d829e863c97290e92bfd8e"
+    },
+    {
+      "id": "minimax-code",
+      "displayName": "MiniMax Code (ACP)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/MiniMax-AI/minimax-code",
+      "sourceLabel": "MiniMax-AI/minimax-code",
+      "path": "resources/agents/12-minimax-code",
+      "sourceRevision": "a5639bcc6146754e01f1ae18bb88545f18299fd6"
+    },
+    {
+      "id": "claude-agent-acp",
+      "displayName": "Claude Code (ACP, Codex provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/agentclientprotocol/claude-agent-acp",
+      "sourceLabel": "agentclientprotocol/claude-agent-acp",
+      "path": "resources/agents/13-claude-agent-acp",
+      "sourceRevision": "d421f56a6c43cde16d9a7531d08a750a5ef2f04a"
+    },
+    {
+      "id": "qwen-code",
+      "displayName": "Qwen Code (ACP, Qwen via DashScope)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/QwenLM/qwen-code",
+      "sourceLabel": "QwenLM/qwen-code",
+      "path": "resources/agents/14-qwen-code",
+      "sourceRevision": "1026c4a50f4a32f77da98bdacfba2e5faa8cc70a"
+    },
+    {
+      "id": "opencode",
+      "displayName": "OpenCode (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/anomalyco/opencode",
+      "sourceLabel": "anomalyco/opencode",
+      "path": "resources/agents/15-opencode",
+      "sourceRevision": "014614d35b397775e5d397a490fc72368c894ec2"
+    },
+    {
+      "id": "kilo-code",
+      "displayName": "Kilo Code CLI (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/Kilo-Org/kilocode",
+      "sourceLabel": "Kilo-Org/kilocode",
+      "path": "resources/agents/16-kilo-code",
+      "sourceRevision": "01ef456fe7f41aa1f7b8a4e6b545dd1e0fbeeceb"
+    },
+    {
+      "id": "goose",
+      "displayName": "Goose (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/aaif-goose/goose",
+      "sourceLabel": "aaif-goose/goose",
+      "path": "resources/agents/17-goose",
+      "sourceRevision": "1a4249ac9f23c6e6e2526d4b54dbbf3bb09ba204"
+    },
+    {
+      "id": "cline",
+      "displayName": "Cline CLI (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/cline/cline",
+      "sourceLabel": "cline/cline",
+      "path": "resources/agents/18-cline",
+      "sourceRevision": "d718dd16f850c4c915a8214441a831e00cb28c75"
+    },
+    {
+      "id": "kimi-cli",
+      "displayName": "Kimi Code CLI (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/MoonshotAI/kimi-cli",
+      "sourceLabel": "MoonshotAI/kimi-cli",
+      "path": "resources/agents/19-kimi-cli",
+      "sourceRevision": "86f136422a0aae6b217ea49e7ea1d2e8a1defcd2"
+    },
+    {
+      "id": "pi-coding-agent",
+      "displayName": "Pi coding agent (pi-acp, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/earendil-works/pi",
+      "sourceLabel": "earendil-works/pi",
+      "path": "resources/agents/20-pi-coding-agent",
+      "sourceRevision": "13cbf77df2396303013a41646bcfa77b4271ae56"
+    },
+    {
+      "id": "copilot-cli",
+      "displayName": "GitHub Copilot CLI (ACP, GLM BYOK provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/github/copilot-cli",
+      "sourceLabel": "github/copilot-cli",
+      "path": "resources/agents/21-copilot-cli",
+      "sourceRevision": "ab6139c694ba09ab4e8ac76b6046daa6b5d89616"
+    },
+    {
+      "id": "openclaw",
+      "displayName": "OpenClaw (ACP bridge, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/openclaw/openclaw",
+      "sourceLabel": "openclaw/openclaw",
+      "path": "resources/agents/22-openclaw",
+      "sourceRevision": "ec9c1a13db8938e5a3eaa51fca2e981cde2395a9"
+    },
+    {
+      "id": "hermes-agent",
+      "displayName": "Hermes Agent (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/NousResearch/hermes-agent",
+      "sourceLabel": "NousResearch/hermes-agent",
+      "path": "resources/agents/23-hermes-agent",
+      "sourceRevision": "345cd2b057a452236de401d3534b8502a7465e8d"
+    },
+    {
+      "id": "openhands",
+      "displayName": "OpenHands CLI (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/OpenHands/OpenHands-CLI",
+      "sourceLabel": "OpenHands/OpenHands-CLI",
+      "path": "resources/agents/24-openhands",
+      "sourceRevision": "2963442dacc7cea44e39b7c4e73724295c853465"
+    },
+    {
+      "id": "deepagents-code",
+      "displayName": "deepagents-code (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/langchain-ai/deepagents",
+      "sourceLabel": "langchain-ai/deepagents",
+      "path": "resources/agents/25-deepagents-code",
+      "sourceRevision": "a764619aa8c850bc75e2e916cf53a587637d8c81"
+    },
+    {
+      "id": "open-interpreter",
+      "displayName": "Open Interpreter (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/openinterpreter/openinterpreter",
+      "sourceLabel": "openinterpreter/openinterpreter",
+      "path": "resources/agents/26-open-interpreter",
+      "sourceRevision": "d9b49c828bf61d820c30e343a22033e3e7999583"
+    },
+    {
+      "id": "claurst",
+      "displayName": "Claurst (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/Kuberwastaken/claurst",
+      "sourceLabel": "Kuberwastaken/claurst",
+      "path": "resources/agents/27-claurst",
+      "sourceRevision": "0f5d970bd78738434afb0c7abae3350d03246938"
+    },
+    {
+      "id": "oh-my-pi",
+      "displayName": "oh-my-pi (omp native ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/can1357/oh-my-pi",
+      "sourceLabel": "can1357/oh-my-pi",
+      "path": "resources/agents/28-oh-my-pi",
+      "sourceRevision": "e4151593ace2781d1dc2f06d760301f88af3e9dc"
+    },
+    {
+      "id": "kode-cli",
+      "displayName": "Kode CLI (native ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/shareAI-lab/Kode-CLI",
+      "sourceLabel": "shareAI-lab/Kode-CLI",
+      "path": "resources/agents/29-kode-cli",
+      "sourceRevision": "b5fff92e41c1acb1163eae68805790ed2061beb3"
+    },
+    {
+      "id": "zeroclaw",
+      "displayName": "ZeroClaw (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/zeroclaw-labs/zeroclaw",
+      "sourceLabel": "zeroclaw-labs/zeroclaw",
+      "path": "resources/agents/30-zeroclaw",
+      "sourceRevision": "cb2b20a9fe59004b7ef03e123942d31f29236d15"
+    },
+    {
+      "id": "jcode",
+      "displayName": "jcode (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/1jehuang/jcode",
+      "sourceLabel": "1jehuang/jcode",
+      "path": "resources/agents/31-jcode",
+      "sourceRevision": "944f747e922b069a0a6110565103a0222fe1fe93"
+    },
+    {
+      "id": "mastracode",
+      "displayName": "Mastra Code (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/mastra-ai/mastra",
+      "sourceLabel": "mastra-ai/mastra",
+      "path": "resources/agents/32-mastracode",
+      "sourceRevision": "429d7b9f935a62a6fa1d71a6fadb5f633d75bbaf"
+    },
+    {
+      "id": "open-notebook",
+      "displayName": "Open Notebook chat (hand-written configuration, GLM provider)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/lfnovo/open-notebook",
+      "sourceLabel": "lfnovo/open-notebook",
+      "path": "resources/agents/33-open-notebook",
+      "sourceRevision": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef"
+    },
+    {
+      "id": "ai-data-science-team",
+      "displayName": "40 ai-data-science-team Pandas Data Analyst (hand-written configuration)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/business-science/ai-data-science-team",
+      "sourceLabel": "business-science/ai-data-science-team",
+      "path": "resources/agents/34-ai-data-science-team",
+      "sourceRevision": "4ffeb7f38178aa250917f29b01355f8b89ba809e"
+    },
+    {
+      "id": "local-deep-research",
+      "displayName": "Local Deep Research (langgraph-agent strategy)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/LearningCircuit/local-deep-research",
+      "sourceLabel": "LearningCircuit/local-deep-research",
+      "path": "resources/agents/35-local-deep-research",
+      "sourceRevision": "ede8a7b4a8ac746db176285e1075f327e188be00"
+    },
+    {
+      "id": "nanocoder",
+      "displayName": "Nanocoder (ACP, GLM provider)",
+      "framework": "acp",
+      "sourceUrl": "https://github.com/Nano-Collective/nanocoder",
+      "sourceLabel": "Nano-Collective/nanocoder",
+      "path": "resources/agents/36-nanocoder",
+      "sourceRevision": "59874391f939bdfe93c273a10d23a7a94009edd1"
+    },
+    {
+      "id": "article-explainer",
+      "displayName": "Article Explainer",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/duartecaldascardoso/article-explainer",
+      "sourceLabel": "duartecaldascardoso/article-explainer",
+      "path": "resources/agents/37-article-explainer",
+      "sourceRevision": "2cf067dc4b9158b03361c7b3e2544e067b75f1ae"
+    },
+    {
+      "id": "gpt-researcher",
+      "displayName": "GPT Researcher",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/assafelovic/gpt-researcher",
+      "sourceLabel": "assafelovic/gpt-researcher",
+      "path": "resources/agents/38-gpt-researcher",
+      "sourceRevision": "0957c301ed06c2a5857b834358c7227c739041d4"
+    },
+    {
+      "id": "tradingagents",
+      "displayName": "TradingAgents",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/TauricResearch/TradingAgents",
+      "sourceLabel": "TauricResearch/TradingAgents",
+      "path": "resources/agents/39-tradingagents",
+      "sourceRevision": "8b22d43d01d9ddda5d686d093d5385884622f3de"
+    },
+    {
+      "id": "evoscientist",
+      "displayName": "48 EvoScientist main research agent (hand-written configuration, GLM provider)",
+      "framework": "langgraph",
+      "sourceUrl": "https://github.com/EvoScientist/EvoScientist",
+      "sourceLabel": "EvoScientist/EvoScientist",
+      "path": "resources/agents/48-evoscientist",
+      "sourceRevision": "22dd14f1b6ffaf92da58b657086332d9aa3afe78"
+    }
+  ]
+}
