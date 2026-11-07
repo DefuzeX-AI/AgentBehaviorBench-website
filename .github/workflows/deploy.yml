@@ -25,8 +25,8 @@ jobs:
       - run: npm run lint
       - run: npm run build
         env:
-          SITE_BASE: /AgentBehaviorBench-website/
-          SITE_ORIGIN: https://defuzex-ai.github.io
+          SITE_BASE: /
+          SITE_ORIGIN: https://agentbehaviorbench.com
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

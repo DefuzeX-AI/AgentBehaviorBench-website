@@ -5,7 +5,7 @@ import { render } from '../dist-ssr/entry-server.js'
 const output = resolve('dist')
 const base = process.env.SITE_BASE || '/'
 if (!base.startsWith('/') || !base.endsWith('/')) throw new Error('SITE_BASE must start and end with /')
-const origin = process.env.SITE_ORIGIN || 'https://defuzex-ai.github.io'
+const origin = process.env.SITE_ORIGIN || 'https://agentbehaviorbench.com'
 const navigation = JSON.parse(await readFile('src/data/navigation.json', 'utf8'))
 const pages = navigation.flatMap(group => group.items)
 const template = await readFile(join(output, 'index.html'), 'utf8')
