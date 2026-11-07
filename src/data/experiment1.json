@@ -1,0 +1,420 @@
+{
+  "title": "Behavioural Failure Detection",
+  "experiment": "Experiment 1",
+  "description": "Testing agents generate test conversations from high-level task descriptions, without access to the original issue report, failure symptoms, or reproduction steps.",
+  "metricDescription": "Detection@k is the percentage of issues whose reported failure is triggered within k test executions, as verified by an independent failure oracle. Higher is better.",
+  "budgets": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "rankingBudget": 50,
+  "source": {
+    "document": "MLSYSR27_AgentBehaviorBench.pdf",
+    "table": "Table 13",
+    "page": 18
+  },
+  "systems": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "model": "Astra 6"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "model": "Opus 5.5"
+    }
+  ],
+  "issues": [
+    {
+      "id": 1,
+      "agent": "agentty",
+      "issue": 116,
+      "firstHit": {
+        "codex": null,
+        "claude-code": 1
+      }
+    },
+    {
+      "id": 2,
+      "agent": "claurst",
+      "issue": 442,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 3,
+      "agent": "claurst",
+      "issue": 448,
+      "firstHit": {
+        "codex": 11,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 4,
+      "agent": "code-assistant",
+      "issue": 276,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 5,
+      "agent": "code-assistant",
+      "issue": 277,
+      "firstHit": {
+        "codex": 24,
+        "claude-code": 1
+      }
+    },
+    {
+      "id": 6,
+      "agent": "codewhale",
+      "issue": 5546,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 7,
+      "agent": "deepagents-code",
+      "issue": 5785,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 8,
+      "agent": "deepagents-code",
+      "issue": 5787,
+      "firstHit": {
+        "codex": 1,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 9,
+      "agent": "deer-flow",
+      "issue": 7526,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 10,
+      "agent": "easy-agent",
+      "issue": 124,
+      "firstHit": {
+        "codex": 23,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 11,
+      "agent": "easy-agent",
+      "issue": 125,
+      "firstHit": {
+        "codex": 21,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 12,
+      "agent": "fast-agent",
+      "issue": 1039,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 13,
+      "agent": "fx",
+      "issue": 1345,
+      "firstHit": {
+        "codex": null,
+        "claude-code": 1
+      }
+    },
+    {
+      "id": 14,
+      "agent": "gptme",
+      "issue": 4490,
+      "firstHit": {
+        "codex": 1,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 15,
+      "agent": "langchain-code",
+      "issue": 17,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 16,
+      "agent": "llxprt-code",
+      "issue": 3599,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 17,
+      "agent": "llxprt-code",
+      "issue": 3943,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 18,
+      "agent": "mastracode",
+      "issue": 14823,
+      "firstHit": {
+        "codex": 33,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 19,
+      "agent": "mini-agent",
+      "issue": 130,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 20,
+      "agent": "minimax-code",
+      "issue": 155,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 21,
+      "agent": "mistral-vibe",
+      "issue": 1179,
+      "firstHit": {
+        "codex": 6,
+        "claude-code": 1
+      }
+    },
+    {
+      "id": 22,
+      "agent": "mistral-vibe",
+      "issue": 186,
+      "firstHit": {
+        "codex": 9,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 23,
+      "agent": "mistral-vibe",
+      "issue": 259,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 24,
+      "agent": "mistral-vibe",
+      "issue": 561,
+      "firstHit": {
+        "codex": 15,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 25,
+      "agent": "nanocoder",
+      "issue": 1057,
+      "firstHit": {
+        "codex": 2,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 26,
+      "agent": "nanocoder",
+      "issue": 1058,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 27,
+      "agent": "nanocoder",
+      "issue": 1237,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 28,
+      "agent": "nanocoder",
+      "issue": 1343,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 29,
+      "agent": "nanocoder",
+      "issue": 1391,
+      "firstHit": {
+        "codex": null,
+        "claude-code": 7
+      }
+    },
+    {
+      "id": 30,
+      "agent": "opencrabs",
+      "issue": 2210,
+      "firstHit": {
+        "codex": 1,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 31,
+      "agent": "opencrabs",
+      "issue": 2211,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 32,
+      "agent": "opencrabs",
+      "issue": 2212,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 33,
+      "agent": "opencrabs",
+      "issue": 2227,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 34,
+      "agent": "openharness",
+      "issue": 140,
+      "firstHit": {
+        "codex": 1,
+        "claude-code": 1
+      }
+    },
+    {
+      "id": 35,
+      "agent": "peri",
+      "issue": 287,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 36,
+      "agent": "reasonix",
+      "issue": 10067,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 37,
+      "agent": "reasonix",
+      "issue": 14403,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 38,
+      "agent": "reasonix",
+      "issue": 8299,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 39,
+      "agent": "reasonix",
+      "issue": 8406,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 40,
+      "agent": "reasonix",
+      "issue": 8811,
+      "firstHit": {
+        "codex": null,
+        "claude-code": 5
+      }
+    },
+    {
+      "id": 41,
+      "agent": "reasonix",
+      "issue": 9487,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 42,
+      "agent": "vtcode",
+      "issue": 792,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    },
+    {
+      "id": 43,
+      "agent": "zeroclaw",
+      "issue": 10912,
+      "firstHit": {
+        "codex": null,
+        "claude-code": null
+      }
+    }
+  ]
+}

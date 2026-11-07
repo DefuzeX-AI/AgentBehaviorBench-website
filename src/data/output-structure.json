@@ -1,0 +1,86 @@
+{
+  "title": "Data Format",
+  "sections": [
+    {
+      "id": "agent-run",
+      "title": "Agent Run Outputs",
+      "description": "ABB saves each execution as a separate attempt, including the test case, agent outputs, execution trajectory, and run status.",
+      "path": "results/agents/<agent-id>/cases/<storage-id>/attempts/<id>/",
+      "items": [
+        {
+          "name": "case.json",
+          "description": "The exact test case used for this execution."
+        },
+        {
+          "name": "steps/<step>/",
+          "description": "Each step's input.json, request.json, native result.json, and committed submission.json, together with captured traces."
+        },
+        {
+          "name": "trajectory.json",
+          "description": "The derived execution trajectory, including model inputs and outputs and tool logs."
+        },
+        {
+          "name": "run.json · manifest.json · process.json",
+          "description": "Execution status, step index, and configuration used for the run."
+        },
+        {
+          "name": "logs/",
+          "description": "Execution and diagnostic logs. Additional workspace evidence is retained when produced."
+        }
+      ]
+    },
+    {
+      "id": "issue-data",
+      "title": "Issue Data",
+      "description": "Each issue directory contains a case definition (verify.case.json) and saved reference executions (runs/).",
+      "path": "resources/agents/<agent>/ground_truth/issue_<number>/\n├── verify.case.json\n└── runs/",
+      "items": [
+        {
+          "name": "verify.case.json",
+          "description": "A JSON file containing the issue report, tested version, reproduction steps, expected and observed behaviour, root cause, and fault locations. The example below shows the field names and value types; values are illustrative.",
+          "example": {
+            "case_id": "<unique case ID>",
+            "issue": {
+              "repository": "<owner/repository>",
+              "number": 123,
+              "url": "https://github.com/<owner>/<repository>/issues/123",
+              "state": "closed",
+              "title": "<issue title>",
+              "body": "<issue report text>"
+            },
+            "version_choice": "pinned",
+            "reported_version": "<version reported in the issue>",
+            "commit_version": "<Git commit used for reproduction>",
+            "fixed_in": "unknown",
+            "pinned_contains_fix": false,
+            "steps": [
+              "<first user input>",
+              "<next user input>"
+            ],
+            "expected": "<expected behaviour>",
+            "defect": "<observed failure>",
+            "fault location": [
+              {
+                "file": "<source file path>",
+                "function": "<function name>",
+                "line_start": 10,
+                "line_end": 20,
+                "commit": "<source revision>",
+                "url": "<source link>",
+                "role": "<location role>",
+                "verification": "<how the location was verified>",
+                "explanation": "<why this location contributes to the failure>"
+              }
+            ],
+            "Root cause": "<explanation of why the failure occurs>"
+          },
+          "note": "steps is an ordered array of test inputs. pinned_contains_fix indicates whether the selected commit includes the fix. Field names are case-sensitive: \"fault location\" and \"Root cause\" include spaces. Available annotation details may vary between cases."
+        },
+        {
+          "name": "runs/",
+          "description": "A directory of saved reference executions of this case. Each run preserves execution evidence such as trajectory.json (agent actions, model interactions, and tool calls), step inputs and results, and logs. These records show what happened when the failure was reproduced; the case definition and annotations are stored in verify.case.json."
+        }
+      ]
+    }
+  ]
+}

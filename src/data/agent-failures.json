@@ -1,0 +1,2615 @@
+{
+  "title": "Agent Failures",
+  "description": "Issue-derived behavioural failures, annotated across five dimensions. Each row links to the original report; tags preserve the existing open-coding assignments.",
+  "codingNote": "Failure type, execution stage, and observable outcome can have multiple tags. Severity and failure scope have one tag per issue. These are research annotations: severity, observable outcome, and failure scope remain preliminary; taxonomy review does not establish independent human consensus.",
+  "sources": [
+    "open_coding/section3-analysis.xlsx",
+    "open_coding/severity.xlsx"
+  ],
+  "dimensions": [
+    {
+      "key": "failureType",
+      "label": "Failure Type",
+      "multiple": true,
+      "labels": [
+        {
+          "id": "F01",
+          "label": "Information Representation Failure",
+          "definition": "Information supplied to or by the agent misrepresents source content, factual content, content locations, output provenance, or a declared data format.",
+          "count": 7
+        },
+        {
+          "id": "F02",
+          "label": "Information Availability Failure",
+          "definition": "Information needed for the requested interaction is omitted, concealed, suppressed, or truncated without a usable continuation in the relevant interface.",
+          "count": 12
+        },
+        {
+          "id": "F03",
+          "label": "Artifact Integrity Failure",
+          "definition": "A requested artifact change is not faithfully applied, or an operation changes stored content or structure beyond the requested modification.",
+          "count": 13
+        },
+        {
+          "id": "F04",
+          "label": "Execution Reporting Failure",
+          "definition": "A status, completion claim, edit preview, or failure explanation conflicts with the reported execution or artifact evidence.",
+          "count": 16
+        },
+        {
+          "id": "F05",
+          "label": "Tool Invocation Failure",
+          "definition": "The invocation interface fails to preserve the intended arguments or command semantics, or returns an identifier unusable for the promised follow-up interaction.",
+          "count": 5
+        },
+        {
+          "id": "F06",
+          "label": "Execution Progress Failure",
+          "definition": "An otherwise executable operation fails to start or make progress because it is skipped, wrongly blocked, stalled, crashed, or fails at delegation.",
+          "count": 7
+        },
+        {
+          "id": "F07",
+          "label": "State Consistency Failure",
+          "definition": "Maintained conversation records or prerequisite states lose required relationships or contradict one another, breaking consistent continuation.",
+          "count": 2
+        },
+        {
+          "id": "F08",
+          "label": "Configuration Adherence Failure",
+          "definition": "Observed behaviour fails to follow an explicit applicable configuration setting.",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "key": "severity",
+      "label": "Severity",
+      "multiple": false,
+      "labels": [
+        {
+          "id": "1",
+          "label": "Negligible",
+          "definition": "Style differences only, with no documented direct functional impact.",
+          "count": 1
+        },
+        {
+          "id": "2",
+          "label": "Low",
+          "definition": "Additional maintenance or operational effort; a local failure can be addressed by rereading, retrying, using another tool, or prompting the agent.",
+          "count": 16
+        },
+        {
+          "id": "3",
+          "label": "Medium",
+          "definition": "Functionality, information, or artifact correctness is impaired without a reliable error indication, or the feedback itself is inaccurate.",
+          "count": 19
+        },
+        {
+          "id": "4",
+          "label": "High",
+          "definition": "A core workflow remains blocked or stored data is seriously damaged, requiring manual repair, recovery, or reconstruction. Cases with insufficient evidence of recovery cost are provisional and flagged for review.",
+          "count": 7
+        },
+        {
+          "id": "5",
+          "label": "Critical",
+          "definition": "Evidence confirms immediate, irreversible harm. Potential risk, the absence of built-in undo, or the absence of observed recovery alone does not establish this level.",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "key": "executionStage",
+      "label": "Execution Stage",
+      "multiple": true,
+      "labels": [
+        {
+          "id": "S1",
+          "label": "Input preparation",
+          "definition": "Defects in input sanitization, system prompts, or configuration injection before the model call.",
+          "count": 3
+        },
+        {
+          "id": "S2",
+          "label": "Model output parsing",
+          "definition": "Defects in protocol recognition, tool-call extraction, or streaming argument assembly in model responses.",
+          "count": 3
+        },
+        {
+          "id": "S3",
+          "label": "Tool dispatch",
+          "definition": "Defects in invocation mode, command interpretation, policy decisions, or session routing before a tool starts.",
+          "count": 6
+        },
+        {
+          "id": "S4",
+          "label": "Tool execution",
+          "definition": "Defects in the operational logic of reading, searching, editing, patch application, or process execution and output collection.",
+          "count": 17
+        },
+        {
+          "id": "S5",
+          "label": "Result feedback",
+          "definition": "Defects in tool-result formatting, truncation, redaction, status mapping, or propagation of returned fields.",
+          "count": 10
+        },
+        {
+          "id": "S6",
+          "label": "History/state maintenance",
+          "definition": "Defects in maintaining conversation history, file versions, failure caches, prerequisites, or persistent memory indexes.",
+          "count": 5
+        },
+        {
+          "id": "S7",
+          "label": "Completion delivery",
+          "definition": "Defects in final readiness checks or in constructing and delivering the end-of-turn response.",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "observableOutcome",
+      "label": "Observable Outcome",
+      "multiple": true,
+      "labels": [
+        {
+          "id": "O1",
+          "label": "Incorrect or incomplete information",
+          "definition": "Information received by the model or user is incorrect, missing, unavailable for continued reading, or includes entries excluded by configuration. An operation not executing does not automatically receive this tag.",
+          "count": 18
+        },
+        {
+          "id": "O2",
+          "label": "Incorrect artifacts",
+          "definition": "Files, commit metadata, or persistent indexes deviate from requirements, including extra files, damaged content or formatting, or unapplied edits. An artifact not being created solely because an invocation is blocked is not counted again here.",
+          "count": 16
+        },
+        {
+          "id": "O3",
+          "label": "Blocked tasks or invocations",
+          "definition": "A task, tool invocation, or result delivery is wrongly blocked, encounters an exception or timeout, or is skipped. A later successful workaround does not remove the earlier blockage.",
+          "count": 13
+        },
+        {
+          "id": "O4",
+          "label": "Incorrect status reports",
+          "definition": "Success or failure status, completion claims, or operational diagnostics conflict with actual behaviour. A missing numeric exit code alone belongs to O1; a genuine nonzero exit is not itself a defect.",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "key": "failureScope",
+      "label": "Failure Scope",
+      "multiple": false,
+      "labels": [
+        {
+          "id": "F1",
+          "label": "Single-action scope",
+          "definition": "Single action: the input, output, and direct state changes of one tool invocation, input-processing step, or response-parsing step suffice to establish the defect.",
+          "count": 36
+        },
+        {
+          "id": "F2",
+          "label": "Within-turn scope",
+          "definition": "Within turn: explaining the defect requires relating multiple actions, parallel calls, or an action and end-of-turn state within the same user request.",
+          "count": 4
+        },
+        {
+          "id": "F3",
+          "label": "Cross-turn scope",
+          "definition": "Cross turn: the key dependency in the retained run spans different user requests; establishing the defect requires relating earlier history or caches to later behaviour.",
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "bytedance/deer-flow#7526",
+      "number": 7526,
+      "agent": "deer-flow",
+      "agentOrder": 1,
+      "repository": "bytedance/deer-flow",
+      "title": "[bug] Input sanitization HTML-escapes XML content requested verbatim",
+      "url": "https://github.com/bytedance/deer-flow/issues/7526",
+      "tags": {
+        "failureType": [
+          "F01",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S1"
+        ],
+        "observableOutcome": [
+          "O1",
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Escaped input and the later claim of an exact match are classified as F01 and F04. No artifact code absent from the original sheet is added by inferring a causal chain.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "XML requested verbatim is escaped before being saved, yet the agent confirms an exact match after reading it back, leaving the content error inaccurately reported."
+        },
+        "executionStage": [
+          {
+            "label": "S1",
+            "reason": "Before the model call, input-sanitization middleware matches specific XML tags with a regular expression and converts them to HTML entities, altering text the user requested verbatim."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The original XML is escaped in the model-visible input, so the text the model receives for saving differs from the source."
+          },
+          {
+            "label": "O2",
+            "reason": "write_file saves entities such as &lt;...&gt; rather than the requested literal XML tags."
+          },
+          {
+            "label": "O4",
+            "reason": "After reading the escaped content back, the agent still claims an exact match without explaining that the source text was altered."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "A single sanitization operation converts the XML tags to HTML entities. Comparing the user input with the sanitized model input establishes the defect without earlier conversation state."
+          }
+        ]
+      }
+    },
+    {
+      "id": "minimax-ai/minimax-code#155",
+      "number": 155,
+      "agent": "minimax-code",
+      "agentOrder": 9,
+      "repository": "MiniMax-AI/minimax-code",
+      "title": "[Bug]: edit with replace_all corrupts literal dollar sequences in replacement text",
+      "url": "https://github.com/MiniMax-AI/minimax-code/issues/155",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Content changes and extra duplication caused by dollar substitution sequences are grouped under F03; the success result is F04. The original report used direct tool tests.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Dollar sequences in replacement text are interpreted as substitution directives, changing content or duplicating unrelated text while the incorrect write can still return success."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "The edit tool passes new_string directly as the String.replaceAll replacement string, interpreting sequences such as $$ and $& as substitution syntax instead of literal text."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "Two positions requesting $$ contain $ instead; a subsequent byte check confirms incorrect file content."
+          },
+          {
+            "label": "O4",
+            "reason": "The replacement interface reports success although the resulting content does not match its arguments."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One replace_all call writes $$ from the arguments as $. The original file, replacement arguments, and resulting bytes suffice to establish the defect without state from other calls."
+          }
+        ]
+      }
+    },
+    {
+      "id": "langchain-ai/deepagents#5785",
+      "number": 5785,
+      "agent": "deepagents-code",
+      "agentOrder": 22,
+      "repository": "langchain-ai/deepagents",
+      "title": "`read_file` renders the empty-file reminder as line 1 of the file on `FilesystemBackend`",
+      "url": "https://github.com/langchain-ai/deepagents/issues/5785",
+      "tags": {
+        "failureType": [
+          "F01"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "A system reminder presented as file content is F01; this does not imply that the reminder was written to the file.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The read tool labels a system reminder as the first file line, substituting it for genuinely empty content and leading the model to treat the reminder as source text."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "The filesystem backend returns an empty-file reminder as a nonempty content string. Middleware then numbers the reminder as source text, conflating a status message with file content."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "An empty file is returned as a line of System reminder text, so the tool's source view differs from the actual file."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "A single read_file call wraps the empty-file reminder as source line 1. The known empty file and that response suffice; no other tool history is needed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "langchain-ai/deepagents#5787",
+      "number": 5787,
+      "agent": "deepagents-code",
+      "agentOrder": 22,
+      "repository": "langchain-ai/deepagents",
+      "title": "`grep` and `read_file` disagree about which line is line N when a file contains a form feed",
+      "url": "https://github.com/langchain-ai/deepagents/issues/5787",
+      "tags": {
+        "failureType": [
+          "F01"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Pagination does not lose content; only line numbers and counts disagree. This is F01 rather than F02.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The read tool labels the actual fifth line as the sixth and reports an incorrect total line count, giving the model incorrect content when locating text by line."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "read_file uses str.splitlines(keepends=True), treating characters such as form feed as line breaks. This differs from the LF boundaries used by grep and line-number display, so offsets select the wrong line."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "read_file and grep disagree on line numbers for the same file; the requested offset returns a different line."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One read_file call with an offset returns the wrong source line. The file bytes containing a form feed and the line-numbering rule suffice; grep is only a comparison check."
+          }
+        ]
+      }
+    },
+    {
+      "id": "kuberwastaken/claurst#442",
+      "number": 442,
+      "agent": "claurst",
+      "agentOrder": 24,
+      "repository": "Kuberwastaken/claurst",
+      "title": "Bash tool runtime: multibyte truncation panic, 2 MB reader stall, no PAGER, spill large output to a file",
+      "url": "https://github.com/Kuberwastaken/claurst/issues/442",
+      "tags": {
+        "failureType": [
+          "F06"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S4",
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1",
+          "O3"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Crash and hang codes are combined into F06. The body is an audit report without all underlying logs; proposed fixes are not treated as observations.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Output processing can crash or block the subprocess until timeout and lose command output, directly interrupting execution and result retrieval."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "After reading more than 2 MiB, the PTY reader stops draining the output stream and retains only the captured prefix, potentially applying backpressure to a subprocess still writing output."
+          },
+          {
+            "label": "S5",
+            "reason": "The output formatter truncates captured content again without retaining complete output and a retrieval handle, making the omitted portion unavailable through result feedback."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The model-visible result lacks the actual seq output, and the complete content cannot be obtained from the original result."
+          },
+          {
+            "label": "O3",
+            "reason": "The original seq 1 2000000 call times out, blocking that direct execution; a diagnostic call with redirected output can complete."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "Draining stops and further truncation occur within the execution and feedback chain of one large-output command. Its expected output and delivered result establish the missing output."
+          }
+        ]
+      }
+    },
+    {
+      "id": "kuberwastaken/claurst#448",
+      "number": 448,
+      "agent": "claurst",
+      "agentOrder": 24,
+      "repository": "Kuberwastaken/claurst",
+      "title": "apply_patch: support the Codex *** Begin Patch envelope, expose it to the codex provider, and fix unified-diff corruption bugs",
+      "url": "https://github.com/Kuberwastaken/claurst/issues/448",
+      "tags": {
+        "failureType": [
+          "F03"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Patch application failure and incorrect file modification are grouped under F03. Because this is a specific patch-processing defect, ordinary execution blockage is not additionally coded as F06.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Patch parsing can reject a model-generated patch format and truncate or omit original file content for other inputs, affecting patch execution and file integrity."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "The unified-diff parser treats every line beginning with --- as a file header without checking whether it is inside a hunk. It therefore misparses a deletion of source text beginning with two hyphens."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The line requested for deletion remains in notes.txt, so the edited artifact does not meet the request."
+          },
+          {
+            "label": "O4",
+            "reason": "The tool claims to have applied the patch, but reports +0 -0 and leaves the content unchanged."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One ApplyPatch call misidentifies a deletion line as a file header and fails to apply the change. The patch arguments, original file, and resulting content suffice to establish this."
+          }
+        ]
+      }
+    },
+    {
+      "id": "zeroclaw-labs/zeroclaw#10912",
+      "number": 10912,
+      "agent": "zeroclaw",
+      "agentOrder": 27,
+      "repository": "zeroclaw-labs/zeroclaw",
+      "title": "[Bug]: Streaming text guard suppresses whole replies when prose quotes a tool-result-shaped object; three retries then a generic format error",
+      "url": "https://github.com/zeroclaw-labs/zeroclaw/issues/10912",
+      "tags": {
+        "failureType": [
+          "F02",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S2"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Undelivered content is F02 and an incorrect explanation is F04. Three bounded retries are not separately classified as an infinite loop.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Output filtering suppresses an entire valid reply three times, then attributes the problem to model formatting, preventing delivery and misreporting the cause."
+        },
+        "executionStage": [
+          {
+            "label": "S2",
+            "reason": "Streaming protocol detection treats inline JSON in ordinary prose as tool-result protocol based only on fields such as tool_call_id and content. Example exemptions cover only specific code fences or tags, so valid text is incorrectly filtered."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The explanation delivered to the user stops at the JSON example, omitting the latter portion already generated by the model."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "A single response-parsing operation mistakes an inline JSON example for protocol content and filters it. Comparing the complete model response with delivered text suffices."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mastra-ai/mastra#14823",
+      "number": 14823,
+      "agent": "mastracode",
+      "agentOrder": 29,
+      "repository": "mastra-ai/mastra",
+      "title": "mastra_workspace_list_files: pattern \"*\" silently filters out all files at depth > 0",
+      "url": "https://github.com/mastra-ai/mastra/issues/14823",
+      "tags": {
+        "failureType": [
+          "F02"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "C01/F02 has a semantic qualification: pattern=\"*\" ordinarily does not cross directories. The report's expectation may differ from the tool's glob contract. The reported omission is retained without claiming that a matching-implementation defect has been established.",
+          "review": "Conditional interpretation; original report retained"
+        },
+        "severity": {
+          "reason": "In the reported scenario requesting files in subdirectories, the tool filters out those files and reports zero files, giving the model incomplete directory information."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "The directory-tree builder matches the full relative path against the glob at each level. Because * does not match / in a path, it removes subdirectory files while explicitly retaining directories, leaving omissions in the recursive listing."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "Newly created dir-a/file1.txt and dir-b/file2.txt are both absent; only directories are returned, with a count of 0 files."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "Given a directory tree containing subdirectory files, one find_files call with the * filter omits them. The tree is static input; the earlier creation process need not be reconstructed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nano-collective/nanocoder#1057",
+      "number": 1057,
+      "agent": "nanocoder",
+      "agentOrder": 33,
+      "repository": "Nano-Collective/nanocoder",
+      "title": "[Bug] Replacement strings containing $ corrupt every string_replace and diff_edit",
+      "url": "https://github.com/Nano-Collective/nanocoder/issues/1057",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Edited content and extra duplication are grouped under F03; approval previews and success claims are grouped under F04. No attack or unauthorized access is inferred.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Dollar sequences in replacement text change content or duplicate unrelated text. The written result differs from the approval preview without a tool error."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "string_replace passes new_str as the String.replace replacement string, expanding $$, $&, $`, and $' instead of writing them literally."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The script contains a single $, duplicated exit 0, and concatenated context, corrupting the saved content."
+          },
+          {
+            "label": "O4",
+            "reason": "The replacement is reported as successful, but the arguments are not written verbatim."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One string_replace call expands dollar substitution sequences and directly writes an incorrect script. The original file, arguments, and resulting content suffice to establish the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nano-collective/nanocoder#1058",
+      "number": 1058,
+      "agent": "nanocoder",
+      "agentOrder": 33,
+      "repository": "Nano-Collective/nanocoder",
+      "title": "[Bug] Editing a PDF or DOCX overwrites the document with its markdown transcript",
+      "url": "https://github.com/Nano-Collective/nanocoder/issues/1058",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Overwriting a PDF with derived text is F03 and the success report is F04. An internal cache root cause does not itself justify F07.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Overwriting the original PDF with plain text destroys its binary document structure. Built-in undo cannot restore the original bytes; recovery requires an independently retained original copy."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "File reading converts PDF/DOCX content to Markdown without retaining provenance that prevents writing the text back as the original format. Editing treats the conversion as raw file content and writes it directly to the binary-file path."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "spec.docx ends up only 48 bytes long with IS_ZIP False: plain text has overwritten the original document container."
+          },
+          {
+            "label": "O4",
+            "reason": "Successful replacement feedback does not immediately reveal document corruption; a subsequent read-only ZIP check exposes it."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "The defect is an edit writing converted DOCX text to the binary-file path. A valid pre-edit DOCX, the replacement arguments, and the resulting file suffice to establish format corruption."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nano-collective/nanocoder#1237",
+      "number": 1237,
+      "agent": "nanocoder",
+      "agentOrder": 33,
+      "repository": "Nano-Collective/nanocoder",
+      "title": "[Bug] list_directory leaks all hidden files/dotfiles by default due to !dirPath.startsWith('.')",
+      "url": "https://github.com/Nano-Collective/nanocoder/issues/1237",
+      "tags": {
+        "failureType": [
+          "F08"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Displaying dotfiles contradicts showHiddenFiles=false and is F08. Reading secret content has not been established.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Hidden file and directory names are listed while hidden-item display is disabled by default, violating the filter configuration. The recorded exposure is limited to names."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "Hidden-file filtering additionally requires that the directory path not start with a dot. The default directory . makes this condition false, skipping the intended hidden-entry filter."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The listing includes .zzhiddenmarker and hidden directories that should be excluded, so the result set conflicts with the configuration."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One default directory-listing call violates the hidden-file setting. The default arguments, known hidden entries, and returned listing suffice to establish this."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nano-collective/nanocoder#1343",
+      "number": 1343,
+      "agent": "nanocoder",
+      "agentOrder": 33,
+      "repository": "Nano-Collective/nanocoder",
+      "title": "[Bug] find_files fails to match any files when pattern begins with ./",
+      "url": "https://github.com/Nano-Collective/nanocoder/issues/1343",
+      "tags": {
+        "failureType": [
+          "F02"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Missing existing files is F02. The original note's reference to a second initial code is outdated; the current code column contains only C01 and is used here.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Existing files are reported as unmatched because the path pattern begins with ./, misleading the model about search results."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "Glob normalization retains the leading ./ while candidate relative paths omit it. Anchored matching then prevents a valid relative-path pattern from matching existing files."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "Both ./package.json and ./source/**/*.ts incorrectly return no matches; removing ./ finds the same files."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One find_files call with a leading ./ returns no existing matches. The directory tree and glob suffice to establish this, without earlier state."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nano-collective/nanocoder#1391",
+      "number": 1391,
+      "agent": "nanocoder",
+      "agentOrder": 33,
+      "repository": "Nano-Collective/nanocoder",
+      "title": "[Bug] processToolUse never sets isError for a non-zero shell exit, so --json and ACP report failed commands as successful",
+      "url": "https://github.com/Nano-Collective/nanocoder/issues/1391",
+      "tags": {
+        "failureType": [
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "The exit code remains in the text; isError and completion status are incorrect. This is F04 only, not F02.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Although the text retains the nonzero exit code, structured status marks the command successful, misleading clients that rely on that status."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "The ACP session layer decides tool failure solely from whether returned text begins with Error. The executor formats a nonzero exit as EXIT_CODE: 7, so protocol status is incorrectly set to completed."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O4",
+            "reason": "A command exiting with code 7 is marked successful by the protocol. The model's eventual correct report of 7 does not remove the protocol-status error."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "The numeric exit code and successful protocol status conflict within the same exit 7 call. No later answer is needed to establish the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "zamalali/langchain-code#17",
+      "number": 17,
+      "agent": "langchain-code",
+      "agentOrder": 56,
+      "repository": "zamalali/langchain-code",
+      "title": "Deep mode: delegating to a sub-agent (`task`) always fails with \"StructuredTool does not support sync invocation\"",
+      "url": "https://github.com/zamalali/langchain-code/issues/17",
+      "tags": {
+        "failureType": [
+          "F06"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S3"
+        ],
+        "observableOutcome": [
+          "O3"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Failure to start a subtask is F06. Synchronous/asynchronous incompatibility is the cause, not a failure type named coordination failure.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Delegation errors end the turn in all ten reported runs. The subagent never starts and the target file is not generated, leaving the delegation path persistently unavailable."
+        },
+        "executionStage": [
+          {
+            "label": "S3",
+            "reason": "The synchronous chat path invokes an asynchronous-only subagent tool through a synchronous interface. StructuredTool raises an unsupported-sync-invocation exception before the delegated task starts."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "Delegation reports StructuredTool does not support sync invocation, preventing the subtask from starting and failing the request."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One task call through the synchronous path immediately raises an asynchronous-only exception before the subtask starts. The invocation method and exception suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "codewhale-hq/codewhale#5546",
+      "number": 5546,
+      "agent": "codewhale",
+      "agentOrder": 58,
+      "repository": "codewhale-hq/Codewhale",
+      "title": "[redacted] output from tools impairs editing",
+      "url": "https://github.com/codewhale-hq/Codewhale/issues/5546",
+      "tags": {
+        "failureType": [
+          "F02"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Inaccessible nonsecret text is F02; modification of the original file is not inferred.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Redacting nonsecret text obstructs precise edits and read-back checks. Recorded agents continue through indirect checks such as byte comparisons, adding steps."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "The model-request builder applies key-name-based log sanitization to tool results. Ordinary dependency names containing token or password are treated as sensitive keys, incorrectly redacting version numbers and losing trailing commas."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The model cannot read ordinary version values in package.json and needs additional comparisons to establish file content."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "The raw result of one read contains ordinary version numbers, while the model-bound version replaces them with [redacted]. Aligning both representations by call ID establishes the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "minimax-ai/mini-agent#130",
+      "number": 130,
+      "agent": "mini-agent",
+      "agentOrder": 60,
+      "repository": "MiniMax-AI/Mini-Agent",
+      "title": "edit_file converts every CRLF line ending to LF during a targeted replacement",
+      "url": "https://github.com/MiniMax-AI/Mini-Agent/issues/130",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Whole-file CRLF changes and successful feedback are classified as F03 and F04, respectively.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The requested port change succeeds, but the tool also rewrites every line ending, changing the byte format of the ten-line file and adding formatting-maintenance work."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "edit_file reads in default text mode, whose universal-newline conversion changes CRLF to LF. Writing the converted full text back makes a local replacement alter line endings throughout the file."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The port replacement takes effect, but deploy.ini loses all original CRLF endings, introducing additional formatting changes."
+          },
+          {
+            "label": "O4",
+            "reason": "The edit is reported as successful without revealing that the write exceeded the requested change."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One edit_file call changes an entire CRLF file to LF through text-mode reading and writing. Comparing bytes before and after that operation establishes the extra changes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistralai/mistral-vibe#186",
+      "number": 186,
+      "agent": "mistral-vibe",
+      "agentOrder": 61,
+      "repository": "mistralai/mistral-vibe",
+      "title": "The bash() tool call uses sh instead of bash",
+      "url": "https://github.com/mistralai/mistral-vibe/issues/186",
+      "tags": {
+        "failureType": [
+          "F05"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S3"
+        ],
+        "observableOutcome": [
+          "O3"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "The reported difference between bash and actual sh semantics is F05. A configuration category is not added merely from the root-cause description.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The bash tool actually uses sh, causing source to exit with 127. The user must resolve the interpreter mismatch to complete the command."
+        },
+        "executionStage": [
+          {
+            "label": "S3",
+            "reason": "ACP Bash uses shlex.split to split the command into an executable and literal arguments, passing them directly to terminal/create without starting a shell. source is treated as a standalone program and && is not interpreted."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "The virtual environment is created, but source .venv/bin/activate && which python fails, leaving activation and interpreter checking incomplete."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One Bash call attempts to launch source as a standalone executable rather than through a shell. The command, routing, and launch failure suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistralai/mistral-vibe#259",
+      "number": 259,
+      "agent": "mistral-vibe",
+      "agentOrder": 61,
+      "repository": "mistralai/mistral-vibe",
+      "title": "bug: Shell operators are not handled when running commands in Zed",
+      "url": "https://github.com/mistralai/mistral-vibe/issues/259",
+      "tags": {
+        "failureType": [
+          "F05"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S3"
+        ],
+        "observableOutcome": [
+          "O3",
+          "O2"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Passing a pipe symbol as an ls argument supports F05. Quoting issues in the example regular expression do not change the recorded pipe-handling defect.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The terminal treats the pipe and following command as ls arguments and explicitly errors, preventing the compound command from executing as intended."
+        },
+        "executionStage": [
+          {
+            "label": "S3",
+            "reason": "ACP Bash passes the shlex-split executable and arguments directly to terminal/create without shell interpretation of pipes. The first program receives arguments that should be pipeline syntax."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "The ls pipeline passes -E to ls and returns invalid option, so the requested filtering operation does not execute."
+          },
+          {
+            "label": "O2",
+            "reason": "During preparation, mkdir && touch is treated as one mkdir call. Requested empty files become directories, and an && directory also appears."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One pipeline is split into ordinary arguments, passing grep options to ls. The command and error output establish the incorrect interpretation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistralai/mistral-vibe#561",
+      "number": 561,
+      "agent": "mistral-vibe",
+      "agentOrder": 61,
+      "repository": "mistralai/mistral-vibe",
+      "title": "bug: Vibe doesn't know today's date",
+      "url": "https://github.com/mistralai/mistral-vibe/issues/561",
+      "tags": {
+        "failureType": [
+          "F01"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S1"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "C01/F01 relies on the author's reported date error. The body lacks the actual execution date and complete reply, so it supports classifying the reported phenomenon but not independently verifying the discrepancy.",
+          "review": "Conditional interpretation; original report retained"
+        },
+        "severity": {
+          "reason": "The agent answers with an outdated date as today's date, creating a factual error and requiring the user to supply the correct date."
+        },
+        "executionStage": [
+          {
+            "label": "S1",
+            "reason": "get_universal_system_prompt omits the current date when constructing system instructions, leaving a request for today's date without necessary runtime date context."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "An incorrect date is delivered to the user."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "A single date question and answer can expose the defect. The execution date, missing date context in that prompt, and final answer suffice; earlier turns are not required."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mistralai/mistral-vibe#1179",
+      "number": 1179,
+      "agent": "mistral-vibe",
+      "agentOrder": 61,
+      "repository": "mistralai/mistral-vibe",
+      "title": "bug: include_commit_signature is ignored on the Unified Harness backend",
+      "url": "https://github.com/mistralai/mistral-vibe/issues/1179",
+      "tags": {
+        "failureType": [
+          "F08"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S1"
+        ],
+        "observableOutcome": [
+          "O2"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Failure to follow explicit include_commit_signature=true is F08. Incorrect committed code is not inferred.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The commit is created but lacks the configured contributor attribution, requiring a metadata update or an explicit instruction as described in the report."
+        },
+        "executionStage": [
+          {
+            "label": "S1",
+            "reason": "The Unified Harness instruction builder neither reads include_commit_signature nor injects the signature requirement, so the default-enabled setting never reaches the model prompt."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The created commit message contains only Add a.py and omits the attribution required by the configuration."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "The configuration requires attribution, but one commit-generation process omits that instruction and produces a commit without it. The setting and that commit message suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esengine/deepseek-reasonix#8299",
+      "number": 8299,
+      "agent": "reasonix",
+      "agentOrder": 63,
+      "repository": "esengine/DeepSeek-Reasonix",
+      "title": "[Bug]: Built-in grep mishandles encoding in some files mixing Chinese and Western text",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/8299",
+      "tags": {
+        "failureType": [
+          "F01",
+          "F02"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Missed Chinese-text matches and garbled matched content are F02 and F01, respectively. Corruption of the original file is not inferred.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Built-in search misses Chinese-text matches and returns garbled content, making retrieved information both incomplete and inaccurate."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "grep detects encoding from the first 8192 bytes without removing an incomplete trailing UTF-8 character. Strict validation fails and GB18030 is incorrectly selected, causing missed Chinese-text matches and garbled output."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "Chinese text occurring 300 times is reported as unmatched; Chinese context surrounding an ASCII match is garbled."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One grep call misidentifies the encoding of a valid UTF-8 file, causing omissions or garbling. The file bytes, pattern, and result suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esengine/deepseek-reasonix#8406",
+      "number": 8406,
+      "agent": "reasonix",
+      "agentOrder": 63,
+      "repository": "esengine/DeepSeek-Reasonix",
+      "title": "[Bug]: Read-only git branch listing is blocked as mutation",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/8406",
+      "tags": {
+        "failureType": [
+          "F06"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S3"
+        ],
+        "observableOutcome": [
+          "O3"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Rejecting a read-only command is F06. A security-classifier root cause does not justify adding configuration or unauthorized-access tags.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Read-only mode incorrectly classifies a valid branch query as a modification and rejects it, potentially skipping later calls in the same batch. The recorded impact is a blocked query workflow."
+        },
+        "executionStage": [
+          {
+            "label": "S3",
+            "reason": "The read-only Git subcommand allowlist omits branch and does not distinguish query options from modifications. git branch -a is therefore misclassified as a mutation and blocked before execution."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "The requested branch listing is blocked; the agent later has to query through git for-each-ref instead."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One git branch -a call under a read-only policy is misclassified as a modification. The command semantics, current policy, and rejection suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esengine/deepseek-reasonix#8811",
+      "number": 8811,
+      "agent": "reasonix",
+      "agentOrder": 63,
+      "repository": "esengine/DeepSeek-Reasonix",
+      "title": "fix(acp): distinguish readiness-gate failure from real turn failure in session/prompt stopReason",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/8811",
+      "tags": {
+        "failureType": [
+          "F02",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S7"
+        ],
+        "observableOutcome": [
+          "O3",
+          "O4"
+        ],
+        "failureScope": [
+          "F2"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "C01/F04 has a semantic qualification: the report says the task succeeded but also says the readiness gate was not satisfied. The stopReason=error contract must be established before calling this a false failure report. C02/F02 is retained separately because unmet conditions were not exposed.",
+          "review": "Conditional interpretation; original report retained"
+        },
+        "severity": {
+          "reason": "The task artifact is correct, but the ACP client receives an error status without an explanation of unmet conditions, leading it to interpret the task as failed."
+        },
+        "executionStage": [
+          {
+            "label": "S7",
+            "reason": "ACP maps final readiness-check errors directly to stopReason=error without distinguishing them. That value is outside the client's accepted stop-reason enumeration, so the turn-ending response fails protocol validation."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "A PromptResponse ValidationError occurs at turn completion, preventing delivery of an otherwise completed result through the protocol."
+          },
+          {
+            "label": "O4",
+            "reason": "File writing succeeds but the turn ends with error status, creating a mismatch between successful task actions and final completion status."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F2",
+            "reason": "Within one turn, a successful file write is followed by the final readiness check and an invalid stopReason. The post-write verification state and completion stage must be considered together to cover the full causal chain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esengine/deepseek-reasonix#9487",
+      "number": 9487,
+      "agent": "reasonix",
+      "agentOrder": 63,
+      "repository": "esengine/DeepSeek-Reasonix",
+      "title": "[Bug]: memory index functions silently discard read errors, causing MEMORY.md data loss",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/9487",
+      "tags": {
+        "failureType": [
+          "F03"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S6"
+        ],
+        "observableOutcome": [
+          "O2"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Clearing a persistent index is F03. F07 is not assigned merely because the component is called memory.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "After a read error is swallowed, empty content is written back and all managed MEMORY.md index entries are deleted, directly damaging persistent-memory index integrity."
+        },
+        "executionStage": [
+          {
+            "label": "S6",
+            "reason": "Memory-index maintenance ignores ReadFileUTF8 errors, rebuilds unreadable MEMORY.md as an empty index, and atomically writes it back, overwriting unrelated entries that should remain."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The index drops from two entries to zero rather than one; the helix memory, which was not requested for deletion, loses its index entry."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One forget operation treats an unreadable index as empty and rewrites it, deleting unrelated entries. The index containing other entries, permission state, and before/after results suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esengine/deepseek-reasonix#10067",
+      "number": 10067,
+      "agent": "reasonix",
+      "agentOrder": 63,
+      "repository": "esengine/DeepSeek-Reasonix",
+      "title": "[Bug]: [tools] After edit_file, all bash commands that might write files remain blocked: read_file reports the requirement satisfied, but bash still considers it unmet (inconsistent state)",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/10067",
+      "tags": {
+        "failureType": [
+          "F06",
+          "F07"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S6"
+        ],
+        "observableOutcome": [
+          "O3",
+          "O4"
+        ],
+        "failureScope": [
+          "F2"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Both contradictory prerequisite state and actual rejection have evidence, so F07 and F06 can coexist.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Conflicting post-edit state persistently blocks write commands in the current turn. Rereading does not clear it; a new user message is needed to continue."
+        },
+        "executionStage": [
+          {
+            "label": "S6",
+            "reason": "A rejected edit remains in evidenceBlocked with its original arguments. After a successful retry, checks still use the old matching text, which no longer exists. The read requirement cannot be cleared, leaving stale state that blocks later writes."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "echo x > tmp.txt remains repeatedly rejected after a normal reread; an alternative tool is needed to complete the action."
+          },
+          {
+            "label": "O4",
+            "reason": "A satisfied read requirement is reported as unmet, incorrectly explaining the rejection."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F2",
+            "reason": "Within one turn, an edit is rejected, the file is read, and the retry succeeds, but the stale read obligation still blocks bash. These state transitions must be connected to establish that the final rejection is wrong."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esengine/deepseek-reasonix#14403",
+      "number": 14403,
+      "agent": "reasonix",
+      "agentOrder": 63,
+      "repository": "esengine/DeepSeek-Reasonix",
+      "title": "[Bug]: Literal edit matches insert bare LF into CRLF files",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/14403",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Mixed line endings are the recorded artifact-contract defect. A separate literal-replacement-content alteration code is not added.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The new configuration is written, but the replacement block introduces line endings inconsistent with the original file, adding format-maintenance work."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "When old_string matches literally, matchLineEndings returns new_string unchanged. It is then written without adapting its line endings to the CRLF file, retaining bare LF in the replacement."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "settings.ini has mixed endings: retries=3 is followed by bare LF while other lines retain CRLF."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One local edit inserts bare LF into a CRLF file. The original line endings, arguments, and resulting bytes suffice to establish the mixture."
+          }
+        ]
+      }
+    },
+    {
+      "id": "gptme/gptme#4490",
+      "number": 4490,
+      "agent": "gptme",
+      "agentOrder": 67,
+      "repository": "gptme/gptme",
+      "title": "Thinking tags inside a save block silently prevent tool execution",
+      "url": "https://github.com/gptme/gptme/issues/4490",
+      "tags": {
+        "failureType": [
+          "F02",
+          "F06"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S2"
+        ],
+        "observableOutcome": [
+          "O3",
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Failure to execute a valid tool block is F06, and undelivered ordinary content is F02. A benchmark Judge's misclassification is not an additional target-agent failure type.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The save code block is silently skipped, the requested file is not created, and the turn ends without corresponding tool-execution feedback to the model or user."
+        },
+        "executionStage": [
+          {
+            "label": "S2",
+            "reason": "Thinking-region cleanup before tool-block parsing does not check whether tags are inside a code fence. It treats thinking tags in the content to save as reasoning boundaries and removes the start of the save block, preventing tool-call recognition."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "The model generates a save instruction but no file is created; a later cat reports No such file or directory."
+          },
+          {
+            "label": "O1",
+            "reason": "User-visible output loses the thinking content inside the code block, making delivery incomplete."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One save response block containing thinking tags is corrupted during parsing, preventing recognition of the save call. The complete response and parsing/execution results suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "stippi/code-assistant#276",
+      "number": 276,
+      "agent": "code-assistant",
+      "agentOrder": 72,
+      "repository": "stippi/code-assistant",
+      "title": "edit strips trailing whitespace from new_text but reports success",
+      "url": "https://github.com/stippi/code-assistant/issues/276",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Unwritten replacement spaces and successful feedback are F03 and F04. The original report's recovery command is perl; it is not replaced with other commands from trajectories.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The edit removes the two trailing spaces needed for a Markdown hard break but reports success, failing to preserve the requested line-break semantics."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "apply_matches applies matching-text normalization to replacement text too. When the original file has no trailing whitespace, trailing spaces on each new_text line are trimmed, removing explicitly requested Markdown hard-break spaces."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The two trailing spaces required for the Markdown hard break are not written to the file."
+          },
+          {
+            "label": "O4",
+            "reason": "The edit report or preview presents the spaces as added, but the requested change has not actually taken effect."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One edit explicitly requests trailing spaces in its replacement, but normalization discards them. The arguments and before/after content suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "stippi/code-assistant#277",
+      "number": 277,
+      "agent": "code-assistant",
+      "agentOrder": 72,
+      "repository": "stippi/code-assistant",
+      "title": "execute_command (blocking mode) never reports the exit code",
+      "url": "https://github.com/stippi/code-assistant/issues/277",
+      "tags": {
+        "failureType": [
+          "F02"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "The success/failure indicator can be correct; only the numeric exit code is missing. This is F02 rather than F04.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The tool still distinguishes success from failure but omits the requested numeric exit code. Recorded runs need an additional command that prints the code for verification."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "Blocking execution compresses the numeric exit code into a success boolean. CommandOutput lacks a retained exit-code field and the final result sets exit_code=None, leaving only success/failure feedback."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The command response omits the exact exit code requested by the user; the model can only report that execution failed."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "The process in one call exits with 3, but the tool retains only Failed and loses the number. Aligning execution and tool results establishes the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "evalstate/fast-agent#1039",
+      "number": 1039,
+      "agent": "fast-agent",
+      "agentOrder": 79,
+      "repository": "evalstate/fast-agent",
+      "title": "ACP terminal execution passes inline shell comments as command arguments",
+      "url": "https://github.com/evalstate/fast-agent/issues/1039",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F05"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S3"
+        ],
+        "observableOutcome": [
+          "O2"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Executing comments as arguments is F05 and extra files are F03. Both observable failures are retained.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "An inline comment is passed as touch arguments, creating two unrelated files alongside the target and extending filesystem changes beyond the request."
+        },
+        "executionStage": [
+          {
+            "label": "S3",
+            "reason": "Command launching does not recognize an unquoted word-initial # as shell syntax. shlex splitting also does not process comments, so the marker and following text are passed as ordinary program arguments."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "Running touch build.log # ci-marker creates an additional file named #, beyond the user's request."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One touch command treats a # comment as file arguments and directly creates unintended files. The input command and resulting directory changes suffice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vybestack/llxprt-code#3599",
+      "number": 3599,
+      "agent": "llxprt-code",
+      "agentOrder": 82,
+      "repository": "vybestack/llxprt-code",
+      "title": "Dogfood: read_file truncates a single-line JSON result and suggests unusable line pagination",
+      "url": "https://github.com/vybestack/llxprt-code/issues/3599",
+      "tags": {
+        "failureType": [
+          "F02"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Tool truncation of a readable file's single-line tail is F02. The original file is not damaged.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The tool explicitly reports truncation, but its line-pagination instructions cannot recover the tail containing completion and verification information, hindering a complete check."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "read_file truncates long lines at 2000 characters without retaining an intra-line continuation position. Its hint offers only a line offset, so the omitted tail of a single-line file cannot be retrieved through that interface."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "read_file cannot return the latter portion of a 6470-byte single-line JSON file; Python is needed instead."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One read_file call truncates within a line but offers continuation only past that line. The file length, returned fragment, and interface parameters establish that the tail cannot be retrieved through that interface."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vybestack/llxprt-code#3943",
+      "number": 3943,
+      "agent": "llxprt-code",
+      "agentOrder": 82,
+      "repository": "vybestack/llxprt-code",
+      "title": "run_shell_command always reports \"Stderr: (empty)\" and puts stderr output under \"Stdout:\"",
+      "url": "https://github.com/vybestack/llxprt-code/issues/3943",
+      "tags": {
+        "failureType": [
+          "F01"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Content remains available but its stream attribution is wrong. This is F01, not missing-output F02.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Standard error is mislabeled as standard output and the error stream is said to be empty, corrupting provenance. Recorded runs need redirection or extra probes to distinguish streams."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "The formatter labels a merged stdout/stderr buffer as Stdout and unconditionally appends Stderr: (empty), misrepresenting output provenance."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The text to-stderr, explicitly written to stderr, appears under Stdout while stderr is incorrectly shown as empty."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One command writes a line to each of stdout and stderr, but feedback labels both as Stdout and claims Stderr is empty. No other action is needed to establish the attribution error."
+          }
+        ]
+      }
+    },
+    {
+      "id": "konghayao/peri#287",
+      "number": 287,
+      "agent": "peri",
+      "agentOrder": 85,
+      "repository": "KonghaYao/peri",
+      "title": "Read: truncation hint points to the wrong line when a single line exceeds 5000 bytes",
+      "url": "https://github.com/KonghaYao/peri/issues/287",
+      "tags": {
+        "failureType": [
+          "F02"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Line-based continuation cannot retrieve the truncated tail, which is F02. This does not imply loss of the source file.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The continuation position offered after truncating a long line is invalid. Both reported runs use Python to read the file instead; the impact is extra retrieval steps."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "Read truncates an oversized first line but points next_offset to the next line without an intra-line continuation position, making the truncated tail of a single-line file inaccessible through continuation."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The final k159 cannot be retrieved through Read continuation; offset=2 is out of bounds, and tail is ultimately used to confirm it."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One Read call truncates a single-line file partway through, then points to nonexistent line 2. Given the one-line file, the original result and continuation hint establish the problem."
+          }
+        ]
+      }
+    },
+    {
+      "id": "agentty-org/agentty#116",
+      "number": 116,
+      "agent": "agentty",
+      "agentOrder": 86,
+      "repository": "agentty-org/agentty",
+      "title": "ACP: parallel tool calls lose their arguments except the last one",
+      "url": "https://github.com/agentty-org/agentty/issues/116",
+      "tags": {
+        "failureType": [
+          "F05"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S2"
+        ],
+        "observableOutcome": [
+          "O3"
+        ],
+        "failureScope": [
+          "F2"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Argument loss is distinguished from the shared concurrency-buffer root cause. Repeated argument loss after retry does not introduce a separate loop category.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "All parallel calls in one response except the last fail through lost arguments. Parallel retries fail again, preventing continuation of that parallel workflow."
+        },
+        "executionStage": [
+          {
+            "label": "S2",
+            "reason": "ACP streaming tool calls share one JSON argument buffer. Each call start clears it, delta events are not separated by call ID, and arguments are ultimately written only to the last call, losing earlier parallel-call arguments."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "Earlier Write calls in the batch report path required because arguments are empty. A later parallel retry fails again; only individual calls complete."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F2",
+            "reason": "Parallel calls within one turn share an argument buffer; a later Start clears earlier content. Interleaved events from the batch must be connected to establish cross-call interference; one empty-argument call alone is insufficient."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vercel-labs/fx#1345",
+      "number": 1345,
+      "agent": "fx",
+      "agentOrder": 87,
+      "repository": "vercel-labs/fx",
+      "title": "ACP: completed shell tool_call_update has a clipped JSON summary instead of the command output",
+      "url": "https://github.com/vercel-labs/fx/issues/1345",
+      "tags": {
+        "failureType": [
+          "F01",
+          "F02"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Missing stdout in the completion message is F02 and invalid truncated JSON is F01. Earlier progress messages contain stdout, so command failure is not inferred.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Command output appears only in progress messages, while the final message contains truncated status JSON. Clients that read only the final message lose the execution output."
+        },
+        "executionStage": [
+          {
+            "label": "S5",
+            "reason": "ACP tool-completion events clip results to a 200-byte preview. The shell tool supplies a JSON status summary rather than accumulated stdout, so completion contains truncated JSON and omits the command output."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "Completion content ends midway through full_output_handle and lacks hello-42, delivering an incomplete tool result to the client."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One command's completed event truncates status JSON and lacks complete output. The full execution result and completion-event content establish the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vinhnx/vtcode#792",
+      "number": 792,
+      "agent": "vtcode",
+      "agentOrder": 91,
+      "repository": "vinhnx/VTCode",
+      "title": "[Bug]: ACP PTY execution reports success without command output or exit status",
+      "url": "https://github.com/vinhnx/VTCode/issues/792",
+      "tags": {
+        "failureType": [
+          "F02",
+          "F04",
+          "F05"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S3",
+          "S5"
+        ],
+        "observableOutcome": [
+          "O1",
+          "O3"
+        ],
+        "failureScope": [
+          "F2"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "False success, missing results, and an unusable session ID are F04, F02, and F05. Sharing one invocation does not collapse them into one tag.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "A command exiting with code 3 is reported successful. The tool returns neither output nor exit status and provides no usable session identifier for retrieving them later."
+        },
+        "executionStage": [
+          {
+            "label": "S3",
+            "reason": "The PTY path returns a client terminal_id, but write_stdin looks up only local exec sessions. No mapping connects the two identifier types, so the returned ID cannot support later session access."
+          },
+          {
+            "label": "S5",
+            "reason": "After terminal/create, the PTY path immediately returns a successful descriptor without collecting terminal output or waiting for exit status. The model-visible result therefore lacks stdout and an exit code."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O1",
+            "reason": "The client records MARKER_7319 and exit 3, but the descriptor received by the model has neither output nor exit code."
+          },
+          {
+            "label": "O3",
+            "reason": "Retrieving results with the original returned ID still reports exec session not found, blocking output retrieval."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F2",
+            "reason": "The terminal_id returned by exec must be connected to the later write_stdin call using that ID to establish the incompatible session identifiers. Both actions occur within one turn."
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhijiewong/openharness#140",
+      "number": 140,
+      "agent": "openharness",
+      "agentOrder": 94,
+      "repository": "zhijiewong/openharness",
+      "title": "oh session: second prompt fails with HTTP 400 because tool results are kept without their assistant tool_calls",
+      "url": "https://github.com/zhijiewong/openharness/issues/140",
+      "tags": {
+        "failureType": [
+          "F04",
+          "F07"
+        ],
+        "severity": [
+          "4"
+        ],
+        "executionStage": [
+          "S6"
+        ],
+        "observableOutcome": [
+          "O3"
+        ],
+        "failureScope": [
+          "F3"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Lost history pairing is F07, and the generic service-configuration explanation is F04. The CLI session entry point is retained rather than substituted with another interface.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "After tool use in the first turn, second-turn requests are persistently rejected because conversation records are incomplete. Later tasks cannot start, blocking the multi-turn workflow."
+        },
+        "executionStage": [
+          {
+            "label": "S6",
+            "reason": "The query path consumes tool_call_complete events without forwarding them to session recording, while tool results are still appended separately. History then lacks assistant.tool_calls paired with the tool messages."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "The second-turn request is rejected with HTTP 400 because of an orphan tool message, preventing continuation of the function-append task."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F3",
+            "reason": "First-turn tool results enter history without matching assistant tool_calls. Reconstructing the second-turn request fails on unpaired messages, so the two turns must be connected."
+          }
+        ]
+      }
+    },
+    {
+      "id": "conardli/easy-agent#124",
+      "number": 124,
+      "agent": "easy-agent",
+      "agentOrder": 101,
+      "repository": "ConardLi/easy-agent",
+      "title": "Edit and MultiEdit interEdit and MultiEdit interpret replacement text as JavaScript substitution patternspret replacement text as JavaScript substitution patterns",
+      "url": "https://github.com/ConardLi/easy-agent/issues/124",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "3"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "C01/C02 are grouped into F03, and C03/C04 into F04. Later repair does not erase intermediate failures.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "A local replacement duplicates unrelated content and invalidates script syntax. Success status and the preview do not reflect the corruption, and final files remain wrong in some runs."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "Edit's non-replace_all branch passes newString directly to String.replace, expanding $', $&, $`, and $$ as substitution syntax and corrupting the text actually written."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "The edited script becomes an incorrect version with duplicated suffix content, exceeding the requested local modification."
+          },
+          {
+            "label": "O4",
+            "reason": "The edit is presented as successful with the expected diff, without reflecting actual file duplication."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One Edit call expands $' in replacement text into the post-match suffix, duplicating script content. The arguments and modified file establish the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "conardli/easy-agent#125",
+      "number": 125,
+      "agent": "easy-agent",
+      "agentOrder": 101,
+      "repository": "ConardLi/easy-agent",
+      "title": "Edit and MultiEdit replace requested curly quotes with straight quotes",
+      "url": "https://github.com/ConardLi/easy-agent/issues/125",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "1"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "The preview itself shows normalized text, so preview-versus-file mismatch is not coded separately here. Final repair is distinguished from intermediate errors.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "Requested curly quotes become straight quotes. The recorded discrepancy is limited to text styling, and final files are corrected in all recorded runs."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "Shared edit logic applies quote normalization intended for matching to replacement content too, changing the requested curly quotes into straight quotes."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "Unicode quotes requested for preservation are replaced, so file bytes do not match new_string."
+          },
+          {
+            "label": "O4",
+            "reason": "The edit returns success and a curly-quote preview, concealing normalization in the written content."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One Edit call normalizes requested curly quotes to ASCII quotes. The difference between arguments and actual bytes establishes the defect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "opencrabs/opencrabs#2210",
+      "number": 2210,
+      "agent": "opencrabs",
+      "agentOrder": 107,
+      "repository": "opencrabs/opencrabs",
+      "title": "fix(tools): edit_file leaves stale version tracking and makes the next write_file fail",
+      "url": "https://github.com/opencrabs/opencrabs/issues/2210",
+      "tags": {
+        "failureType": [
+          "F04",
+          "F06"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S6"
+        ],
+        "observableOutcome": [
+          "O3",
+          "O4"
+        ],
+        "failureScope": [
+          "F3"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Incorrect blocking and an incorrect explanation are F06 and F04. The cache root cause does not additionally introduce F07 in this coding round.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The agent's own edit is mistaken for an external modification and blocks overwriting. Of seven hits, three recover through rereading; four pause and request user intervention."
+        },
+        "executionStage": [
+          {
+            "label": "S6",
+            "reason": "After a successful edit, only the file path is recorded; the file version used by later write checks is not refreshed. The next overwrite is still compared with the stale pre-edit version."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "write_file after read then edit is incorrectly rejected, leaving the requested later write unexecuted."
+          },
+          {
+            "label": "O4",
+            "reason": "The Another agent working message conflicts with this run's own immediately preceding edit."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F3",
+            "reason": "The successful second-turn edit does not refresh the recorded file version. The third-turn write uses the stale version and is incorrectly rejected. The final rejection alone cannot establish whether an external modification actually occurred."
+          }
+        ]
+      }
+    },
+    {
+      "id": "opencrabs/opencrabs#2211",
+      "number": 2211,
+      "agent": "opencrabs",
+      "agentOrder": 107,
+      "repository": "opencrabs/opencrabs",
+      "title": "fix(tools): recent-failure guard blocks a valid retry after the missing file is created",
+      "url": "https://github.com/opencrabs/opencrabs/issues/2211",
+      "tags": {
+        "failureType": [
+          "F06"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S6"
+        ],
+        "observableOutcome": [
+          "O3"
+        ],
+        "failureScope": [
+          "F3"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "A stale failure blocks a new valid operation and is F06 under the existing C01. The root cause does not additionally introduce F07.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "A valid command remains blocked by recorded failures after the file is created. Some runs read it through a reformulated command, adding recovery steps."
+        },
+        "executionStage": [
+          {
+            "label": "S6",
+            "reason": "Command failures are cached by command and session. Repairing the file does not invalidate the old entry, so retrying the same command reuses stale failure state."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O3",
+            "reason": "The initial missing-file cat error is legitimate; the defect is that a valid retry remains blocked after file creation."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F3",
+            "reason": "The first-turn cat failure is cached, the missing file is created in turn two, and the same command remains blocked by the stale failure in turn three. All three turns are needed to establish that repair did not invalidate the cache."
+          }
+        ]
+      }
+    },
+    {
+      "id": "opencrabs/opencrabs#2212",
+      "number": 2212,
+      "agent": "opencrabs",
+      "agentOrder": 107,
+      "repository": "opencrabs/opencrabs",
+      "title": "fix(tools): edit_file fuzzy fallback converts unrelated CRLF line endings to LF",
+      "url": "https://github.com/opencrabs/opencrabs/issues/2212",
+      "tags": {
+        "failureType": [
+          "F03"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Only additional line-ending changes when the fuzzy branch is triggered are classified. Reproduction rates are not recalculated, and the old hard threshold is not reinstated.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "A local edit also converts endings on untouched lines. Most recorded hit runs restore them with extra commands, adding formatting-repair steps."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "The multiline-edit fallback splits the entire file with lines() and reconstructs it with LF, removing CR bytes from untouched lines."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "A local edit also changes newline bytes across the whole file, damaging its original CRLF format."
+          },
+          {
+            "label": "O4",
+            "reason": "The edit is reported successful with no additional changes; a later od check shows that CR bytes were lost."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One multiline edit reconstructs the whole file and converts CRLF to LF. Before/after bytes establish the defect without cross-action cache state."
+          }
+        ]
+      }
+    },
+    {
+      "id": "opencrabs/opencrabs#2227",
+      "number": 2227,
+      "agent": "opencrabs",
+      "agentOrder": 107,
+      "repository": "opencrabs/opencrabs",
+      "title": "fix(tool): edit_file line operations drop the final newline and convert CRLF files to LF",
+      "url": "https://github.com/opencrabs/opencrabs/issues/2227",
+      "tags": {
+        "failureType": [
+          "F03",
+          "F04"
+        ],
+        "severity": [
+          "2"
+        ],
+        "executionStage": [
+          "S4"
+        ],
+        "observableOutcome": [
+          "O2",
+          "O4"
+        ],
+        "failureScope": [
+          "F1"
+        ]
+      },
+      "annotationNotes": {
+        "failureType": {
+          "reason": "Additional line-ending changes are F03 and explicit success text is F04. A preview code is not inferred merely because feedback lists only the target line.",
+          "review": "Classification reviewed in this round"
+        },
+        "severity": {
+          "reason": "The target line is deleted, but the whole file's line endings are converted and its final newline is lost. Recorded runs need additional restoration of bytes that should not have changed."
+        },
+        "executionStage": [
+          {
+            "label": "S4",
+            "reason": "Line-based editing splits content with content.lines() and rebuilds it with LF, preserving neither original CRLF separators nor whether the file ended with a newline."
+          }
+        ],
+        "observableOutcome": [
+          {
+            "label": "O2",
+            "reason": "After deleting one line, the remaining CRLF endings become LF and the final newline disappears."
+          },
+          {
+            "label": "O4",
+            "reason": "The tool presents a successful line deletion, but also produces unrequested byte changes."
+          }
+        ],
+        "failureScope": [
+          {
+            "label": "F1",
+            "reason": "One delete_lines call removes the target line and also discards the remaining CRLF endings and final newline. The before/after files suffice to establish this."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "title": null,
+    "items": [
+      {
+        "label": "Leaderboards",
+        "path": "/"
+      }
+    ]
+  },
+  {
+    "title": "Benchmarks",
+    "items": [
+      {
+        "label": "Agent BehaviorBench",
+        "path": "/agent-behavior-bench"
+      },
+      {
+        "label": "Data Format",
+        "path": "/data-format"
+      },
+      {
+        "label": "CLI Documentation",
+        "path": "/cli-documentation"
+      }
+    ]
+  },
+  {
+    "title": "Data",
+    "items": [
+      {
+        "label": "Registry Agents",
+        "path": "/registry-agents"
+      },
+      {
+        "label": "Agent Failures",
+        "path": "/agent-failures"
+      }
+    ]
+  },
+  {
+    "title": "About",
+    "items": [
+      {
+        "label": "Paper",
+        "path": "/paper"
+      },
+      {
+        "label": "Blog",
+        "path": "/blog",
+        "hidden": true
+      },
+      {
+        "label": "Citation",
+        "path": "/citation"
+      }
+    ]
+  }
+]

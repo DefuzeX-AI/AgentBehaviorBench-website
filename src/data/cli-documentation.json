@@ -1,0 +1,2545 @@
+{
+  "title": "CLI Reference",
+  "introduction": "Browse agentbench commands by category. Search by command, argument, or description; select a command to inspect its usage and parameters. JSON API commands are listed in a separate category.",
+  "note": "Generated from the ABB CLI parser. Options inherited from a parent command must appear before its subcommand. A dash means no default or description is specified by the CLI.",
+  "commands": [
+    {
+      "id": "run",
+      "command": "agentbench run",
+      "group": "general",
+      "kind": "Command",
+      "description": "Run all enabled Agents whose status is ready.",
+      "usage": "agentbench run [-h] [--sdk NAME] [--sdk-options PATH]\n                      [--case-retries CASE_RETRIES]\n                      [--retry-delay RETRY_DELAY] [--agent ID] [-y]\n                      [--env-file PATH] [--results-dir DIR | --output PATH]\n                      [--no-view] [--model MODEL]\n                      [--llm-trace-max-bytes BYTES]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--sdk",
+          "kind": "Option",
+          "value": "NAME",
+          "required": false,
+          "default": "—",
+          "description": "Select an adapter directory listed by 'agentbench sdk list'. Omit only when exactly one adapter is available.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--sdk-options",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "JSON object of options passed to the selected SDK.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--case-retries",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "Maximum extra attempts for safe transient Case failures; 0 disables them.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--retry-delay",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "—",
+          "description": "Initial Case retry backoff in seconds.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--agent",
+          "kind": "Option",
+          "value": "ID",
+          "required": false,
+          "default": "[]",
+          "description": "Run only this enabled ready Agent; repeat to select several.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "-y, --yes",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Confirm this execution without prompting.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "Load host secrets and defaults from PATH instead of .env.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--results-dir",
+          "kind": "Option",
+          "value": "DIR",
+          "required": false,
+          "default": "—",
+          "description": "ABB result directory; managed Suites save DIR/suites/<suite-id>/events.json. Created if missing; independent of SDK output.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "Deprecated result location. For managed Suites, a file path selects its parent directory; the requested filename is not created. Use --results-dir instead.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--no-view",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Save results without starting the local live viewer.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "MODEL",
+          "required": false,
+          "default": "—",
+          "description": "Target model ID; defaults to the selected provider model environment variable.",
+          "choices": [],
+          "scope": "agentbench run"
+        },
+        {
+          "name": "--llm-trace-max-bytes",
+          "kind": "Option",
+          "value": "BYTES",
+          "required": false,
+          "default": "262144",
+          "description": "Legacy option: streaming memory spool threshold; payloads are never truncated.",
+          "choices": [],
+          "scope": "agentbench run"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "agent-add",
+      "command": "agentbench agent add",
+      "group": "agent",
+      "kind": "Command",
+      "description": "Import an Agent and list files for onboarding.",
+      "usage": "agentbench agent add [-h] [--agents-dir DIRECTORY] [-b] [-c]\n                            [--registry REGISTRY]\n                            [--build-settings BUILD_SETTINGS]\n                            [--build-model BUILD_MODEL] [--answers ANSWERS]\n                            [--with-observe] [--agent-timeout AGENT_TIMEOUT]\n                            [--adapter-context ADAPTER_CONTEXT]\n                            [--env-file ENV_FILE] [--model MODEL]\n                            [--output OUTPUT] [--no-view] [-y] [--sdk NAME]\n                            [--sdk-options PATH]\n                            SOURCE",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "repository",
+          "kind": "Positional",
+          "value": "SOURCE",
+          "required": true,
+          "default": "—",
+          "description": "HTTPS GitHub repository URL or absolute local directory.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--agents-dir",
+          "kind": "Option",
+          "value": "DIRECTORY",
+          "required": false,
+          "default": "<checkout>/resources/agents",
+          "description": "Parent of numbered Agent folders (default: resources/agents).",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "-b, --build",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Generate, validate and save files one at a time; resume valid files.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "-c, --certify",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Run existing certification using generated or manual files.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--registry",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>/resources/registry.toml",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--build-settings",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "TOML [build] overrides for generation.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--build-model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "OpenRouter model for configuration generation only.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--answers",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Text answers to a previous build plan's questions.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--with-observe",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "With -b, generate Observe fields from the input definition.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--agent-timeout",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "—",
+          "description": "With -b, override the generated Agent timeout (default: 300 seconds).",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--adapter-context",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "With -b, explicit deployment overrides as a JSON object; omitted by default.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Host environment file; never included in source context.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Target provider model for certification, independent of --build-model.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Certification result path.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--no-view",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Certify without starting the live viewer.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "-y, --yes",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Confirm certification without prompting.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--sdk",
+          "kind": "Option",
+          "value": "NAME",
+          "required": false,
+          "default": "—",
+          "description": "Select an adapter directory listed by 'agentbench sdk list'. Omit only when exactly one adapter is available.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        },
+        {
+          "name": "--sdk-options",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "JSON object of options passed to the selected SDK.",
+          "choices": [],
+          "scope": "agentbench agent add"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "view",
+      "command": "agentbench view",
+      "group": "general",
+      "kind": "Command",
+      "description": "Open a saved benchmark result in the local viewer.",
+      "usage": "agentbench view [-h] [--host HOST] [--port PORT] result_log",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench view"
+        },
+        {
+          "name": "result_log",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "Path to an AgentBench JSON result snapshot.",
+          "choices": [],
+          "scope": "agentbench view"
+        },
+        {
+          "name": "--host",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "127.0.0.1",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench view"
+        },
+        {
+          "name": "--port",
+          "kind": "Option",
+          "value": "viewer_port",
+          "required": false,
+          "default": "8765",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench view"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "certify",
+      "command": "agentbench certify",
+      "group": "general",
+      "kind": "Command",
+      "description": "Run one adapting Agent and promote it to ready after execution succeeds.",
+      "usage": "agentbench certify [-h] [-y] [--registry REGISTRY] [--sdk NAME]\n                          [--sdk-options PATH] [--case-retries CASE_RETRIES]\n                          [--retry-delay RETRY_DELAY] [--no-view]\n                          [--env-file PATH]\n                          [--results-dir DIR | --output PATH] [--model MODEL]\n                          [--llm-trace-max-bytes BYTES]\n                          agent_id",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "-y, --yes",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Confirm this execution without prompting.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--registry",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>/resources/registry.toml",
+          "description": "Agent registry path",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--sdk",
+          "kind": "Option",
+          "value": "NAME",
+          "required": false,
+          "default": "—",
+          "description": "Select an adapter directory listed by 'agentbench sdk list'. Omit only when exactly one adapter is available.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--sdk-options",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "JSON object of options passed to the selected SDK.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--case-retries",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "Maximum extra attempts for safe transient Case failures; 0 disables them.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--retry-delay",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "—",
+          "description": "Initial Case retry backoff in seconds.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--no-view",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Save results without starting the live viewer.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "Registered adapting Agent to certify.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "Load host secrets and defaults from PATH instead of .env.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--results-dir",
+          "kind": "Option",
+          "value": "DIR",
+          "required": false,
+          "default": "—",
+          "description": "ABB result directory; managed Suites save DIR/suites/<suite-id>/events.json. Created if missing; independent of SDK output.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "Deprecated result location. For managed Suites, a file path selects its parent directory; the requested filename is not created. Use --results-dir instead.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "MODEL",
+          "required": false,
+          "default": "—",
+          "description": "Target model ID; defaults to the selected provider model environment variable.",
+          "choices": [],
+          "scope": "agentbench certify"
+        },
+        {
+          "name": "--llm-trace-max-bytes",
+          "kind": "Option",
+          "value": "BYTES",
+          "required": false,
+          "default": "262144",
+          "description": "Legacy option: streaming memory spool threshold; payloads are never truncated.",
+          "choices": [],
+          "scope": "agentbench certify"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "observe",
+      "command": "agentbench observe",
+      "group": "general",
+      "kind": "Command",
+      "description": "Run one enabled Agent and save traces",
+      "usage": "agentbench observe [-h] [--agent AGENT] [--registry REGISTRY] [--list]\n                          [--input INPUT] [--output OUTPUT]\n                          [--env-file ENV_FILE] [--model MODEL]\n                          [--timeout TIMEOUT] [--show SHOW]\n                          [AGENT]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "selection",
+          "kind": "Positional",
+          "value": "AGENT",
+          "required": false,
+          "default": "—",
+          "description": "Enabled Agent number or ID; omit to choose interactively",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--agent",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Alias for the positional Agent number or ID",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--registry",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>/resources/registry.toml",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--list",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Show all enabled Agents and exit",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--input",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Native input JSON file",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<path>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "MODEL",
+          "required": false,
+          "default": "—",
+          "description": "Target model name (not an Agent number); defaults to the selected provider model",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--timeout",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "—",
+          "description": "Positive execution timeout in seconds",
+          "choices": [],
+          "scope": "agentbench observe"
+        },
+        {
+          "name": "--show",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Review a saved observe run directory offline",
+          "choices": [],
+          "scope": "agentbench observe"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "evaluate",
+      "command": "agentbench evaluate",
+      "group": "general",
+      "kind": "Command",
+      "description": "Evaluate one Agent on independent SDK Cases",
+      "usage": "agentbench evaluate [-h] [-y] [--registry REGISTRY]\n                           [--env-file ENV_FILE] [--model MODEL] [--sdk NAME]\n                           [--sdk-options PATH] [--case-retries CASE_RETRIES]\n                           [--retry-delay RETRY_DELAY] [--no-view]\n                           [--llm-trace-max-bytes LLM_TRACE_MAX_BYTES]\n                           [--results-dir DIR | --result-output PATH]\n                           [--output OUTPUT] [--timeout TIMEOUT]\n                           [--cases CASES] [--max-steps MAX_STEPS]\n                           [--case-file CASE_FILE] [--judge JUDGE]\n                           [selection]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "-y, --yes",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Confirm this execution without prompting.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "selection",
+          "kind": "Positional",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Enabled Agent number or ID",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--registry",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>/resources/registry.toml",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "model_name",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--sdk",
+          "kind": "Option",
+          "value": "NAME",
+          "required": false,
+          "default": "—",
+          "description": "Select an adapter directory listed by 'agentbench sdk list'. Omit only when exactly one adapter is available.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--sdk-options",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "JSON object of options passed to the selected SDK.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--case-retries",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "Maximum extra attempts for safe transient Case failures; 0 disables them.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--retry-delay",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "—",
+          "description": "Initial Case retry backoff in seconds.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--no-view",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Save results without starting the live viewer.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--llm-trace-max-bytes",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "262144",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--results-dir",
+          "kind": "Option",
+          "value": "DIR",
+          "required": false,
+          "default": "—",
+          "description": "ABB result directory; managed Suites save DIR/suites/<suite-id>/events.json. Created if missing; independent of SDK output.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--result-output",
+          "kind": "Option",
+          "value": "PATH",
+          "required": false,
+          "default": "—",
+          "description": "Deprecated result location. For managed Suites, a file path selects its parent directory; the requested filename is not created. Use --results-dir instead.",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Override the SDK output option",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--timeout",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "—",
+          "description": "Override the SDK timeout option (seconds)",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--cases",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "Number of independent Cases (default: Registry case count)",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--max-steps",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "Override Registry step: SDK upper bound on dialogue steps per Case",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--case-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Import abb.cases.v1 JSON with --sdk native or local",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        },
+        {
+          "name": "--judge",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "With --sdk native/local: local, kuma or a trusted module:object; omit for execution only",
+          "choices": [],
+          "scope": "agentbench evaluate"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "clean",
+      "command": "agentbench clean",
+      "group": "general",
+      "kind": "Command",
+      "description": "Archive unreferenced local result history.",
+      "usage": "agentbench clean [-h] [--dry-run] [-y]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench clean"
+        },
+        {
+          "name": "--dry-run",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "List history without changing files.",
+          "choices": [],
+          "scope": "agentbench clean"
+        },
+        {
+          "name": "-y, --yes",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Confirm cleanup without prompting; stop active runs first.",
+          "choices": [],
+          "scope": "agentbench clean"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "sdk-list",
+      "command": "agentbench sdk list",
+      "group": "sdk",
+      "kind": "Command",
+      "description": "List evaluation adapters found in the SDK directory.",
+      "usage": "agentbench sdk list [-h]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench sdk list"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "sdk-show",
+      "command": "agentbench sdk show",
+      "group": "sdk",
+      "kind": "Command",
+      "description": "Load one SDK and show its execution interface.",
+      "usage": "agentbench sdk show [-h] name",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench sdk show"
+        },
+        {
+          "name": "name",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "SDK adapter directory name.",
+          "choices": [],
+          "scope": "agentbench sdk show"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "resume",
+      "command": "agentbench resume",
+      "group": "general",
+      "kind": "Command",
+      "description": "Continue unfinished work in a saved Suite.",
+      "usage": "agentbench resume [-h] [--suite-root SUITE_ROOT] [--env-file ENV_FILE]\n                         suite",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench resume"
+        },
+        {
+          "name": "suite",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "Saved Suite ID, directory, or events.json path.",
+          "choices": [],
+          "scope": "agentbench resume"
+        },
+        {
+          "name": "--suite-root",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Directory containing saved Suites; defaults to results/suites.",
+          "choices": [],
+          "scope": "agentbench resume"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Credential/default file; secrets are never read from saved plans.",
+          "choices": [],
+          "scope": "agentbench resume"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "retry",
+      "command": "agentbench retry",
+      "group": "general",
+      "kind": "Command",
+      "description": "Retry one unfinished Case using its original inputs.",
+      "usage": "agentbench retry [-h] [--suite-root SUITE_ROOT] [--env-file ENV_FILE]\n                        --agent AGENT --case CASE_NUMBER\n                        suite",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench retry"
+        },
+        {
+          "name": "suite",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "Saved Suite ID, directory, or events.json path.",
+          "choices": [],
+          "scope": "agentbench retry"
+        },
+        {
+          "name": "--suite-root",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Directory containing saved Suites; defaults to results/suites.",
+          "choices": [],
+          "scope": "agentbench retry"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Credential/default file; secrets are never read from saved plans.",
+          "choices": [],
+          "scope": "agentbench retry"
+        },
+        {
+          "name": "--agent",
+          "kind": "Option",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "Exact Agent ID from the original Suite.",
+          "choices": [],
+          "scope": "agentbench retry"
+        },
+        {
+          "name": "--case",
+          "kind": "Option",
+          "value": "int",
+          "required": true,
+          "default": "—",
+          "description": "One-based Case number.",
+          "choices": [],
+          "scope": "agentbench retry"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "reuse",
+      "command": "agentbench reuse",
+      "group": "general",
+      "kind": "Command",
+      "description": "Rerun a saved Case or Suite with fresh Agent execution and judging.",
+      "usage": "agentbench reuse [-h] [--suite-root SUITE_ROOT] [--agent AGENT]\n                        [--case CASE_NUMBER] [--output-root OUTPUT_ROOT]\n                        [--env-file ENV_FILE] [--model MODEL]\n                        [--max-steps MAX_STEPS]\n                        suite",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "suite",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "Suite ID/path (all Cases), or Case ID, artifact run ID, saved Case/attempt path (one Case).",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--suite-root",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Directory to search for saved Suites; defaults to project results and indexed Suites.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--agent",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Exact Agent ID; use with --case and a Suite source.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--case",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "One-based Case number; use with --agent.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--output-root",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Only join/create reuse Suites under this directory; new batches otherwise use the original parent.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Current credential/default file; secrets are never copied from a plan.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Agent model for the new Suite; defaults to the saved model.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        },
+        {
+          "name": "--max-steps",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "Positive SDK max_steps option for the new Suite.",
+          "choices": [],
+          "scope": "agentbench reuse"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "gt",
+      "command": "agentbench gt",
+      "group": "general",
+      "kind": "Command",
+      "description": "Match saved Suite executions against Agent ground truth.",
+      "usage": "agentbench gt [-h] --suite SUITE [--env-file ENV_FILE]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench gt"
+        },
+        {
+          "name": "--suite",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench gt"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench gt"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-agent",
+      "command": "agentbench api agent",
+      "group": "api",
+      "kind": "Command",
+      "description": "Read a registered agent’s source revision, framework, status, case limits, and task context.",
+      "usage": "agentbench api agent [-h] agent_id",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api agent"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api agent"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-prepare",
+      "command": "agentbench api prepare",
+      "group": "api",
+      "kind": "Command",
+      "description": "Prepare an agent’s source at a specified Git revision and return the prepared target metadata without running test cases.",
+      "usage": "agentbench api prepare [-h] --revision REVISION agent_id",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api prepare"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api prepare"
+        },
+        {
+          "name": "--revision",
+          "kind": "Option",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api prepare"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-execute",
+      "command": "agentbench api execute",
+      "group": "api",
+      "kind": "Command",
+      "description": "Run an abb.cases.v1 case collection against one agent, save execution evidence, and optionally invoke a Judge.",
+      "usage": "agentbench api execute [-h] --case-file CASE_FILE\n                              [--results-dir RESULTS_DIR] [--judge JUDGE]\n                              [--model MODEL] [--timeout TIMEOUT]\n                              [--max-steps MAX_STEPS] [--revision REVISION]\n                              agent_id",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--case-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--results-dir",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--judge",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--timeout",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "2400",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--max-steps",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api execute"
+        },
+        {
+          "name": "--revision",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Prepare and execute this exact historical commit",
+          "choices": [],
+          "scope": "agentbench api execute"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-result",
+      "command": "agentbench api result",
+      "group": "api",
+      "kind": "Command",
+      "description": "Read a saved Suite’s result snapshot and run metadata without executing the agent again.",
+      "usage": "agentbench api result [-h] --suite SUITE",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api result"
+        },
+        {
+          "name": "--suite",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api result"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-evidence",
+      "command": "agentbench api evidence",
+      "group": "api",
+      "kind": "Command",
+      "description": "Read one run’s validated Judge request, derived trajectory, trace spans, and evaluation data.",
+      "usage": "agentbench api evidence [-h] --suite SUITE --run-id RUN_ID",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api evidence"
+        },
+        {
+          "name": "--suite",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api evidence"
+        },
+        {
+          "name": "--run-id",
+          "kind": "Option",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api evidence"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-attachment",
+      "command": "agentbench api attachment",
+      "group": "api",
+      "kind": "Command",
+      "description": "Read the text content and metadata of a registered Judge evidence attachment from a saved run.",
+      "usage": "agentbench api attachment [-h] --suite SUITE --run-id RUN_ID --path\n                                 PATH",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api attachment"
+        },
+        {
+          "name": "--suite",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api attachment"
+        },
+        {
+          "name": "--run-id",
+          "kind": "Option",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api attachment"
+        },
+        {
+          "name": "--path",
+          "kind": "Option",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api attachment"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-submit-judge",
+      "command": "agentbench api submit-judge",
+      "group": "api",
+      "kind": "Command",
+      "description": "Validate and save an external Judge report for a completed, host-accepted execution with no assigned Judge.",
+      "usage": "agentbench api submit-judge [-h] --suite SUITE --run-id RUN_ID --report\n                                   REPORT",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api submit-judge"
+        },
+        {
+          "name": "--suite",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api submit-judge"
+        },
+        {
+          "name": "--run-id",
+          "kind": "Option",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api submit-judge"
+        },
+        {
+          "name": "--report",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api submit-judge"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "api-gt",
+      "command": "agentbench api gt",
+      "group": "api",
+      "kind": "Command",
+      "description": "Match saved Suite execution evidence against the agent’s ground-truth failures without rerunning the agent.",
+      "usage": "agentbench api gt [-h] --suite SUITE",
+      "parameters": [
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api"
+        },
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench api gt"
+        },
+        {
+          "name": "--suite",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench api gt"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "trajectory-build",
+      "command": "agentbench trajectory build",
+      "group": "trajectory",
+      "kind": "Command",
+      "description": "Derive trajectory.json from the raw evidence of one attempt directory",
+      "usage": "agentbench trajectory build [-h] [--write] [--force] directory",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench trajectory build"
+        },
+        {
+          "name": "directory",
+          "kind": "Positional",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "Attempt directory (run.json or evaluation/ inside)",
+          "choices": [],
+          "scope": "agentbench trajectory build"
+        },
+        {
+          "name": "--write",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Save trajectory.json beside the evidence instead of printing it",
+          "choices": [],
+          "scope": "agentbench trajectory build"
+        },
+        {
+          "name": "--force",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Replace an existing trajectory.json whose content differs",
+          "choices": [],
+          "scope": "agentbench trajectory build"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "trajectory-show",
+      "command": "agentbench trajectory show",
+      "group": "trajectory",
+      "kind": "Command",
+      "description": "Render the saved or derived trajectory as step text",
+      "usage": "agentbench trajectory show [-h]\n                                  [--mode {full,truncate_middle,response_only}]\n                                  directory",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench trajectory show"
+        },
+        {
+          "name": "directory",
+          "kind": "Positional",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench trajectory show"
+        },
+        {
+          "name": "--mode",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "truncate_middle",
+          "description": "",
+          "choices": [
+            "full",
+            "truncate_middle",
+            "response_only"
+          ],
+          "scope": "agentbench trajectory show"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp1-run",
+      "command": "agentbench exp1 run",
+      "group": "exp1",
+      "kind": "Command",
+      "description": "Execute and assess Cases in order, stopping at the first confirmed hit",
+      "usage": "agentbench exp1 run [-h] --issue ISSUE --cases CASES\n                           [--results-dir RESULTS_DIR]\n                           [--prompt-template PROMPT_TEMPLATE]\n                           [--scenario-file SCENARIO_FILE] [--model MODEL]\n                           [--timeout TIMEOUT] [--root ROOT]\n                           [--env-file ENV_FILE]\n                           agent_id",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--issue",
+          "kind": "Option",
+          "value": "int",
+          "required": true,
+          "default": "—",
+          "description": "Ground-truth Issue number",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--cases",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "Absolute path to an abb.cases.v1 JSON file (1-50 Cases)",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--results-dir",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--prompt-template",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Record the shared testing prompt template",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--scenario-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Record this Agent's shared scenario",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Target model override; oracle uses the shared provider default model",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--timeout",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "2400",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 run"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp1-match",
+      "command": "agentbench exp1 match",
+      "group": "exp1",
+      "kind": "Command",
+      "description": "Assess saved trajectories without executing Cases",
+      "usage": "agentbench exp1 match [-h] --experiment EXPERIMENT [--retry-failed]\n                             [--root ROOT] [--env-file ENV_FILE]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp1 match"
+        },
+        {
+          "name": "--experiment",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 match"
+        },
+        {
+          "name": "--retry-failed",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Explicitly retry failed/interrupted oracle calls",
+          "choices": [],
+          "scope": "agentbench exp1 match"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 match"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 match"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp1-result",
+      "command": "agentbench exp1 result",
+      "group": "exp1",
+      "kind": "Command",
+      "description": "Read saved Detection@k results",
+      "usage": "agentbench exp1 result [-h] --experiment EXPERIMENT [--root ROOT]\n                              [--env-file ENV_FILE]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp1 result"
+        },
+        {
+          "name": "--experiment",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "Saved experiment directory; repeat to aggregate distinct Issues",
+          "choices": [],
+          "scope": "agentbench exp1 result"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 result"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp1 result"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp3-genProject",
+      "command": "agentbench exp3 genProject",
+      "group": "exp3",
+      "kind": "Command",
+      "description": "Export pinned source/ and only the Issue object",
+      "usage": "agentbench exp3 genProject [-h] [--noRun] --issue ISSUE --output OUTPUT\n                                  [--records-dir RECORDS_DIR] [--root ROOT]\n                                  agent_id",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        },
+        {
+          "name": "--noRun",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "false",
+          "description": "Export source and Issue without preparing a runnable Agent",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        },
+        {
+          "name": "--issue",
+          "kind": "Option",
+          "value": "int",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "New absolute directory outside ABB",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        },
+        {
+          "name": "--records-dir",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "Host provenance directory outside the exported project",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 genProject"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp3-run",
+      "command": "agentbench exp3 run",
+      "group": "exp3",
+      "kind": "Command",
+      "description": "Replay the original GT Case against frozen external source",
+      "usage": "agentbench exp3 run [-h] --issue ISSUE --source SOURCE [--runs RUNS]\n                           [--results-dir RESULTS_DIR] [--model MODEL]\n                           [--timeout TIMEOUT] [--env-file ENV_FILE]\n                           [--root ROOT]\n                           agent_id",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "agent_id",
+          "kind": "Positional",
+          "value": "string",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--issue",
+          "kind": "Option",
+          "value": "int",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--source",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "Absolute path to the modified source/ directory",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--runs",
+          "kind": "Option",
+          "value": "int",
+          "required": false,
+          "default": "3",
+          "description": "Independent repair executions (default: 3)",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--results-dir",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Target model override (execution only)",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--timeout",
+          "kind": "Option",
+          "value": "float",
+          "required": false,
+          "default": "2400",
+          "description": "Timeout per Case execution in seconds",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 run"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp3-result",
+      "command": "agentbench exp3 result",
+      "group": "exp3",
+      "kind": "Command",
+      "description": "Read a saved repair result without executing anything",
+      "usage": "agentbench exp3 result [-h] --experiment EXPERIMENT [--root ROOT]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp3 result"
+        },
+        {
+          "name": "--experiment",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 result"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 result"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp3-judge-auto",
+      "command": "agentbench exp3 judge auto",
+      "group": "exp3-judge",
+      "kind": "Command",
+      "description": "Assess saved trajectories with a model",
+      "usage": "agentbench exp3 judge auto [-h] [--model MODEL] [--env-file ENV_FILE]\n                                  --experiment EXPERIMENT [--root ROOT]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp3 judge auto"
+        },
+        {
+          "name": "--model",
+          "kind": "Option",
+          "value": "string",
+          "required": false,
+          "default": "—",
+          "description": "Judge model override on the configured provider",
+          "choices": [],
+          "scope": "agentbench exp3 judge auto"
+        },
+        {
+          "name": "--env-file",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge auto"
+        },
+        {
+          "name": "--experiment",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge auto"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge auto"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp3-judge-export",
+      "command": "agentbench exp3 judge export",
+      "group": "exp3-judge",
+      "kind": "Command",
+      "description": "Export evidence and a manual review template",
+      "usage": "agentbench exp3 judge export [-h] --output OUTPUT --experiment\n                                    EXPERIMENT [--root ROOT]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp3 judge export"
+        },
+        {
+          "name": "--output",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge export"
+        },
+        {
+          "name": "--experiment",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge export"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge export"
+        }
+      ],
+      "subcommands": []
+    },
+    {
+      "id": "exp3-judge-import",
+      "command": "agentbench exp3 judge import",
+      "group": "exp3-judge",
+      "kind": "Command",
+      "description": "Validate and retain a completed manual review",
+      "usage": "agentbench exp3 judge import [-h] --input INPUT --experiment EXPERIMENT\n                                    [--root ROOT]",
+      "parameters": [
+        {
+          "name": "-h, --help",
+          "kind": "Option",
+          "value": "flag",
+          "required": false,
+          "default": "—",
+          "description": "show this help message and exit",
+          "choices": [],
+          "scope": "agentbench exp3 judge import"
+        },
+        {
+          "name": "--input",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge import"
+        },
+        {
+          "name": "--experiment",
+          "kind": "Option",
+          "value": "Path",
+          "required": true,
+          "default": "—",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge import"
+        },
+        {
+          "name": "--root",
+          "kind": "Option",
+          "value": "Path",
+          "required": false,
+          "default": "<checkout>",
+          "description": "",
+          "choices": [],
+          "scope": "agentbench exp3 judge import"
+        }
+      ],
+      "subcommands": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "general",
+      "label": "General",
+      "description": "Execution, evaluation, recovery, and result management."
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "description": "Import and inspect Agent source for onboarding."
+    },
+    {
+      "id": "sdk",
+      "label": "sdk",
+      "description": "List and inspect evaluation SDK plugins."
+    },
+    {
+      "id": "trajectory",
+      "label": "trajectory",
+      "description": "Build or show the derived step sequence of a saved execution."
+    },
+    {
+      "id": "exp1",
+      "label": "exp1",
+      "description": "Run behavioural failure detection and report Detection@k"
+    },
+    {
+      "id": "exp3",
+      "label": "exp3",
+      "description": "Export and validate Issue repair projects"
+    },
+    {
+      "id": "exp3-judge",
+      "label": "exp3 judge",
+      "description": "Judge saved evidence without running Agents"
+    },
+    {
+      "id": "api",
+      "label": "api",
+      "description": "JSON command-line interface for scripts and external testing agents. Commands return structured JSON on stdout; execution logs go to stderr."
+    }
+  ]
+}

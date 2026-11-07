@@ -1,0 +1,11 @@
+{
+  "agentbench api": "JSON command-line interface for scripts and external testing agents. Commands return structured JSON on stdout; execution logs go to stderr.",
+  "agentbench api agent": "Read a registered agent’s source revision, framework, status, case limits, and task context.",
+  "agentbench api prepare": "Prepare an agent’s source at a specified Git revision and return the prepared target metadata without running test cases.",
+  "agentbench api execute": "Run an abb.cases.v1 case collection against one agent, save execution evidence, and optionally invoke a Judge.",
+  "agentbench api result": "Read a saved Suite’s result snapshot and run metadata without executing the agent again.",
+  "agentbench api evidence": "Read one run’s validated Judge request, derived trajectory, trace spans, and evaluation data.",
+  "agentbench api attachment": "Read the text content and metadata of a registered Judge evidence attachment from a saved run.",
+  "agentbench api submit-judge": "Validate and save an external Judge report for a completed, host-accepted execution with no assigned Judge.",
+  "agentbench api gt": "Match saved Suite execution evidence against the agent’s ground-truth failures without rerunning the agent."
+}

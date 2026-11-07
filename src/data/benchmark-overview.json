@@ -1,0 +1,5 @@
+{
+  "title": "AgentBehaviourBench",
+  "subtitle": "A Benchmark of Real-World Behavioural Failures in AI Agents",
+  "overview": "AgentBehaviourBench is a benchmark of real-world, user-reported behavioural failures in AI agents. It comprises 43 validated issues from 23 open-source agents. Each instance connects a GitHub issue with a specific agent revision, a reproducing test case, execution trajectories, and manually validated root-cause and fault-location annotations. These resources support systematic analysis of agent failures and evaluation of behavioural failure detection and fault localization."
+}

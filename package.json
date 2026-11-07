@@ -1,23 +1,28 @@
 {
-  "name": "abb-benchmark-site",
+  "name": "agentbehviorbench-web",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1",
-    "sync:agents": "python scripts/sync_agents.py"
+    "dev": "vite",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "lint": "oxlint",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/dm-sans": "^5.3.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "@reduxjs/toolkit": "^2.14.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-redux": "^9.3.1",
+    "react-router-dom": "^7.18.5"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "@vitejs/plugin-react": "5.2.0",
-    "tailwindcss": "^4.3.3",
-    "vite": "7.3.6"
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.6"
   }
 }

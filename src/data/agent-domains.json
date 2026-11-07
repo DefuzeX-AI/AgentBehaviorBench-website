@@ -1,0 +1,2859 @@
+{
+  "reviewedOn": "2026-11-07",
+  "method": "Each registered agent was reviewed individually using its README and ABB integration profile. Labels are editorial primary application domains, not a paper taxonomy or runtime-capability certification. For monorepos and reusable frameworks, the registered agent surface identifies the product being classified; broad personal assistants retain a general-purpose label. Source or deployment differences are documented per agent.",
+  "agents": {
+    "deer-flow": {
+      "commit": "a1eb3971412ee269f1f89bfb5cc9e158b682f86e",
+      "domain": "General-purpose Assistance",
+      "reason": "General assistant for research, reports, data processing, and file-based work; version 2 is a broad agent harness.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/bytedance/deer-flow/blob/a1eb3971412ee269f1f89bfb5cc9e158b682f86e/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "e7a3ea501fc6975a73125287b5d42bd337fc2269aebe2fe14f5298a0c7a6b2bb"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/01-deer-flow/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "DeerFlow is a text assistant using its native embedded LangGraph client. It can run bash commands and Python scripts, read and write"
+        }
+      ],
+      "note": ""
+    },
+    "ai-hedge-fund-crypto": {
+      "commit": "c6750e0041cb2e528856864783585427c45cc34d",
+      "domain": "Finance & Trading",
+      "reason": "Cryptocurrency trading signals, technical analysis, risk limits, and portfolio decisions.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/51bitquant/ai-hedge-fund-crypto/blob/c6750e0041cb2e528856864783585427c45cc34d/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "e36ea820c6d4c5b9b7cd76812e66c61e3ee6b813b0c4745031e30a3ed7e48523"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/02-ai-hedge-fund-crypto/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "AI Hedge Fund Crypto: a LangGraph trading-signal pipeline for cryptocurrency futures. Each Input is one instruction in plain text that is passed"
+        }
+      ],
+      "note": ""
+    },
+    "labscript-ai": {
+      "commit": "abff77285eacc98f245a27059d7d2c34969dcc2c",
+      "domain": "Scientific Research",
+      "reason": "Laboratory automation and protein-engineering protocols for liquid-handling robots.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/KRATSZ/LabScript-AI/blob/abff77285eacc98f245a27059d7d2c34969dcc2c/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "9c5528cb899b040eed64095843cc54154de459e46bc39c5d39b9a8512fe86231"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/03-labscript-ai/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LabScript-AI: a lab-automation protocol generator for PyLabRobot liquid-handling robots. Each Input is one experiment requirement in plain text. Using a fixed hardware"
+        }
+      ],
+      "note": ""
+    },
+    "multi-agent-cad": {
+      "commit": "f31a2f65aa1b1e16fa6c45f1d642142fb696db28",
+      "domain": "Engineering & Robotics",
+      "reason": "Natural-language mechanical design and parametric CAD generation with geometry checks.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Pan-Chera/Multi-Agent-CAD/blob/f31a2f65aa1b1e16fa6c45f1d642142fb696db28/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "03ad4219257f100bb7ff990b759607c26a53f64c941f792a599280df3e7e1010"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/04-multi-agent-cad/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Multi-Agent-CAD: turns a natural-language mechanical part request into a parametric CAD model. Each Input is one part request in plain text (for"
+        }
+      ],
+      "note": ""
+    },
+    "autoresearch-agents": {
+      "commit": "552fd6a1bd607f6645cd4baba0a98858d62e8815",
+      "domain": "AI Research & Development",
+      "reason": "Agent optimization through autonomous code changes and evaluation; ABB runs its small calculator/unit-converter example.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/hwchase17/autoresearch-agents/blob/552fd6a1bd607f6645cd4baba0a98858d62e8815/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "18ce4283fb2d928bda61f93092edf21981348f8b2b06887622aebd0a56309d8c"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/05-autoresearch-agents/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Autoresearch Agents: a small ReAct question-answering agent on an OpenAI chat model with two tools, a calculator and a unit converter. Each"
+        }
+      ],
+      "note": ""
+    },
+    "langchain-streamlit-template": {
+      "commit": "3c676a670d1f69bcc4c76b692126db1922101d5f",
+      "domain": "General-purpose Assistance",
+      "reason": "A conversational chatbot template; the registered example is a tool-free, pirate-persona chat assistant.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/hwchase17/langchain-streamlit-template/blob/3c676a670d1f69bcc4c76b692126db1922101d5f/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "55bc2af18332582b7953c4244868f5753eddcee01d43e21be160f45eab0c383d"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/06-langchain-streamlit-template/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LangChain Streamlit template: a minimal chatbot built with LangGraph's prebuilt ReAct agent on an OpenAI chat model (gpt-4o-mini) with no tools and"
+        }
+      ],
+      "note": ""
+    },
+    "readwren": {
+      "commit": "3d0bfe481a340f247c749c082b7a65c877c12de1",
+      "domain": "Education & Reading",
+      "reason": "Interviews readers to build literary-taste profiles and guide personalized reading or writing.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/muratcankoylan/readwren/blob/3d0bfe481a340f247c749c082b7a65c877c12de1/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "88560889eece0dcf484aa6ce679066c7d0a228a3f44c0a59008165664c080c9c"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/07-readwren/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "WREN Interview Agent: a conversational agent that profiles a reader's literary taste through an adaptive interview on the Kimi (Moonshot) model. It"
+        }
+      ],
+      "note": ""
+    },
+    "tablegpt-agent": {
+      "commit": "26bc576bb21fc1c296d829e863c97290e92bfd8e",
+      "domain": "Data & Analytics",
+      "reason": "Table question answering, spreadsheet exploration, and Python-based data analysis.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/tablegpt/tablegpt-agent/blob/26bc576bb21fc1c296d829e863c97290e92bfd8e/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "4881dffa99997afcfa90637660540a35a30ce582d95b165656e11f8ed87a2d0e"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/08-tablegpt-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "TableGPT Agent: a LangGraph agent for table question answering and data analysis built for the TableGPT2 models. Each Input is one user"
+        }
+      ],
+      "note": ""
+    },
+    "minimax-code": {
+      "commit": "a5639bcc6146754e01f1ae18bb88545f18299fd6",
+      "domain": "Software Development",
+      "reason": "Terminal coding assistant for project inspection, code changes, and test execution.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/MiniMax-AI/minimax-code/blob/a5639bcc6146754e01f1ae18bb88545f18299fd6/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "e291e9fc00605212c7796aa2cfd2f00f3686f296afbd2a0d21267cbd6f11b959"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/09-minimax-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "A coding assistant running its native ACP stdio implementation in an isolated Linux container. It can inspect and edit local files, run"
+        }
+      ],
+      "note": ""
+    },
+    "claude-agent-acp": {
+      "commit": "d421f56a6c43cde16d9a7531d08a750a5ef2f04a",
+      "domain": "Software Development",
+      "reason": "Claude Code exposed through the Claude Agent SDK ACP bridge for development tasks.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/agentclientprotocol/claude-agent-acp/blob/d421f56a6c43cde16d9a7531d08a750a5ef2f04a/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "90be6e06919d7bf620d37afc6144319d7f9bed24e0719802da11ced8910fb492"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/10-claude-agent-acp/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Claude Code exposed through the official Claude Agent SDK ACP bridge, using an explicitly configured Anthropic-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "qwen-code": {
+      "commit": "1026c4a50f4a32f77da98bdacfba2e5faa8cc70a",
+      "domain": "Software Development",
+      "reason": "Qwen coding agent for code editing, debugging, and terminal development workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/QwenLM/qwen-code/blob/1026c4a50f4a32f77da98bdacfba2e5faa8cc70a/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "0fc2159f9ab32e6d28a9f47a692002540537421525e96cd3a7e37c01ceb9fdde"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/11-qwen-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Qwen Code exposed through its native ACP stdio server, using Qwen models through Alibaba Cloud DashScope's OpenAI-compatible API."
+        }
+      ],
+      "note": ""
+    },
+    "opencode": {
+      "commit": "014614d35b397775e5d397a490fc72368c894ec2",
+      "domain": "Software Development",
+      "reason": "OpenCode coding assistant with build and planning workflows for repositories.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/anomalyco/opencode/blob/014614d35b397775e5d397a490fc72368c894ec2/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "400890a3082e225c440561825270a911cd7df90a9f64f85166aed330201e50ba"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/12-opencode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenCode exposed through its native ACP stdio server (`opencode acp`), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "kilo-code": {
+      "commit": "01ef456fe7f41aa1f7b8a4e6b545dd1e0fbeeceb",
+      "domain": "Software Development",
+      "reason": "Coding assistant available through IDEs and a CLI for implementing and reviewing changes.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Kilo-Org/kilocode/blob/01ef456fe7f41aa1f7b8a4e6b545dd1e0fbeeceb/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "a5de43a9179e06a55d63e7ed2b7b00cd7caaaa48608825eca68a0217fb4c8a85"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/13-kilo-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Kilo Code CLI exposed through its native ACP stdio server (kilo acp), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model"
+        }
+      ],
+      "note": ""
+    },
+    "goose": {
+      "commit": "1a4249ac9f23c6e6e2526d4b54dbbf3bb09ba204",
+      "domain": "General-purpose Assistance",
+      "reason": "Upstream explicitly covers research, writing, automation, and data analysis as well as code.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/aaif-goose/goose/blob/1a4249ac9f23c6e6e2526d4b54dbbf3bb09ba204/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "0f1df85a0c457caf1f3c4e1c0370f2da3887fffa588d207862cfc298c1d39755"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/14-goose/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Goose exposed through its native ACP stdio server (goose acp), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "cline": {
+      "commit": "d718dd16f850c4c915a8214441a831e00cb28c75",
+      "domain": "Software Development",
+      "reason": "Autonomous coding assistant for repository inspection, file edits, and command execution.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/cline/cline/blob/d718dd16f850c4c915a8214441a831e00cb28c75/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "71b0a582e9ea66fe8a886df08010ccd0e2566091a3456a7176e969d5ea4fea42"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/15-cline/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Cline CLI exposed through its native ACP stdio server, using its built-in the selected OpenAI-compatible model provider pointed at an explicitly configured"
+        }
+      ],
+      "note": ""
+    },
+    "kimi-cli": {
+      "commit": "86f136422a0aae6b217ea49e7ea1d2e8a1defcd2",
+      "domain": "Software Development",
+      "reason": "Terminal assistant explicitly targeting software-development tasks and code editing.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/MoonshotAI/kimi-cli/blob/86f136422a0aae6b217ea49e7ea1d2e8a1defcd2/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "dc8992517be50091b4119410bd31bc53c1cb93e2b905868698ce98ec613b36a7"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/16-kimi-cli/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Kimi Code CLI exposed through its native ACP stdio server, using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "pi-coding-agent": {
+      "commit": "13cbf77df2396303013a41646bcfa77b4271ae56",
+      "domain": "Software Development",
+      "reason": "Pi coding-agent CLI, rather than the other libraries in the Pi monorepo.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/earendil-works/pi/blob/13cbf77df2396303013a41646bcfa77b4271ae56/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "fe13915e217f905739b64124cbb03b72758fa2081b7198cabeefaee4914a6f14"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/17-pi-coding-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Pi coding agent exposed over ACP stdio through the pi-acp adapter, using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "copilot-cli": {
+      "commit": "ab6139c694ba09ab4e8ac76b6046daa6b5d89616",
+      "domain": "Software Development",
+      "reason": "GitHub-integrated coding assistance for building, debugging, and understanding repositories.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/github/copilot-cli/blob/ab6139c694ba09ab4e8ac76b6046daa6b5d89616/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "33657f2e7383f2167b47d5f8c549a6071905a5c93d5d67d17e5c5399f126f07b"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/18-copilot-cli/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "GitHub Copilot CLI exposed through its native ACP stdio server, using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model endpoint (BYOK,"
+        }
+      ],
+      "note": ""
+    },
+    "openclaw": {
+      "commit": "ec9c1a13db8938e5a3eaa51fca2e981cde2395a9",
+      "domain": "General-purpose Assistance",
+      "reason": "Self-hosted personal or team assistant operating across chat channels and devices.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/openclaw/openclaw/blob/ec9c1a13db8938e5a3eaa51fca2e981cde2395a9/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "c594e29266562db197f8dff4f7cdebc56df08ef4ba8e46bb3130f75457dbe39b"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/19-openclaw/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenClaw exposed through its ACP stdio bridge to a private per-Case OpenClaw Gateway, using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model"
+        }
+      ],
+      "note": ""
+    },
+    "hermes-agent": {
+      "commit": "f97608f178d1ffeca59860195ab7da295f7c8e5f",
+      "domain": "General-purpose Assistance",
+      "reason": "Persistent personal assistant with learned skills, memory, and multi-channel task execution.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/NousResearch/hermes-agent/blob/f97608f178d1ffeca59860195ab7da295f7c8e5f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "1d733df90c2836c1b9cd8d7307d2d222023456b7b55b5036c2fbb54fd8bcfdf4"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/20-hermes-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Nous Research Hermes Agent exposed through its native ACP stdio adapter, using an explicitly configured the selected OpenAI-compatible model OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "openhands": {
+      "commit": "2963442dacc7cea44e39b7c4e73724295c853465",
+      "domain": "Software Development",
+      "reason": "OpenHands CLI for interactive development, IDE integration, and software automation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/OpenHands/OpenHands-CLI/blob/2963442dacc7cea44e39b7c4e73724295c853465/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "6860c215f57abe05e09ecedd1b94b9570126c4507d1630398068d6f93b3c744e"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/21-openhands/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenHands CLI exposed through its native ACP stdio server, using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "deepagents-code": {
+      "commit": "a764619aa8c850bc75e2e916cf53a587637d8c81",
+      "domain": "Software Development",
+      "reason": "The registered Deep Agents Code CLI is the coding product within the broader Deep Agents framework.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/langchain-ai/deepagents/blob/a764619aa8c850bc75e2e916cf53a587637d8c81/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "6219a57cabdaf020a9635047a1f526abbe7b309512460f770bcfc48d90ea80ed"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/22-deepagents-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LangChain deepagents-code (Deep Agents CLI) exposed through its native ACP stdio server, using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model"
+        }
+      ],
+      "note": ""
+    },
+    "open-interpreter": {
+      "commit": "d9b49c828bf61d820c30e343a22033e3e7999583",
+      "domain": "Software Development",
+      "reason": "The pinned Open Interpreter revision is a Codex-derived coding CLI, not the older general code-interpreter product.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/openinterpreter/openinterpreter/blob/d9b49c828bf61d820c30e343a22033e3e7999583/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "356a354b13c1475d853b4f29b544a3ef0142e6404a1791cb418547c679c055cc"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/23-open-interpreter/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Open Interpreter (Rust CLI derived from OpenAI Codex) exposed through its native ACP stdio server (interpreter acp), using an explicitly configured OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "claurst": {
+      "commit": "0f5d970bd78738434afb0c7abae3350d03246938",
+      "domain": "Software Development",
+      "reason": "Rust terminal coding agent and pair programmer with project tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Kuberwastaken/claurst/blob/0f5d970bd78738434afb0c7abae3350d03246938/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "7c3a49aa98db18c599567d62637a4112ecb9abf6be5c73c45f5f5a195ed7016d"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/24-claurst/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Claurst (Rust clean-room Claude-Code-style coding agent) exposed through its native ACP stdio server (claurst acp), using an explicitly configured OpenAI-compatible the selected"
+        }
+      ],
+      "note": ""
+    },
+    "oh-my-pi": {
+      "commit": "e4151593ace2781d1dc2f06d760301f88af3e9dc",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent with code navigation, language-server, debugging, and editing tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/can1357/oh-my-pi/blob/e4151593ace2781d1dc2f06d760301f88af3e9dc/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "bcc1eb97b66cb44dd0e27b2cb2670a52bf34488f87a4f1874273bb3ca46e91e9"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/25-oh-my-pi/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "oh-my-pi (omp) terminal coding agent exposed over its native ACP stdio server (`omp acp`), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "kode-cli": {
+      "commit": "b5fff92e41c1acb1163eae68805790ed2061beb3",
+      "domain": "Software Development",
+      "reason": "Terminal coding assistant with project instructions, subagents, and development workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/shareAI-lab/Kode-CLI/blob/b5fff92e41c1acb1163eae68805790ed2061beb3/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "138c2046c5b44cca8595321bf246f8c22c6e862f9526852095728d00b36dd739"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/26-kode-cli/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Kode CLI terminal coding agent exposed over its native ACP stdio server (`kode --acp`), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "zeroclaw": {
+      "commit": "cb2b20a9fe59004b7ef03e123942d31f29236d15",
+      "domain": "General-purpose Assistance",
+      "reason": "Personal assistant runtime using chat channels, memory, shell, browser, and extensible tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/zeroclaw-labs/zeroclaw/blob/cb2b20a9fe59004b7ef03e123942d31f29236d15/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "ff71ad829b9d5eeec03bdebf3f3a3677725cfd9408c1492b650d630b7ce81b2a"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/27-zeroclaw/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "ZeroClaw general-purpose personal assistant runtime exposed through its native ACP stdio server (zeroclaw acp), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "jcode": {
+      "commit": "944f747e922b069a0a6110565103a0222fe1fe93",
+      "domain": "Software Development",
+      "reason": "Coding-agent harness for repository editing and development tasks through a daemon and ACP.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/1jehuang/jcode/blob/944f747e922b069a0a6110565103a0222fe1fe93/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "37e4ec85343c0b90f60feb3648a032685dbd5cc9c1f69da0bec87946aec7bfcb"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/28-jcode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "jcode (Rust coding agent harness) exposed through its native ACP adapter (jcode acp) backed by a per-Case jcode daemon, using an explicitly"
+        }
+      ],
+      "note": ""
+    },
+    "mastracode": {
+      "commit": "429d7b9f935a62a6fa1d71a6fadb5f633d75bbaf",
+      "domain": "Software Development",
+      "reason": "The registered Mastra Code CLI is a coding assistant, not the whole Mastra application framework.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/mastra-ai/mastra/blob/429d7b9f935a62a6fa1d71a6fadb5f633d75bbaf/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "a46d3f2fe4de19458c35a46c58a3c8a2a7eb3237e8a1faf2b112f6287e081bfc"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/29-mastracode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Mastra Code (mastracode CLI) exposed through its native ACP stdio server (mastracode --acp), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model"
+        }
+      ],
+      "note": ""
+    },
+    "open-notebook": {
+      "commit": "3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef",
+      "domain": "Research & Knowledge",
+      "reason": "Notebook-based research and knowledge work over source material; ABB exposes notebook chat.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/lfnovo/open-notebook/blob/3127f14ea9dbb519f0e4ddc64a0742ca644ba6ef/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "571e3a2fae66b4c4e881fb653f265c0f90c5c006b1750fcab42328718e596a38"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/30-open-notebook/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Open Notebook (lfnovo/open-notebook), an open-source NotebookLM-style research assistant. The deployed interface is its notebook chat: upstream's LangGraph chat graph (open_notebook/graphs/chat.py) with its"
+        }
+      ],
+      "note": ""
+    },
+    "ai-data-science-team": {
+      "commit": "4ffeb7f38178aa250917f29b01355f8b89ba809e",
+      "domain": "Data & Analytics",
+      "reason": "Data loading, wrangling, visualization, and modeling; ABB runs the Pandas analyst application.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/business-science/ai-data-science-team/blob/4ffeb7f38178aa250917f29b01355f8b89ba809e/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "efaa7b5f3e578586e40b24812428ee46dba38cd52331549f14b25ac23bcd3e63"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/31-ai-data-science-team/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "AI Data Science Team - Pandas Data Analyst: a LangGraph multi-agent from business-science/ai-data-science-team, deployed as its Pandas Data Analyst app. Each Input"
+        }
+      ],
+      "note": ""
+    },
+    "local-deep-research": {
+      "commit": "ede8a7b4a8ac746db176285e1075f327e188be00",
+      "domain": "Research & Knowledge",
+      "reason": "Searches evidence sources and produces cited research reports, with optional sub-research tasks.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/LearningCircuit/local-deep-research/blob/ede8a7b4a8ac746db176285e1075f327e188be00/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "07f416b1df172f07a289c658df8f452b668029ba02003cb27b86604edf286ccd"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/32-local-deep-research/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Local Deep Research (LDR) is a research assistant that answers a research question with a cited report. This deployment runs its default"
+        }
+      ],
+      "note": ""
+    },
+    "nanocoder": {
+      "commit": "59874391f939bdfe93c273a10d23a7a94009edd1",
+      "domain": "Software Development",
+      "reason": "Local-first terminal coding assistant supporting hosted or local models.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Nano-Collective/nanocoder/blob/59874391f939bdfe93c273a10d23a7a94009edd1/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "1658b0e746da463208f384992b6af9566b817d2cb052995afa20b2cca2c90815"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/33-nanocoder/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Nanocoder (@nanocollective/nanocoder CLI) exposed through its native ACP stdio server (nanocoder --acp), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model model"
+        }
+      ],
+      "note": ""
+    },
+    "article-explainer": {
+      "commit": "2cf067dc4b9158b03361c7b3e2544e067b75f1ae",
+      "domain": "Education & Reading",
+      "reason": "Explains technical articles through summaries, analogies, examples, and critical reading.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/duartecaldascardoso/article-explainer/blob/2cf067dc4b9158b03361c7b3e2544e067b75f1ae/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "83df819918065b72cf63194f243a34d3540631d209cca0939ba512c62aaea322"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/34-article-explainer/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Article Explainer is a multi-agent article explanation service implemented as a LangGraph swarm. Five specialist agents — explainer (default), summarizer, developer, analogy_creator"
+        }
+      ],
+      "note": ""
+    },
+    "tradingagents": {
+      "commit": "8b22d43d01d9ddda5d686d093d5385884622f3de",
+      "domain": "Finance & Trading",
+      "reason": "Equity research, market and fundamentals analysis, trading recommendations, and risk assessment.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/TauricResearch/TradingAgents/blob/8b22d43d01d9ddda5d686d093d5385884622f3de/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "4c9f427febaa69930fd3a91e6e26be0a64824d280f2a981f4d19ec3e911d14f4"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/35-tradingagents/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "TradingAgents is a multi-agent equity research and trading-decision pipeline. One text input - a ticker and an analysis date, e.g. 'NVDA 2026-09-01'"
+        }
+      ],
+      "note": ""
+    },
+    "evoscientist": {
+      "commit": "22dd14f1b6ffaf92da58b657086332d9aa3afe78",
+      "domain": "Scientific Research",
+      "reason": "Research-scientist assistant for planning studies, experiments, analysis, and scholarly writing.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/EvoScientist/EvoScientist/blob/22dd14f1b6ffaf92da58b657086332d9aa3afe78/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "67cd7252f42348f24b5b0d1518447784853ded573274b0cae958db011b0974f1"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/36-evoscientist/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "EvoScientist: a LangGraph deep-agent \"AI research scientist\" from EvoScientist/EvoScientist, deployed as its main EvoScientist graph in unattended (auto) mode. Each Input is"
+        }
+      ],
+      "note": ""
+    },
+    "biomedical-aiq-research-agent": {
+      "commit": "b5cd7b4c7ae544c1e21ac79ef9fa67641eeff5a4",
+      "domain": "Biomedical Research",
+      "reason": "Biomedical research reports and molecular virtual screening, including docking workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/NVIDIA-AI-Blueprints/biomedical-aiq-research-agent/blob/b5cd7b4c7ae544c1e21ac79ef9fa67641eeff5a4/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "8e63ac7fe2b44eb21fce990a169c06ebd202edd630e1c1247908c405cb81b910"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/37-biomedical-aiq-research-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "NVIDIA Biomedical AI-Q Research Agent is a biomedical deep-research workflow implemented with NeMo Agent Toolkit and two native LangGraphs. Given a research"
+        }
+      ],
+      "note": ""
+    },
+    "cra-agent": {
+      "commit": "4d819a56d825ca14013997958eeb3d0e13ab7ebb",
+      "domain": "Security & Compliance",
+      "reason": "Source-code vulnerability analysis and Cyber Resilience Act compliance triage.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/kulkarnirohit123/cra-agent/blob/4d819a56d825ca14013997958eeb3d0e13ab7ebb/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "c01d0584f9291c20c6a7ae1a9578b5078affd32e52be8afb490ccfa02813d0a4"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/38-cra-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "A Cyber Resilience Act (CRA) compliance assistant for source code, built as a LangGraph state machine over four agents. Given the text"
+        }
+      ],
+      "note": ""
+    },
+    "zhisaotong-agent": {
+      "commit": "92569e61ac22ef4d902953a7d916e941921ab92f",
+      "domain": "Customer Support",
+      "reason": "Product support, maintenance advice, and troubleshooting for robot vacuum cleaners.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/bamboo-moon/zhisaotong-Agent/blob/92569e61ac22ef4d902953a7d916e941921ab92f/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "27bb15b41a71b089dd1da80ae9c5d43fce9ad214fb583c9b0d5cf2379711a270"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/39-zhisaotong-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "A Chinese-language customer-support assistant for robot vacuum and mop-vacuum products, built as a LangChain ReAct Agent (LangGraph underneath) over a local retrieval"
+        }
+      ],
+      "note": ""
+    },
+    "beacon-math-agent": {
+      "commit": "36b0b7de6774bc619dc39a80a00a41639909d7e9",
+      "domain": "Education & Reading",
+      "reason": "Mathematical-modeling competition assistance from problem analysis to models and papers.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/123-qw-as/Beacon/blob/36b0b7de6774bc619dc39a80a00a41639909d7e9/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "fb947f7d62d8734fee7960c08fe9b930b9207696e9572904bd80fd4c92d2135a"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/40-beacon/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "A mathematical-modelling assistant, built as a 26-node LangGraph pipeline (\"Beacon\"), that turns a written modelling problem into a complete competition paper. From"
+        }
+      ],
+      "note": ""
+    },
+    "m-cube": {
+      "commit": "75ab640723e19dd612cd13c284c5d6a059e2547b",
+      "domain": "Legal & Patents",
+      "reason": "Patent drafting from invention disclosures, including claims, specifications, and consistency review.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/yycyyv/M-Cube/blob/75ab640723e19dd612cd13c284c5d6a059e2547b/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "0f7195bfaaf6dd7351beba1e53cf460e15a3559cb90ab9853226c7450172fe50"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/41-m-cube/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "M-Cube (M³) is a Multi-thinking, Multimodal, Multi-verification Patent Drafting Assistant implemented with the LangGraph framework. The certification target is its draft workflow:"
+        }
+      ],
+      "note": ""
+    },
+    "breadfree-simu": {
+      "commit": "6e5d9dde204728e5b93571c027a9030fb22eb94c",
+      "domain": "Finance & Trading",
+      "reason": "A-share investment analysis and simulated portfolio decisions through an investment committee.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/FeiCoder/BreadFree-Simu/blob/6e5d9dde204728e5b93571c027a9030fb22eb94c/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "8e1110b8ecc95274f23c9fddabef1aa7879228fda0f6f3fab435ce743d28b6f2"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/42-breadfree-simu/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "BreadFree-Simu's LangGraph investment committee analyzes caller-supplied A-share market and account data through three sequential roles: an aggressive market analyst, a conservative risk"
+        }
+      ],
+      "note": ""
+    },
+    "excelmind": {
+      "commit": "d8bc5c8bdd26e5bf5944807a01cc4732bb0250a9",
+      "domain": "Data & Analytics",
+      "reason": "Natural-language Excel analysis, aggregation, filtering, and chart generation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Gen-Future/ExcelMind/blob/d8bc5c8bdd26e5bf5944807a01cc4732bb0250a9/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "1cba85d359e9643f8f0a79af24b230d0f77357631219a60839687161d5318349"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/43-excelmind/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "ExcelMind's native non-streaming Excel chat workflow, implemented with a real LangGraph StateGraph and ten native tools. The deployed workbook is a public"
+        }
+      ],
+      "note": ""
+    },
+    "podcast": {
+      "commit": "9d0f3c4e261fb7363ef419639371443febbf0c13",
+      "domain": "Creative & Media",
+      "reason": "Converts source material into podcast dialogue scripts; audio generation is outside the ABB deployment.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/artnoage/Podcast/blob/9d0f3c4e261fb7363ef419639371443febbf0c13/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "3097b97fef558637508166b107c57f5bf8b24ccd311339e03d78e70a07b51e90"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/44-podcast/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Podcast is an in-process LangGraph pipeline that turns one piece of source text into a spoken-style dialogue script. Given plain text (in"
+        }
+      ],
+      "note": ""
+    },
+    "local-rag-researcher-deepseek": {
+      "commit": "98e83829a7e506b1092e90467245e0caed686331",
+      "domain": "Research & Knowledge",
+      "reason": "Retrieves and assesses documents, synthesizes findings, and writes research reports.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/kaymen99/local-rag-researcher-deepseek/blob/98e83829a7e506b1092e90467245e0caed686331/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "022bb80fa1ea42327521fe6e6ea6d4aec4a11e037ea7a7a0da35094c8af81249"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/45-local-rag-researcher-deepseek/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Local RAG Researcher is a LangGraph research workflow that turns a plain-text user instruction into research queries, retrieves local RAG documents, optionally"
+        }
+      ],
+      "note": ""
+    },
+    "air-lingjing": {
+      "commit": "d23060cc83b7e2e2fadef0db64f16de40c68ebc6",
+      "domain": "Engineering & Robotics",
+      "reason": "Embodied-agent navigation and simulation; ABB uses the in-process mock environment.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/seanlxh/Air-Lingjing/blob/d23060cc83b7e2e2fadef0db64f16de40c68ebc6/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "055d61b4cce10091896bfe7430689edc95251bc80d226a2923b974f0ec55bded"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/46-air-lingjing/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Air-Lingjing (LingJing Embodied Intelligence) is an embodied-intelligence simulation backend. This deployment integrates its registered LangGraph workflow `open_vocab_navigation_env_loop`: the agent takes one plain-text"
+        }
+      ],
+      "note": ""
+    },
+    "langgraph-email-automation": {
+      "commit": "9ea0f54cb30a493bbc25114cfc1769a25d45169a",
+      "domain": "Customer Support",
+      "reason": "Classifies customer emails, retrieves product information, and drafts reviewed support replies.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/kaymen99/langgraph-email-automation/blob/9ea0f54cb30a493bbc25114cfc1769a25d45169a/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "714d6de6d61c80fef4c1fdbc26aaac2c7a706d13dbccc8847bf25a7530e480ed"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/47-langgraph-email-automation/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Customer support email automation agent (kaymen99/langgraph-email-automation) deployed through ABB as a LangGraph workflow. The agent takes one customer email as text and"
+        }
+      ],
+      "note": ""
+    },
+    "open-deepthink": {
+      "commit": "b440af10fd8fc9550b3a70fc76761465aede7a4b",
+      "domain": "General-purpose Assistance",
+      "reason": "Domain-independent problem solving and decision analysis through iterative multi-agent reasoning.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/iblameandrew/open-deepthink/blob/b440af10fd8fc9550b3a70fc76761465aede7a4b/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "5e89e6cd72f904c30607c97588e6cf509f07df9c6b7b0876119d7977e3d408bf"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/48-open-deepthink/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "open-deepthink runs its native Qualitative Neural Network (QNN) workflow on a natural-language problem or decision brief. Two model-generated personas explore the problem"
+        }
+      ],
+      "note": ""
+    },
+    "garmin-ai-coach": {
+      "commit": "54a64942d52a04d624df4bb7cbc7fdc28c39113e",
+      "domain": "Health & Fitness",
+      "reason": "Endurance coaching using Garmin training data, with analysis and season or weekly plans.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/leonzzz435/garmin-ai-coach/blob/54a64942d52a04d624df4bb7cbc7fdc28c39113e/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "bba8be373c4feaa5041c656347628723e492643ee27bc44c049a04aac916912e"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/49-garmin-ai-coach/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "A LangGraph endurance-coaching agent that analyzes a supplied Garmin-style snapshot and produces integrated analysis plus season and weekly plans."
+        }
+      ],
+      "note": ""
+    },
+    "timeseriesscientist": {
+      "commit": "41b396316fee25462c56cb53635b42660042d890",
+      "domain": "Data & Analytics",
+      "reason": "Time-series diagnostics, model selection, forecasting, validation, and reporting.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Y-Research-SBU/TimeSeriesScientist/blob/41b396316fee25462c56cb53635b42660042d890/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "38fc9af68097734fb1330f50b85b87c78dddc8c046382445a5bfcafac3f7033f"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/50-timeseriesscientist/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "TimeSeriesScientist (TSci) is an LLM-driven time-series forecasting pipeline. Its LangGraph workflow chains five agents — Preprocess, Analysis, Validation, Forecast and Report —"
+        }
+      ],
+      "note": ""
+    },
+    "sales-outreach-automation-langgraph": {
+      "commit": "2e2761ccc16c26fe20adf101b4ec702cd0876b15",
+      "domain": "Sales & Marketing",
+      "reason": "Lead research, qualification, and personalized sales outreach material.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/kaymen99/sales-outreach-automation-langgraph/blob/2e2761ccc16c26fe20adf101b4ec702cd0876b15/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "1e4a85a45388dbadb46a7896827a67bcaa0fd5545023897baf92674cf71d89f2"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/51-sales-outreach-automation-langgraph/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Sales outreach automation agent (kaymen99/sales-outreach-automation-langgraph) deployed through ABB as a LangGraph workflow. The agent takes one lead brief (name/email/company context as text"
+        }
+      ],
+      "note": ""
+    },
+    "jobsmith": {
+      "commit": "f5427c156d4d0289463f048a2beedb87c80e802b",
+      "domain": "Career Assistance",
+      "reason": "Job-search and application assistance for Taiwan; ABB runs cover-letter generation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/kevin333353/jobsmith/blob/f5427c156d4d0289463f048a2beedb87c80e802b/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "8c7c65d61758495dae9bef54465c2aa309182576c2fac0e92338687209bcf8ab"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/52-jobsmith/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Jobsmith (kevin333353/jobsmith) is a Taiwan-focused LangGraph job-application copilot. In this ABB deployment the agent takes one job description plus a candidate profile"
+        }
+      ],
+      "note": ""
+    },
+    "texel-studio": {
+      "commit": "cde7bdd5fe47c9bfe2106248dc4d8a8a0cfb6873",
+      "domain": "Creative & Media",
+      "reason": "Pixel-art and sprite creation using canvas drawing and revision tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/EYamanS/texel-studio/blob/cde7bdd5fe47c9bfe2106248dc4d8a8a0cfb6873/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "fd1ad55350009b095d96335d88b48d21620feed136abf75316fe14f4b43965c6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/53-texel-studio/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Texel Studio (EYamanS/texel-studio) pixel art agent deployed through ABB as a LangGraph ReAct agent. Given a text description of a sprite, it"
+        }
+      ],
+      "note": ""
+    },
+    "csgotrading": {
+      "commit": "d3f67c1c2379fbf04442011664dff3e844278ea6",
+      "domain": "Finance & Trading",
+      "reason": "Market analysis and trading decisions for Counter-Strike virtual items, rather than game-playing.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/IatomicreactorI/CSGOTrading/blob/d3f67c1c2379fbf04442011664dff3e844278ea6/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "98ad98a2c8ee2d18669935c5b86b23258cd9be46f097a8ee5f2cb6e3c8a03d03"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/54-csgotrading/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "CSGOTrading (IatomicreactorI/CSGOTrading) is a LangGraph trading desk for Counter-Strike 2 market items. One text input selects one trading day and optionally a"
+        }
+      ],
+      "note": ""
+    },
+    "zeroapp": {
+      "commit": "e081199fe9e9005715891860f43188e214acf163",
+      "domain": "Software Development",
+      "reason": "Application-generation pipeline for mobile apps, including HarmonyOS project scaffolding.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/shodan1q/zeroapp/blob/e081199fe9e9005715891860f43188e214acf163/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "8a6dc16cd98cec6c551fa90b0a2366371bbbeeea8fcf6714bb834d179d7e927c"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/55-zeroapp/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "ZeroDev app factory (shodan1q/zeroapp) deployed through ABB as a LangGraph supervisor workflow. The agent takes one product brief (app name, description and"
+        }
+      ],
+      "note": ""
+    },
+    "langchain-code": {
+      "commit": "d75d039ce2b4d1d2bff01d7f8858068209564ecc",
+      "domain": "Software Development",
+      "reason": "Coding agent for implementing features, bug fixes, and refactoring in project workspaces.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/zamalali/langchain-code/blob/d75d039ce2b4d1d2bff01d7f8858068209564ecc/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "7092106e65cddced3e54d8ae12b8c6858de6830053597de8bbbb15bf3fc59936"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/63-langchain-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LangCode (zamalali/langchain-code) coding agent deployed through ABB as its LangGraph deep agent in autopilot mode, the behavior of `langcode chat --mode deep"
+        }
+      ],
+      "note": ""
+    },
+    "langgraph-chatchat": {
+      "commit": "0ae53b7ef7f23b04fe37062a8ad031b39e8f11a3",
+      "domain": "Research & Knowledge",
+      "reason": "Knowledge-base question answering and RAG; ABB exposes its base chat graph without retrieval tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/chatchat-space/LangGraph-Chatchat/blob/0ae53b7ef7f23b04fe37062a8ad031b39e8f11a3/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "487f325b1e413eb1893f52b9aeafaa4e31bff6fc027c516e6f4e030f8ee34677"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/64-langgraph-chatchat/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LangGraph-Chatchat base chat agent (chatchat-space/LangGraph-Chatchat) deployed through ABB as the native base_agent graph. The agent takes a plain-text user message, optionally uses"
+        }
+      ],
+      "note": ""
+    },
+    "codewhale": {
+      "commit": "fead51eeea0fb6038ea3e30923751b1a1c765b25",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent that reads repositories, edits files, runs commands, and checks changes.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/codewhale-hq/Codewhale/blob/fead51eeea0fb6038ea3e30923751b1a1c765b25/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "004b3d4220634520b6897969f26e21670019cfce05fb9d0612e10e03ae3c5f7b"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/65-codewhale/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Codewhale (codewhale-hq/Codewhale) is a Rust terminal coding agent exposed over the Agent Client Protocol. One text input is one task: the agent"
+        }
+      ],
+      "note": ""
+    },
+    "openchatbi": {
+      "commit": "97818e4fdcea85535cdfa53d8ae4054878342af1",
+      "domain": "Data & Analytics",
+      "reason": "Business-intelligence assistant using text-to-SQL, sales-order data, analysis, and report generation.",
+      "sources": [
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/66-openchatbi/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenChatBI (zhongyu09/openchatbi): a LangGraph chat-based business-intelligence agent deployed with its own example configuration, a sqlite sales order tracking database (Customers, Products, Orders,"
+        }
+      ],
+      "note": "Public repository returned 404. Classification is supported by the local ABB profile describing text-to-SQL and sales-order analytics."
+    },
+    "mini-agent": {
+      "commit": "d76a4f6389688cabda39c224a6cdfa274215d47c",
+      "domain": "General-purpose Assistance",
+      "reason": "Minimal general-purpose tool-using agent with filesystem, shell, memory, and skills.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/MiniMax-AI/Mini-Agent/blob/d76a4f6389688cabda39c224a6cdfa274215d47c/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "f6f84c639c266c4b6a5ebc2bf8b6533f05679052335cb1d8c56ede17597a7763"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/67-mini-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Mini-Agent (MiniMax-AI/Mini-Agent) single-agent runtime exposed through its own ACP stdio server (mini_agent.acp), using the selected OpenAI-compatible Chat Completions model endpoint as its"
+        }
+      ],
+      "note": ""
+    },
+    "mistral-vibe": {
+      "commit": "63d0e8f17e2c1f0d9e1d6f4399ab2dc10fbdf477",
+      "domain": "Software Development",
+      "reason": "Mistral's command-line coding assistant for exploring and modifying codebases.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/mistralai/mistral-vibe/blob/63d0e8f17e2c1f0d9e1d6f4399ab2dc10fbdf477/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "8038409071e0d1c2fb48f4cbac4bf0825d651a692a424e3f08958a66ca4371a6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/68-mistral-vibe/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Mistral Vibe 3.0.2 exposed through its native ACP stdio server (vibe-acp) on its Unified Harness runtime, using the selected OpenAI-compatible Chat Completions"
+        }
+      ],
+      "note": ""
+    },
+    "mini-opencode": {
+      "commit": "d09f3e96eca1ac3fb40f7e9ab3740ef67daedc86",
+      "domain": "Software Development",
+      "reason": "Experimental DeepAgents-based coding assistant for planning and iterative code generation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/amszuidas/mini-opencode/blob/d09f3e96eca1ac3fb40f7e9ab3740ef67daedc86/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "37aa1ec3ef6ca96b0d09f1e4021a157271b06db68899effccdc216c4c370aca5"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/69-mini-opencode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "mini-opencode is a conversational coding Agent using its native DeepAgents/LangGraph factory. It reads, writes, edits and searches workspace files, runs shell commands,"
+        }
+      ],
+      "note": ""
+    },
+    "reasonix": {
+      "commit": "2ddc6f646e71eafd415c7168fb7c800e43ee0ccf",
+      "domain": "Software Development",
+      "reason": "Coding agent for code changes, command execution, testing, and repository workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/esengine/DeepSeek-Reasonix/blob/2ddc6f646e71eafd415c7168fb7c800e43ee0ccf/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "96402630dda8583442e0b415f75af0bc69bf42fc8bcf178bd38ab1786fa41117"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/70-reasonix/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Reasonix terminal coding agent exposed over its native ACP stdio server (`reasonix acp`), using an explicitly configured OpenAI-compatible the selected OpenAI-compatible model"
+        }
+      ],
+      "note": ""
+    },
+    "waveloom": {
+      "commit": "daccab5d4816803a82eb6eabfe44a68c75bc1f58",
+      "domain": "Software Development",
+      "reason": "DeepSeek-oriented terminal coding assistant with cache-aware model use.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "0a477dac41b18bab3a22707ba096a16e61d9754ed94fa1f9d8fe0721cfd56daa"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/71-waveloom/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Waveloom (Menfre01/waveloom), a DeepSeek-native terminal coding agent, exposed through its native ACP stdio server (`waveloom acp`) with the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "sigit": {
+      "commit": "e0ec5cf381ae09df66ad0cc33aa1c16afd97a23f",
+      "domain": "Software Development",
+      "reason": "Local-first coding agent with repository knowledge and development automation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/getsigit/sigit/blob/e0ec5cf381ae09df66ad0cc33aa1c16afd97a23f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "d1723ea93752c28da19e3b37b77ff6c50c8e0694ff88d7a11f8fd92ec739997b"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/72-sigit/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "siGit Code exposed through its native ACP stdio server (sigit --acp), using the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "kit": {
+      "commit": "c50c75cbdd467614092116b049d5fcf43d6dc6b5",
+      "domain": "Software Development",
+      "reason": "Extensible coding CLI with filesystem, shell, search, and subagent tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/mark3labs/kit/blob/c50c75cbdd467614092116b049d5fcf43d6dc6b5/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "b3d9a6f372491e7183a8c01babe818c325af841eb0a4233870dedf50dfecdbfd"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/73-kit/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Kit (mark3labs/kit), an AI coding agent CLI, exposed through its native ACP stdio server (`kit acp`) with the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "gptme": {
+      "commit": "0c131bb0d642fcdd1edb2c6fec02eccfe7f71a07",
+      "domain": "General-purpose Assistance",
+      "reason": "Personal terminal assistant for broad knowledge work, including but not limited to coding.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/gptme/gptme/blob/0c131bb0d642fcdd1edb2c6fec02eccfe7f71a07/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "672aa781bfa293306d6fa78089478f8f6865ad07484844ef8855eea8e2e9ec20"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/74-gptme/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "gptme terminal coding assistant exposed through its native ACP stdio server (gptme-acp), using the selected OpenAI-compatible Chat Completions model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "deepresearch-ai": {
+      "commit": "a7a9cc380933c67492f2457bbaf28091dd25a968",
+      "domain": "Research & Knowledge",
+      "reason": "Academic literature research, evidence-grounded writing, and citation auditing.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Aryan-Pardeshi/DeepResearch_AI/blob/a7a9cc380933c67492f2457bbaf28091dd25a968/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "ec57dc72271aba7b3ada4fac351f4e6ba7f7dcaeff4308e72d2b1c27405bab50"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/75-deepresearch-ai/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "CiteProof Research DeepSearch mode (Aryan-Pardeshi/DeepResearch_AI) deployed through ABB as its LangGraph research graph. Given a research question, a query validator rejects greetings,"
+        }
+      ],
+      "note": ""
+    },
+    "ra-aid": {
+      "commit": "e71bb83dcfdf8796d41c746ad99bf4838d1d5914",
+      "domain": "Software Development",
+      "reason": "Autonomous software-development agent for research, planning, and implementation tasks.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/ai-christianson/RA.Aid/blob/e71bb83dcfdf8796d41c746ad99bf4838d1d5914/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "da662dcedbf90a084e20b03dc24d5d3fce36240839c0aaca765c896bf2da71a6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/76-ra-aid/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "RA.Aid (ai-christianson/RA.Aid) autonomous software-development agent, deployed through ABB as `ra-aid -m \"<task>\" --cowboy-mode` with the DeepSeek provider. For each task it runs"
+        }
+      ],
+      "note": ""
+    },
+    "maki": {
+      "commit": "621ef0c4788e5c553691280444974cc9b9523d5f",
+      "domain": "Software Development",
+      "reason": "Terminal coding assistant with context-efficient code inspection and editing.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/tontinton/maki/blob/621ef0c4788e5c553691280444974cc9b9523d5f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "d1e300312f5d464350947e6798b8162262f9775e1aa6ba64b50806f54b3c7770"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/77-maki/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "maki (tontinton/maki), an AI coding agent for the terminal, exposed through its native ACP stdio server (`maki acp`) with the selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "dirac": {
+      "commit": "f1847e91e702fa5c058cfb31d339dc5346481b9c",
+      "domain": "Software Development",
+      "reason": "Coding agent for long-running software engineering and precise codebase changes.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/dirac-run/dirac/blob/f1847e91e702fa5c058cfb31d339dc5346481b9c/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "40b6f25a5c46d5568c1fd4723cd73b47578eaf9baa27fe6069d0022616a85358"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/78-dirac/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Dirac's native ACP coding assistant with file editing, code search and analysis, command execution, task planning and delegation, using ABB's selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "code-assistant": {
+      "commit": "b942737b7360de9608f2f84f28bf9a463d7a5bc1",
+      "domain": "Software Development",
+      "reason": "Autonomous codebase assistant for reading, searching, editing, and command execution.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/stippi/code-assistant/blob/b942737b7360de9608f2f84f28bf9a463d7a5bc1/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "23a7ae00bc30ee69e312a3439d1392c178720ad1b3216929a7b58c36d776a9f8"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/79-code-assistant/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "code-assistant (stippi/code-assistant), a Rust coding agent, exposed through its ACP mode (`code-assistant acp`) with the selected OpenAI-compatible model endpoint. Its built-in tools"
+        }
+      ],
+      "note": ""
+    },
+    "autohand": {
+      "commit": "55f07f8112d3d53739c4c45d7c19d73772e645d7",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent for planning, editing, testing, and development automation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/autohandai/code-cli/blob/55f07f8112d3d53739c4c45d7c19d73772e645d7/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "329a424b85ef4d99cf479b0aa146c67690d505e19698f7eb66af5ac2c1fd2405"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/80-autohand/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Autohand's native ACP coding assistant with file inspection and editing, search, command execution, planning and delegation, using ABB's selected OpenAI-compatible model."
+        }
+      ],
+      "note": ""
+    },
+    "aster": {
+      "commit": "aa437a6ff1d76660581b6166c20d3ef325557375",
+      "domain": "Software Development",
+      "reason": "Self-hosted coding assistant for questions, edits, command execution, and change review.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Zfinix/aster/blob/aa437a6ff1d76660581b6166c20d3ef325557375/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "4bf309e990be15f77091e7fdcd7f0ec8bb25c2b588a0d8014b1ee3678ce31375"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/81-aster/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Aster (Zfinix/aster), a self-hostable coding agent harness, exposed through its native ACP stdio server (`aster acp`) with the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "coddy": {
+      "commit": "82e994b5ca32904412c561002dfda28650632af0",
+      "domain": "General-purpose Assistance",
+      "reason": "Upstream describes a general-purpose agent shared across terminal, browser, editor, and messaging surfaces.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/coddy-project/coddy-agent/blob/82e994b5ca32904412c561002dfda28650632af0/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "111bb7c31b7dfee157437627871697b2fd8bc90d691a8452e93948fc81e5c684"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/82-coddy/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Coddy's native ACP coding assistant with its built-in file, shell, planning, configuration, session, documentation and delegation tools, using ABB's selected OpenAI-compatible model."
+        }
+      ],
+      "note": ""
+    },
+    "agentao": {
+      "commit": "51d8e94214db55cf2620c61c5b7bc08fe5a224bd",
+      "domain": "General-purpose Assistance",
+      "reason": "Governed local agent runtime deployed as a general task and coding assistant.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/jin-bo/agentao/blob/51d8e94214db55cf2620c61c5b7bc08fe5a224bd/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "70662752ee935e88057c28b5f67c67fb542da48c427cef4f3a60d60dd6229440"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/83-agentao/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Agentao, a governed local-first Python agent runtime, exposed through its native ACP stdio server with the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "lambchat": {
+      "commit": "fd72d632ed2021c992b84485c5b598f0ce3be9fd",
+      "domain": "General-purpose Assistance",
+      "reason": "Personal cloud assistant; the registered QuickAgent surface is a single-turn chat assistant.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Yanyutin753/LambChat/blob/fd72d632ed2021c992b84485c5b598f0ce3be9fd/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "e06bb63a6befe59121e60c09f14209f6feff1716221fe290b10dff4bfcc6cce0"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/84-lambchat/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LambChat QuickAgent (Yanyutin753/LambChat) deployed through ABB as the native quick graph. The agent takes a plain-text user message and returns a single"
+        }
+      ],
+      "note": ""
+    },
+    "zeph": {
+      "commit": "6673e1f08d6b3bfab91f83f18663c4f7959af382",
+      "domain": "General-purpose Assistance",
+      "reason": "Memory-oriented assistant for persistent work across code, documents, and team conversations.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/bug-ops/zeph/blob/6673e1f08d6b3bfab91f83f18663c4f7959af382/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "fd83043cb09f4cac49a211f8f0ee257caa72bb88e103d4dfef58c2566baba644"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/85-zeph/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Zeph (bug-ops/zeph), a Rust AI agent with memory, skills and sub-agents, exposed through its ACP stdio server (`zeph --acp`) with the selected"
+        }
+      ],
+      "note": ""
+    },
+    "fast-agent": {
+      "commit": "5c4453b8e13d1bfc808db6236516b283c4f2c227",
+      "domain": "Software Development",
+      "reason": "The registered ACP surface is a coding assistant within a broader agent and workflow toolkit.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/evalstate/fast-agent/blob/5c4453b8e13d1bfc808db6236516b283c4f2c227/README.md",
+          "path": "README.md",
+          "basis": "Local source checkout",
+          "sha256": "6a03b9a97023e86f9b8c3874ce5567ead283ce4a009db3959b96be160595657c"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/86-fast-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "fast-agent's native ACP coding assistant with workspace file access and shell execution, using ABB's selected OpenAI-compatible model."
+        }
+      ],
+      "note": ""
+    },
+    "pi-go": {
+      "commit": "1c5d97388168763b30dc802aa68532d4cedd0d5d",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent with development tools, language-server integration, and subagents.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/dimetron/pi-go/blob/1c5d97388168763b30dc802aa68532d4cedd0d5d/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "9ef3ccd5ae92df6936b11b5a2654bbc053a584800e37dfa071e7b79e1c34ec24"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/87-pi-go/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "pi-go (dimetron/pi-go), a Go coding agent built on Google ADK Go, exposed through its native ACP stdio server (`pi acp-server`) with the"
+        }
+      ],
+      "note": ""
+    },
+    "blade-code": {
+      "commit": "266fd27a2c9bfb2bf83b1e308cceef60cdf220f6",
+      "domain": "Software Development",
+      "reason": "Coding assistant with project memory, code search, editing, Git, and task delegation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/echoVic/blade-code/blob/266fd27a2c9bfb2bf83b1e308cceef60cdf220f6/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "906d1cee147cbe5759d132294b8c3e0986f501960a60f448f78a507f43cf61f1"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/88-blade-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Blade Code's native ACP coding assistant, using its file, search, shell, planning and subagent tools with ABB's selected OpenAI-compatible model."
+        }
+      ],
+      "note": ""
+    },
+    "llxprt-code": {
+      "commit": "5400f65a6c7eef52844697c8f8c85390df29eea1",
+      "domain": "Software Development",
+      "reason": "Multi-provider coding CLI for repository edits, application generation, and development automation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/vybestack/llxprt-code/blob/5400f65a6c7eef52844697c8f8c85390df29eea1/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "7101ae32cd35355c1a00efecc5f8530651598710d836544eced39901c54813ee"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/89-llxprt-code/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "LLxprt Code 0.11.0 (a multi-provider fork of Gemini CLI) exposed through its native ACP stdio server (llxprt --experimental-acp), using the selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "kimchi": {
+      "commit": "65dfefb12a177e60942dc8fde87eeabe02d006af",
+      "domain": "Software Development",
+      "reason": "Pi-based coding CLI for terminal development assistance.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/getkimchi/kimchi/blob/65dfefb12a177e60942dc8fde87eeabe02d006af/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "39a83038defc8e398747765f68f69b5121fd35a8fc67a807cccce56809fab697"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/90-kimchi/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "kimchi is a terminal coding agent built on the Pi coding-agent SDK. This deployment runs its native Agent Client Protocol server over"
+        }
+      ],
+      "note": ""
+    },
+    "pydantic-deepagents": {
+      "commit": "650b592b6accd7dc994226abbaa0cf717527e457",
+      "domain": "Software Development",
+      "reason": "The registered assistant uses the coding surface of the Pydantic Deep Agents framework.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/vstorm-co/pydantic-deepagents/blob/650b592b6accd7dc994226abbaa0cf717527e457/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "a225dec40377c152e7cc8cfed802623c089d0f4e850658f5b51dae26b5000386"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/91-pydantic-deepagents/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Pydantic Deep Agents using the unchanged native create_deep_agent factory and local workspace, exposed through an ABB-owned ACP transport over its public run"
+        }
+      ],
+      "note": ""
+    },
+    "peri": {
+      "commit": "e598d17872bce487355e1bfa70f077743984760f",
+      "domain": "Software Development",
+      "reason": "Native coding agent for planning, code changes, review, and verification.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/KonghaYao/peri/blob/e598d17872bce487355e1bfa70f077743984760f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "dd282826be7e44b7c5f726f7121caa08392d16bec891d480a5a177ee0999a1ba"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/92-peri/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Peri (KonghaYao/peri), a Rust coding agent with Claude Code compatible tools, exposed through its native ACP stdio server (`peri acp`) with the"
+        }
+      ],
+      "note": ""
+    },
+    "agentty": {
+      "commit": "b8c8b7192c3d003a1c733693f2c8447019851374",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent with code-aware retrieval and repository tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/agentty-org/agentty/blob/b8c8b7192c3d003a1c733693f2c8447019851374/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "33a8b56277bcb281d972bcffeb2f42198d750502b3e66abf8d7b43fa3b329f2a"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/93-agentty/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "agentty (agentty-org/agentty), a C++ terminal coding agent, exposed through its native ACP stdio server (`agentty acp`) with the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "fx": {
+      "commit": "1a070af32cdfaf8cd0da6de3dc7f053302828b17",
+      "domain": "Software Development",
+      "reason": "Small native coding CLI for repository work in terminals, CI, or agent sandboxes.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/vercel-labs/fx/blob/1a070af32cdfaf8cd0da6de3dc7f053302828b17/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "079776a287f04ee0594431e8c28aa6a860297fb4ed5fa8fd28e24652f0833407"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/94-fx/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "fx (vercel-labs/fx), a native Zig terminal coding agent, exposed through its built-in ACP stdio server (`fx acp`) with the selected OpenAI-compatible model"
+        }
+      ],
+      "note": ""
+    },
+    "weaver": {
+      "commit": "745693afbf1e8a5b68dad5f616b2681cb2042ee9",
+      "domain": "Research & Knowledge",
+      "reason": "The registered LangGraph research workflow combines retrieval, investigation, and cited answers.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/skygazer42/Weaver/blob/745693afbf1e8a5b68dad5f616b2681cb2042ee9/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "1ebdad5cc3bdcd8d8f9ddfcd3c59f83f5dc341ce9bfd86fefa6c2840b15b2eec"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/95-weaver/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Weaver is a LangGraph-based research assistant platform. The certification target is its compiled research graph (agent/core/graph.py: create_research_graph), invoked once per Case step"
+        }
+      ],
+      "note": ""
+    },
+    "grapharc": {
+      "commit": "e27b9e8b55afd137820938441099659ae24c1d29",
+      "domain": "AI Research & Development",
+      "reason": "Agent-graph engineering, admission policies, budgets, and execution traces; ABB exercises its governed coding loop.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/CodeGraphContext/GraphARC/blob/e27b9e8b55afd137820938441099659ae24c1d29/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "6af0b97864076e6ffa90732351b266c6b9666ab8a7285cbd7e4a5179d65138e9"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/96-grapharc/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "GraphARC exposed through a native LangGraph Python in-process binding, driven by a DeepSeek OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "alpacatradingagent": {
+      "commit": "93a81064e3190c25daa733e5c70a132cfb1b6f5f",
+      "domain": "Finance & Trading",
+      "reason": "Stock and cryptocurrency analysis and trading workflows designed around Alpaca integration.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/huygiatrng/AlpacaTradingAgent/blob/93a81064e3190c25daa733e5c70a132cfb1b6f5f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "8f15db910f7a407456e57e50bf80d82e0c43ec03a32ebaebb7778a192cb7c8b3"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/97-alpacatradingagent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "AlpacaTradingAgent is a multi-agent stock-analysis system built on LangGraph (a TradingAgents-style workflow). Given a ticker symbol (and an optional trade date), a"
+        }
+      ],
+      "note": ""
+    },
+    "vtcode": {
+      "commit": "ea28d48590cf98958885b3c420c5d22d8af82a68",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent for planning, building, reviewing, and verifying repository changes.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/vinhnx/VTCode/blob/ea28d48590cf98958885b3c420c5d22d8af82a68/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "2f09dda711b7d3de0f67cedfc30fa06d91f3ec1b75222f6aaca8dec2f32464d1"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/98-vtcode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "VT Code 0.180.5, a Rust terminal coding agent, exposed through its native ACP stdio server (vtcode acp) in its default Build primary-agent"
+        }
+      ],
+      "note": ""
+    },
+    "deepagentforce": {
+      "commit": "0acbbb25044141582f0375f0047940e4a81f8c74",
+      "domain": "Business Automation",
+      "reason": "Enterprise multi-user agent platform for knowledge assistance and business tool workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/TW-NLP/DeepAgentForce/blob/0acbbb25044141582f0375f0047940e4a81f8c74/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "2fdeeb2b3ac53914aa72fae9ae6f99d306730b1b41338d1097b0b45c813b89eb"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/99-deepagentforce/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "DeepAgentForce (TW-NLP/DeepAgentForce): an enterprise conversational agent platform built on LangGraph and deepagents with integrated skill and tool registries (web search, document processing,"
+        }
+      ],
+      "note": ""
+    },
+    "langrepl": {
+      "commit": "b0d3780878441ee33d10062b040e5415c8b5da59",
+      "domain": "General-purpose Assistance",
+      "reason": "The registered general agent supports research, writing, analysis, planning, and project memory.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/midodimori/langrepl/blob/b0d3780878441ee33d10062b040e5415c8b5da59/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "4b5d36554ed738ec964acfac20d50cd07cc378424654bf0132f3f42442b9d5e6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/100-langrepl/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "langrepl runs its native general-purpose LangGraph agent for research, writing, analysis and planning. It can read local files, search local text, fetch"
+        }
+      ],
+      "note": ""
+    },
+    "openharness": {
+      "commit": "2a7b7b8e1c0b132241d0eebb906dc86863ca19d8",
+      "domain": "Software Development",
+      "reason": "Terminal coding assistant with local or cloud models and repository execution tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/zhijiewong/openharness/blob/2a7b7b8e1c0b132241d0eebb906dc86863ca19d8/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "518d1db0d182d604c816c2718b0171b64744eae9d0e8d65fdf16f50c4be582d4"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/101-openharness/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenHarness is a terminal coding assistant exposed through its native ACP stdio server. It reads, writes, edits and searches workspace files, runs"
+        }
+      ],
+      "note": ""
+    },
+    "ggcode": {
+      "commit": "6b51d84e810424b29dbb3f9b1512c33596995cd8",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent for repository understanding, changes, and command execution.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/topcheer/ggcode/blob/6b51d84e810424b29dbb3f9b1512c33596995cd8/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "e14e4f21a0728dad38b60b3fb588d3a3672b7ff9b714296e712565009610e9fa"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/102-ggcode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "ggcode (topcheer/ggcode), a terminal AI coding agent, exposed through its native ACP stdio server (`ggcode acp`) with the selected OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "docsentinel": {
+      "commit": "15ebe0ce0a34cce3622540cf7f619819e444f6b9",
+      "domain": "Security & Compliance",
+      "reason": "Security architecture and compliance assessment across the secure software-development lifecycle.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/arthurpanhku/DocSentinel/blob/15ebe0ce0a34cce3622540cf7f619819e444f6b9/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "82fe6059c425c45d133da327c435b395151815d2d91aa7ab6d5f3b07b0e3da0a"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/103-docsentinel/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "DocSentinel (arthurpanhku/DocSentinel) deployed through ABB as an in-process LangGraph security architecture and compliance assessment agent. The agent accepts plain-text software architecture documents"
+        }
+      ],
+      "note": ""
+    },
+    "stakpak": {
+      "commit": "d3eba6f502a79b993b826ef3ab4065eec9e38dfa",
+      "domain": "DevOps & Systems",
+      "reason": "DevOps agent for infrastructure tasks, application operations, and ongoing system maintenance.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/stakpak/agent/blob/d3eba6f502a79b993b826ef3ab4065eec9e38dfa/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "2389ea9f7d95625e1255c693af3fe479f9607e26247e30aa7c8b7a8e5aca0359"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/104-stakpak/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Stakpak (stakpak/agent), a Rust DevOps and coding agent, exposed through its native ACP stdio server (`stakpak acp`) in local mode (no Stakpak"
+        }
+      ],
+      "note": ""
+    },
+    "tradingagents-astock": {
+      "commit": "e3981af1e4c94656cdc663f1466d54fd49253dd5",
+      "domain": "Finance & Trading",
+      "reason": "A-share equity research and trading analysis adapted to Chinese market data and rules.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/simonlin1212/TradingAgents-astock/blob/e3981af1e4c94656cdc663f1466d54fd49253dd5/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "f18f403d0c833bd5592ddd39e144cd0094272ea26426b20a6b870af982e89ba1"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/105-tradingagents-astock/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "TradingAgents-astock is an A-share specialization of TradingAgents. One text input — a mainland China equity code and an analysis date, e.g. '600519"
+        }
+      ],
+      "note": ""
+    },
+    "orca-agent": {
+      "commit": "bbe6ef3932be43adb34e62775d3595e4f0e55e1d",
+      "domain": "Software Development",
+      "reason": "Terminal coding assistant that edits code, runs commands, and verifies results.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/echoVic/orca-agent/blob/bbe6ef3932be43adb34e62775d3595e4f0e55e1d/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "bf6550c752ce1e0c53b53e9adbd0fa4b4b7bec6db4985097aedf12f83accae31"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/106-orca-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Orca (echoVic/orca-agent), a DeepSeek-native coding agent, exposed through its native ACP stdio mode (`orca --mode=acp`) with the selected OpenAI-compatible model endpoint. Its"
+        }
+      ],
+      "note": ""
+    },
+    "chatcli": {
+      "commit": "45db39a5174bde637a203408462155b2a9047829",
+      "domain": "Software Development",
+      "reason": "The registered ACP deployment is a coding assistant; the upstream product also supports general chat and automation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/diillson/chatcli/blob/45db39a5174bde637a203408462155b2a9047829/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "ed24fbc78b565e96c52ee94a64001bd00c824bf758ec755d2fc790aa1b02d364"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/107-chatcli/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "ChatCLI terminal assistant using its native ACP stdio server and native OpenAI-compatible provider."
+        }
+      ],
+      "note": ""
+    },
+    "easy-agent": {
+      "commit": "aec616a97114ce9683e4fbfcff3abbc55155fe50",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent for repository edits, tests, and controlled command execution.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/ConardLi/easy-agent/blob/aec616a97114ce9683e4fbfcff3abbc55155fe50/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "e088f162cb1d4183313b59877f8f8d046bdaeb4fe4d8e23e9a3336bcd936891e"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/108-easy-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Easy Agent terminal coding assistant using its native ACP stdio server and native model profiles."
+        }
+      ],
+      "note": ""
+    },
+    "opensoul": {
+      "commit": "5478591f9f031e6537193cbc828150193c0f478c",
+      "domain": "General-purpose Assistance",
+      "reason": "Self-hosted assistant maintaining tasks across chat applications, browser surfaces, and scheduled work.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/NJX-njx/opensoul/blob/5478591f9f031e6537193cbc828150193c0f478c/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "93734b3b3d7c116979e17f2da6cd662dba84de724ac535bc7fa64c3acd0c7b36"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/109-opensoul/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenSoul exposed through its native ACP stdio bridge (opensoul acp), which forwards prompts to a local OpenSoul Gateway using the selected OpenAI-compatible"
+        }
+      ],
+      "note": ""
+    },
+    "pi": {
+      "commit": "43ca4c0b0c9479356f424bd165721ce98eecf7bb",
+      "domain": "Software Development",
+      "reason": "Rust implementation of a terminal coding agent with repository and execution tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Dicklesworthstone/pi_agent_rust/blob/43ca4c0b0c9479356f424bd165721ce98eecf7bb/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "7f0cc65ac48cbf6ea654ac69a79ff79f3bab44d61078f209be22481b9899e3a6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/110-pi/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Pi coding agent exposed through its native ACP server, using a custom OpenAI-compatible provider written by the launcher and a signed upstream"
+        }
+      ],
+      "note": ""
+    },
+    "octop": {
+      "commit": "dd9dce470844c25d59effb50615bb3c667ea25cd",
+      "domain": "General-purpose Assistance",
+      "reason": "Self-hosted multi-user, multi-agent assistant for individual, family, and team use.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/TencentCloud/Octop/blob/dd9dce470844c25d59effb50615bb3c667ea25cd/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "3b7dfed94413522454de48b300da849b123614c41d92b1c284658e8fa745d8bb"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/111-octop/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Octop exposed through its native inbound ACP server, using an explicitly configured OpenAI-compatible model endpoint and a single local agent."
+        }
+      ],
+      "note": ""
+    },
+    "alphastream": {
+      "commit": "abc3398c49ac2ad0ff3be34ca787b03c67004ead",
+      "domain": "Finance & Trading",
+      "reason": "Multi-agent stock-market analysis covering technical, fundamental, capital-flow, and sentiment signals.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/lc2panda/alphastream/blob/abc3398c49ac2ad0ff3be34ca787b03c67004ead/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "fdc6dec50079466d679e0a3da04ab7ed763b5759a7fc151fa1b50b1dd1f62d12"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/112-alphastream/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "AlphaStream is a multi-agent stock-analysis platform built on LangGraph. Given a stock code and market type, a dynamic analysis graph runs a"
+        }
+      ],
+      "note": ""
+    },
+    "sudocode": {
+      "commit": "e820666797007931dcd4e57605025f0c51586092",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent for file editing, tool execution, and resumable development sessions.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/sudoprivacy/sudocode/blob/e820666797007931dcd4e57605025f0c51586092/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "2cd1e6227521f8e1b96e1361a9f7facea8900344aa3df7417731d672a0955297"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/113-sudocode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Sudo Code (scode) v0.2.36 is a Rust terminal coding agent driven here through its native ACP stdio server. It takes plain-text software"
+        }
+      ],
+      "note": ""
+    },
+    "opencrabs": {
+      "commit": "0dfe3b7fd03e62e4184edf4d5e98ee7e73f45402",
+      "domain": "General-purpose Assistance",
+      "reason": "Autonomous multi-channel assistant with extensible skills and general task tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/opencrabs/opencrabs/blob/0dfe3b7fd03e62e4184edf4d5e98ee7e73f45402/README.md",
+          "path": "README.md",
+          "basis": "Pinned source archive",
+          "sha256": "69b2ea427581dba090bbec6427c8a6681165dde780753b65f816150d664dab18"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/114-opencrabs/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenCrabs (opencrabs/opencrabs), a Rust autonomous agent, exposed through its native ACP stdio server (`opencrabs acp`) with the selected OpenAI-compatible model as a"
+        }
+      ],
+      "note": ""
+    },
+    "moltis": {
+      "commit": "177f8f13f4e69cf2042eee1b2c5b115671861840",
+      "domain": "General-purpose Assistance",
+      "reason": "Persistent personal assistant server with memory, scheduling, voice, and chat integration.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/moltis-org/moltis/blob/177f8f13f4e69cf2042eee1b2c5b115671861840/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "3ccfc98e328d3cdea933e7ac0b53988ac097e7a232e10c59b30075e5a53d36b1"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/115-moltis/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Moltis 20261023.01 is a Rust personal AI assistant and gateway, driven here through its native headless ACP stdio server (`moltis acp`). It"
+        }
+      ],
+      "note": ""
+    },
+    "cuga-agent": {
+      "commit": "b219b48184c1544481e2568f2978ffb09fe8fbbb",
+      "domain": "Business Automation",
+      "reason": "Enterprise automation across business applications, APIs, and documents under execution policies.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/cuga-project/cuga-agent/blob/b219b48184c1544481e2568f2978ffb09fe8fbbb/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "bd4782c554fbf7433dee4ce43f72eec57dcf5e40099416f9e564f7e580508b0d"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/117-cuga-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "CUGA (cuga-project/cuga-agent, package version 0.4.2) is an open-source generalist enterprise agent that turns natural-language business requests into completed tasks. In this deployment"
+        }
+      ],
+      "note": ""
+    },
+    "qwenpaw": {
+      "commit": "27d22cd18d6e7fe610536ef1375cebf7aea89215",
+      "domain": "General-purpose Assistance",
+      "reason": "Personal assistant spanning local or cloud deployment, skills, memory, and messaging channels.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/agentscope-ai/QwenPaw/blob/27d22cd18d6e7fe610536ef1375cebf7aea89215/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "d287c698dc5c20419a94edfc033e8aa8aa57ab4165df8c8f56e08de917edf1ed"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/118-qwenpaw/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "QwenPaw (agentscope-ai/QwenPaw) is a personal AI assistant; this deployment profiles its assistant and coding surface inside a single project directory. Driven over"
+        }
+      ],
+      "note": ""
+    },
+    "zerostack": {
+      "commit": "797dca9c0c4ddb16e09e9707ca17634b13f878ea",
+      "domain": "Software Development",
+      "reason": "Minimal coding agent with standard repository tools, permissions, and sessions.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/gi-dellav/zerostack/blob/797dca9c0c4ddb16e09e9707ca17634b13f878ea/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "1f46ab17ef368d548605bd7d1a0a012427bb15e3077cf44219c9058c2045f85a"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/119-zerostack/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "zerostack is a minimal autonomous coding agent written in Rust (crate version 1.8.5, upstream revision 797dca9c0c4ddb16e09e9707ca17634b13f878ea). In this deployment it runs as"
+        }
+      ],
+      "note": ""
+    },
+    "bub": {
+      "commit": "a93f5b80cf4b1bb35a248f4108b463f7af44f08d",
+      "domain": "Software Development",
+      "reason": "ABB registers the Bub application's coding-assistant surface, rather than the reusable agent kernel alone.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/bubbuild/bub/blob/a93f5b80cf4b1bb35a248f4108b463f7af44f08d/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "63f18ee9d61d2a7c1ef9637c3a05e711271155152b19baeb68713ec492ef7601"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/120-bub/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Bub is a small open-source agent runtime, composable with plugins, used here as a general coding assistant. In this deployment it is"
+        }
+      ],
+      "note": ""
+    },
+    "nullclaw": {
+      "commit": "5f1cade05c19b6ecdfb9565ae3305e892e484da9",
+      "domain": "General-purpose Assistance",
+      "reason": "General autonomous assistant infrastructure with tools and multiple communication channels.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/nullclaw/nullclaw/blob/5f1cade05c19b6ecdfb9565ae3305e892e484da9/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "19b808d49916537352923698020af5d1760fadf70a8ae244b2cff955198623da"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/121-nullclaw/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "NullClaw is a single static Zig binary autonomous assistant. In this deployment it is exposed through its native Agent Client Protocol server,"
+        }
+      ],
+      "note": ""
+    },
+    "open-code-review": {
+      "commit": "375f64cd6f67a48a135da83cfcf59c52669a09cb",
+      "domain": "Software Development",
+      "reason": "Code-review agent analyzing Git diffs and producing line-specific review comments.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/alibaba/open-code-review/blob/375f64cd6f67a48a135da83cfcf59c52669a09cb/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "e90ddd2234de7d1b3608ed9107287cf94a9c574fb5d5d1c9e3133a83d4556bd6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/122-open-code-review/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "open-code-review (alibaba/open-code-review) is an AI code review CLI exposed through its native ACP stdio adapter (ocr-acp). It reviews Git changes in the"
+        }
+      ],
+      "note": ""
+    },
+    "giga-agent": {
+      "commit": "e02715ff2d1a29192f167d385647064a2ff5d2e5",
+      "domain": "General-purpose Assistance",
+      "reason": "Modular assistant for varied tasks including spreadsheets, content, business analysis, and web creation.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/ai-forever/giga_agent/blob/e02715ff2d1a29192f167d385647064a2ff5d2e5/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "86d645b45eeabe3c081944f6b71a93b04aa7845e50fc6d4d9834003db167a555"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/123-giga-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "GigaAgent is a general-purpose modular LangGraph assistant deployed through its native CLI runtime without the frontend or HTTP application. It receives one"
+        }
+      ],
+      "note": ""
+    },
+    "synergy": {
+      "commit": "d82f52e4d137831dc3dfdf5ac186c0cb9b5ab584",
+      "domain": "Software Development",
+      "reason": "The registered Forge agent handles coding tasks within the broader Synergy platform.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/SII-Holos/synergy/blob/d82f52e4d137831dc3dfdf5ac186c0cb9b5ab584/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "f2fe71f8a951a1378aaa8275b097f7ff1a7c48f051b0f3d290b9272f4177e0a6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/124-synergy/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Synergy's native Forge coding Agent exposed through its original ACP server, with workspace files, search, commands, planning and native delegation."
+        }
+      ],
+      "note": ""
+    },
+    "terminai": {
+      "commit": "4b816c7acc5a89afb692d512c046cdc61bf6186b",
+      "domain": "DevOps & Systems",
+      "reason": "Terminal system operator for governed machine and workflow changes; ABB restricts it to development-workspace tasks.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Prof-Harita/terminaI/blob/4b816c7acc5a89afb692d512c046cdc61bf6186b/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "1d1f502fdbcb5d247e88889971204f7b80b02d24f7ec83ed628963be2cbab2d6"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/125-terminai/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "TerminaI (Prof-Harita/terminaI) is an autonomous software engineering CLI agent that executes code editing, terminal commands, and automated test runs within a sandboxed"
+        }
+      ],
+      "note": ""
+    },
+    "microclaw": {
+      "commit": "45ad5e7a8c705080a94543c92319f81b7e0e884f",
+      "domain": "General-purpose Assistance",
+      "reason": "Self-hosted assistant platform for chat, scheduled automation, and local workspace tasks.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/microclaw/microclaw/blob/45ad5e7a8c705080a94543c92319f81b7e0e884f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "0bf6cc37ae68d6ee39b26482bffefa4ce10ed89df9d96d8997f28637b7b620b0"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/126-microclaw/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "MicroClaw assistant using its unmodified native ACP server and shared agent engine."
+        }
+      ],
+      "note": ""
+    },
+    "klaatcode": {
+      "commit": "b988be7cf6ffe7878e87ed3e720759e0f7247c33",
+      "domain": "Software Development",
+      "reason": "Terminal coding agent using routed models for software-development work.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/KlaatAI/klaatcode/blob/b988be7cf6ffe7878e87ed3e720759e0f7247c33/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "7f6e7f33bc11eae0e24b3acdde8354375ca66c44fad5d9266445ac5502adf254"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/127-klaatcode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Klaat Code's native ACP coding assistant, with workspace file, search, shell, planning and permission tools using a custom model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "icode": {
+      "commit": "2ced1be715e47be0e789c85af19fde6cda9bdb55",
+      "domain": "Software Development",
+      "reason": "The registered Code Agent handles repository maintenance, coding, and verification.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/openJiuwen-ai/iCode/blob/2ced1be715e47be0e789c85af19fde6cda9bdb55/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "8c2752e285d943b2b136d3f047fbe9ea80f1fa20f7f73ac5838d274546a7f8e8"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/128-icode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "iCode's native Code Agent through its ACP server, with workspace files, search, shell commands, task planning and built-in sub-agents."
+        }
+      ],
+      "note": ""
+    },
+    "octomind": {
+      "commit": "aa08782640ddc441e8a0ef0f1bf25bec85344a73",
+      "domain": "Software Development",
+      "reason": "CLI-first coding runtime; ABB selects its developer role with repository and shell tools.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Muvon/octomind/blob/aa08782640ddc441e8a0ef0f1bf25bec85344a73/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "2fe3f32bd7a4c45a4a68fa11887e857e21c7429b21c069d63caa3e9b0eae39cc"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/129-octomind/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Octomind 0.63.0 is a Rust coding agent, running the native developer:general role through its stdio ACP server. The preserved official tap supplies"
+        }
+      ],
+      "note": ""
+    },
+    "ownpilot": {
+      "commit": "568cf7eee2ec5fa82d66ffdb984e2202171bffce",
+      "domain": "General-purpose Assistance",
+      "reason": "Personal assistant for multi-tool workflows, browser automation, memory, and messaging.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/ownpilot/OwnPilot/blob/568cf7eee2ec5fa82d66ffdb984e2202171bffce/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "4f74ee004f0b9d77cb269f7f9630ec8345ea1da443dbbc1bc50ed7c3cb4806e5"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/130-ownpilot/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OwnPilot is a self-hosted personal assistant. This deployment invokes its native ACP server, which creates its original chat Agent and exposes text"
+        }
+      ],
+      "note": ""
+    },
+    "autodev": {
+      "commit": "47f9aab58f023dc777fbb5f3c71c539fa0a40a82",
+      "domain": "Software Development",
+      "reason": "Multi-agent software-development platform covering requirements, implementation, review, testing, and operations.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/phodal/auto-dev/blob/47f9aab58f023dc777fbb5f3c71c539fa0a40a82/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "18f26d542f78d5ba191c7e6706fac5900dad9720d76828e61a473289260ac6e2"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/131-autodev/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "AutoDev Xiuper coding assistant using its published Node.js CLI, compiled Kotlin core and native ACP server."
+        }
+      ],
+      "note": ""
+    },
+    "whip": {
+      "commit": "1c5da05987d2869687dfc95fc9128ad2ad68e0f0",
+      "domain": "Software Development",
+      "reason": "Coding agent for large tasks requiring persistent context and delegated development work.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/context-labs/whip/blob/1c5da05987d2869687dfc95fc9128ad2ad68e0f0/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "1fd1fb29b1821d2f7236eda7b1a41e200e8fea063fc0c6c7432080af6d2e207f"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/132-whip/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "WhipCode is a coding agent invoked through its native ACP stdio adapter. Its native daemon executes a recursive language-model loop using rlm_exec"
+        }
+      ],
+      "note": ""
+    },
+    "openbitfun": {
+      "commit": "db7d36544896c62bc53c48c8774bcb13d4aa5e49",
+      "domain": "Software Development",
+      "reason": "The registered ACP interface is a coding assistant within a broader customizable agent workspace.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/GCWing/OpenBitFun/blob/db7d36544896c62bc53c48c8774bcb13d4aa5e49/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "a285b480b70776235161dd2cb9dca510401b60137acb9500c857b97bc54948c4"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/133-openbitfun/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenBitFun coding assistant using its unmodified native ACP stdio server from the official Linux CLI release."
+        }
+      ],
+      "note": ""
+    },
+    "row-bot": {
+      "commit": "e026b84bfc9f7c65ba87ae8f608e3d3dbaf1327f",
+      "domain": "General-purpose Assistance",
+      "reason": "Local-first desktop assistant for files, code, designs, reports, and workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/siddsachar/row-bot/blob/e026b84bfc9f7c65ba87ae8f608e3d3dbaf1327f/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "1182d015dbe42b366898557535231a65a5132f9e1ea639c5e69b4e2f59b328dd"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/134-row-bot/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Row-Bot (siddsachar/row-bot) deployed through ABB as a headless LangGraph Case runner. The binding registers an OpenAI-compatible custom endpoint from interceptor-supplied OPENAI_* environment"
+        }
+      ],
+      "note": ""
+    },
+    "openclaudia": {
+      "commit": "fad337c447320ea0a3281bcbff378b30e7a1d3d0",
+      "domain": "General-purpose Assistance",
+      "reason": "The registered print frontend provides general text replies without the repository's broader tools or session features.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Corvidae-Coding-Projects/OpenClaudia/blob/fad337c447320ea0a3281bcbff378b30e7a1d3d0/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "14c6cc46e28337e67f212d88c202930379fbb7330c34b7c031227811786b7361"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/135-openclaudia/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "OpenClaudia is driven in ABB through its native one-shot print frontend (`openclaudia --print --target openai`). That path submits a single no-tools, no-persistence"
+        }
+      ],
+      "note": ""
+    },
+    "portable-hermes-agent": {
+      "commit": "26462e29b8f9c0d92a970b91bf7ab8da4ff727dc",
+      "domain": "General-purpose Assistance",
+      "reason": "Portable personal AI desktop assistant with tools, local models, media, and workflows.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/aivrar/portable-hermes-agent/blob/26462e29b8f9c0d92a970b91bf7ab8da4ff727dc/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "6b2537a1b8eb7852a8f7bb10ec74414d8a9f09a5a679192483c632f3dd6e1c11"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/136-portable-hermes-agent/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "aivrar's Portable Hermes Agent exposed through its native ACP stdio adapter (hermes acp), using an explicitly configured OpenAI-compatible model endpoint."
+        }
+      ],
+      "note": ""
+    },
+    "easycode": {
+      "commit": "3e7d8e89b5ca96c649240ebaa5d4c08f87afb7b6",
+      "domain": "Software Development",
+      "reason": "AI programming assistant for code generation, project understanding, debugging, and tool orchestration.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/OrionStarAI/EasyCode/blob/HEAD/README.md",
+          "path": "README.md",
+          "basis": "Current upstream README",
+          "sha256": "e35a76df0acc3e147c63a0effb6badaedb3904c7161c0c43f90512371174069c"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/137-easycode/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Easy Code 1.1.91 (easycode-ai, formerly DeepV Code; a fork of Gemini CLI) exposed through its native ACP stdio server (easycode --acp), using"
+        }
+      ],
+      "note": "The pinned README was unavailable. The current upstream README corroborates the registered coding profile; current features are not assumed available at the pinned revision."
+    },
+    "bitterbot": {
+      "commit": "733b741952b627b1ca34aa892a8d1b4a9333e7b6",
+      "domain": "General-purpose Assistance",
+      "reason": "Personal assistant with persistent memory, browser and code tools, skills, and chat integrations.",
+      "sources": [
+        {
+          "title": "Upstream README",
+          "url": "https://github.com/Bitterbot-AI/bitterbot-desktop/blob/733b741952b627b1ca34aa892a8d1b4a9333e7b6/README.md",
+          "path": "README.md",
+          "basis": "Pinned upstream README",
+          "sha256": "8998d20b20f3dbee0bd9398fbe8def011d785bbadb339d784d035134a4158d95"
+        },
+        {
+          "title": "ABB agent profile",
+          "path": "resources/agents/138-bitterbot/requirement.md",
+          "url": null,
+          "basis": "Local integration profile",
+          "excerpt": "Bitterbot personal assistant through its original ACP bridge and a private per-Case native Gateway with the shared OpenAI-compatible model."
+        }
+      ],
+      "note": ""
+    }
+  }
+}

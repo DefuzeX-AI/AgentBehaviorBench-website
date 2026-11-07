@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #800d20;
+  --color-primary-hover: #650a19;
+  --color-primary-foreground: #ffffff;
+  --color-background: #faf7f2;
+  --color-foreground: #171313;
+  --color-muted: #6b6260;
+  --color-border: #d8cfc8;
+
+  --font-sans: Arial, "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --font-serif: "Times New Roman", "Songti SC", SimSun, serif;
+  --font-heading: "Times New Roman", "Songti SC", SimSun, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "AgentBehaviourBench: A Benchmark of Real-World Behavioural Failures in AI Agents",
+  "authors": "Anonymous Authors",
+  "status": "Manuscript",
+  "summary": [
+    "AgentBehaviourBench studies real-world behavioural failures reported by users of AI agents. The benchmark contains 43 validated issues from 23 open-source agents, linking issue reports to specific source revisions, reproducing test cases, execution trajectories, and root-cause and fault-location annotations.",
+    "The paper evaluates coding agents on behavioural failure detection and fault localization. In the detection task, testing agents generate cases from high-level task descriptions without access to the original issue report. In the localization task, they receive the full issue report and can inspect the target codebase and execution environment."
+  ],
+  "finding": "Within 50 test executions per issue, Codex and Claude Code trigger the reported failure in 30.23% and 16.28% of issues, respectively. In the separate fault-localization experiment, both correctly explain the root cause of 41 out of 43 issues. The results highlight a gap between diagnosing a reported failure and generating tests that expose it.",
+  "citationIntroduction": "If you use AgentBehaviourBench in your research, please cite the accompanying paper.",
+  "citationNote": "The current PDF lists Anonymous Authors. This provisional citation describes the manuscript; author names, publication year, venue, and a permanent URL will be added when confirmed.",
+  "citationText": "Anonymous Authors. AgentBehaviourBench: A Benchmark of Real-World Behavioural Failures in AI Agents. Unpublished manuscript.",
+  "bibtex": "@misc{agentbehaviourbench,\n  title = {{AgentBehaviourBench}: A Benchmark of Real-World Behavioural Failures in {AI} Agents}\n}"
+}
