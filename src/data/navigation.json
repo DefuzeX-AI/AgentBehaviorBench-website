@@ -12,7 +12,7 @@
     "title": "Benchmarks",
     "items": [
       {
-        "label": "Agent BehaviorBench",
+        "label": "AgentBehaviorBench",
         "path": "/agent-behavior-bench"
       },
       {

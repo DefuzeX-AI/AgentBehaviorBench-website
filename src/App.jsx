@@ -14,7 +14,7 @@ import Citation from './pages/Citation.tsx'
 
 const pages = {
   'Leaderboards': Leaderboards,
-  'Agent BehaviorBench': AgentBehaviorBench,
+  'AgentBehaviorBench': AgentBehaviorBench,
   'Data Format': OutputStructure,
   'CLI Documentation': CliDocumentation,
   'Registry Agents': RegistryAgents,
